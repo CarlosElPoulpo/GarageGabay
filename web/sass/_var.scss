@@ -1,0 +1,56 @@
+/*FONTS*/
+/*@font-face {
+  font-family: "Monthoers";
+  src: url("../fonts/Monthoers.ttf");
+}
+
+$first-font: "Monthoers";
+$second-font: none;*/
+
+/*COLORS*/
+$first-color: #FFCC33;
+$second-color: #333333;
+$third-color: #E9E9E9;
+$fourth-color: none;
+$fifth-color: none;
+
+
+.first-color{
+  background-color: $first-color ;
+}
+
+.first-color-text{
+  color: $first-color ;
+}
+
+.second-color{
+  background-color: $second-color ;
+}
+
+.second-color-text{
+  color: $second-color ;
+}
+
+.third-color{
+  background-color: $third-color ;
+}
+
+.third-color-text{
+  color: $third-color ;
+}
+
+.fourth-color{
+  background-color: $fourth-color ;
+}
+
+.fourth-color-text{
+  color: $fourth-color ;
+}
+
+.fifth-color{
+  background-color: $fifth-color ;
+}
+
+.fifth-color-text{
+  color: $fifth-color ;
+}

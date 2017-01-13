@@ -1,0 +1,95 @@
+/*VARIABLES, TOOLS & ADD-ON*/
+/*FONTS*/
+/*@font-face {
+  font-family: "Monthoers";
+  src: url("../fonts/Monthoers.ttf");
+}
+
+$first-font: "Monthoers";
+$second-font: none;*/
+/*COLORS*/
+/* line 18, ../sass/_var.scss */
+.first-color {
+  background-color: #FFCC33;
+}
+
+/* line 22, ../sass/_var.scss */
+.first-color-text {
+  color: #FFCC33;
+}
+
+/* line 26, ../sass/_var.scss */
+.second-color {
+  background-color: #333333;
+}
+
+/* line 30, ../sass/_var.scss */
+.second-color-text {
+  color: #333333;
+}
+
+/* line 34, ../sass/_var.scss */
+.third-color {
+  background-color: #E9E9E9;
+}
+
+/* line 38, ../sass/_var.scss */
+.third-color-text {
+  color: #E9E9E9;
+}
+
+/* line 42, ../sass/_var.scss */
+.fourth-color {
+  background-color: none;
+}
+
+/* line 46, ../sass/_var.scss */
+.fourth-color-text {
+  color: none;
+}
+
+/* line 50, ../sass/_var.scss */
+.fifth-color {
+  background-color: none;
+}
+
+/* line 54, ../sass/_var.scss */
+.fifth-color-text {
+  color: none;
+}
+
+/* line 1, ../sass/_tools.scss */
+.no-shadow {
+  box-shadow: none !important;
+}
+
+/* line 5, ../sass/_tools.scss */
+.no-padding-left {
+  padding-left: 0;
+}
+
+/* line 9, ../sass/_tools.scss */
+.no-padding-right {
+  padding-right: 0;
+}
+
+/* line 13, ../sass/_tools.scss */
+.no-padding-top {
+  padding-top: 0;
+}
+
+/* line 17, ../sass/_tools.scss */
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+/* line 21, ../sass/_tools.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* YOUR CUSTOM STYLES */
+/* line 1, ../sass/_custom.scss */
+html, body {
+  height: 100%;
+}
