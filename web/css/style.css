@@ -161,6 +161,19 @@ body {
   color: black !important;
 }
 
+/* line 62, ../sass/_custom.scss */
+footer {
+  background-color: #333333 !important;
+}
+/* line 64, ../sass/_custom.scss */
+footer div {
+  background-color: transparent;
+}
+/* line 67, ../sass/_custom.scss */
+footer .footer-copyright {
+  background-color: black !important;
+}
+
 /* line 1, ../sass/_navigation.scss */
 .navbar {
   background-color: white;

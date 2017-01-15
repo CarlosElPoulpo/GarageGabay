@@ -58,3 +58,13 @@ body{
     }
   }
 }
+
+footer {
+  background-color: $second-color!important;
+  div{
+    background-color: transparent;
+  }
+  .footer-copyright {
+    background-color: $fourth-color!important;
+  }
+}
