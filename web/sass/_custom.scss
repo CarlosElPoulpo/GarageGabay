@@ -1,3 +1,60 @@
-html, body {
+html,
+body,
+header,
+.view {
   height: 100%;
+}
+
+body{
+  padding-top: 62px;
+}
+
+@media only screen and (max-width: 992px) {
+  body{
+    padding-top: 37px;
+  }
+}
+
+.img-fluid{
+  height: auto;
+}
+
+.view {
+  background: url("../media/design/index-full-screen.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .full-bg-img,
+  .view {
+    height: auto;
+    position: relative;
+  }
+}
+@media (max-width: 992px) {
+  .description {
+    padding-top: 7rem;
+    text-align: center;
+  }
+  #garage {
+    max-height: 400px;
+  }
+}
+
+#home{
+  padding-top: 37px;
+  .description{
+    color: $fifth-color;
+    padding-top: 25%;
+    padding-bottom: 3rem;
+  }
+  .button-bottom-row{
+    margin-top: 15%;
+    a{
+      color: $fourth-color!important;
+    }
+  }
 }

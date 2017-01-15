@@ -1,0 +1,71 @@
+<nav class="navbar navbar-fixed-top scrolling-navbar no-shadow">
+    <!--Collapse button-->
+    <div data-activates="mobile-menu" class="button-collapse">
+        <a href="#"><i class="fa fa-bars"></i><div class="float-xs-right">Garage GABAY <img class="" height="30" src="{{ asset("/media/design/renault-logo.png") }}" alt="Logo Renault"></div></a>
+    </div>
+
+    <div class="navbar-desktop container">
+        <!--Navbar Brand-->
+        <a class="navbar-brand" href="{{ path("homepage") }}">
+            Garage GABAY <img class="" height="30" src="{{ asset("/media/design/renault-logo.png") }}" alt="Logo Renault">
+        </a>
+        <!--Links-->
+        <ul class="nav navbar-nav float-xs-right">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path("homepage") }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Voitures</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Promotions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path("apropos") }}">A propos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Content for mobile devices-->
+    <div class="navbar-mobile">
+        <ul class="side-nav blue light-side-nav" id="mobile-menu">
+            <div class="logo-wrapper waves-light">
+                <a href="{{ path("homepage") }}" class="flex-center">
+                    Garage GABAY
+                    <img class="img-fluid" src="{{ asset("/media/design/renault-logo.png") }}" alt="Logo Renault">
+                </a>
+            </div>
+            <ul class="social">
+                <li><a class="icons-sm fb-ic" href=""><i class="fa fa-facebook"> </i></a></li>
+                <li><a class="icons-sm gplus-ic" href="" rel="publisher"><i class="fa fa-google-plus"> </i></a></li>
+                <li><a class="icons-sm li-ic" href=""><i class="fa fa-linkedin"> </i></a></li>
+            </ul>
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header waves-effect" href="{{ path("homepage") }}">Accueil</a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect" href="">Voitures</a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect" href="">Promotions</a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect" href="">Articles</a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect" href="{{ path("apropos") }}">A propos</a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect" href="">Contact</a>
+                </li>
+            </ul>
+        </ul>
+    </div>
+</nav>
