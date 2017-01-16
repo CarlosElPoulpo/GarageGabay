@@ -174,6 +174,69 @@ footer .footer-copyright {
   background-color: black !important;
 }
 
+/*PARALLAX*/
+/* line 73, ../sass/_custom.scss */
+.section_1 {
+  background-image: url("../media/design/parallax-picture-1.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 400px;
+}
+
+/* line 81, ../sass/_custom.scss */
+section.parallax {
+  height: 400px;
+}
+
+/* line 85, ../sass/_custom.scss */
+.section-parallax {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* line 91, ../sass/_custom.scss */
+#section-1 {
+  background-image: url("../media/design/parallax-picture-1.jpg");
+  transform: skewY(4deg);
+}
+
+/* line 96, ../sass/_custom.scss */
+#section-3 {
+  background-image: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(54).jpg");
+}
+
+/* line 100, ../sass/_custom.scss */
+.parallax-n {
+  height: 500px;
+  transform: skewY(4deg);
+  margin-bottom: 4%;
+  margin-top: 4%;
+  position: relative;
+}
+/* line 106, ../sass/_custom.scss */
+.parallax-n .background {
+  position: absolute;
+  background-position: 0 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+/* line 115, ../sass/_custom.scss */
+#section-1 .background {
+  background-image: url("../media/design/parallax-picture-1.jpg");
+}
+
+/* line 119, ../sass/_custom.scss */
+#section-2 .background {
+  background-image: url("../media/design/parallax-picture-2.jpg");
+}
+
+/* line 123, ../sass/_custom.scss */
+#section-3 .background {
+  background-image: url("../media/design/parallax-picture-3.jpg");
+}
+
 /* line 1, ../sass/_navigation.scss */
 .navbar {
   background-color: white;
