@@ -1,7 +1,7 @@
 {% extends 'base_index.html.twig' %}
 
 {% block body %}
-    <div class="view hm-black-strong">
+    <div class="view hm-black-strong fullscreen-index">
         <div class="full-bg-img flex-center">
             <div class="container">
                 <div class="row" id="home">
@@ -257,19 +257,20 @@
 {% block javascripts %} {{ parent() }}
     <script>new WOW().init();</script>
     <script>
-        /*$(document).ready(function() {
-         var top;
-         $(window).scroll(function() {
-         top = ($(window).scrollTop() * 0.4) + 'px';
-         $('.parallax-n .background').css({
-         'background-position': '0 ' + top
-         });
-         });
-
-         });*/
         var s = skrollr.init({forceHeight: false});
-        /*s.refresh($('.parallax-n'));*/
     </script>
-
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > $(window).height()) {
+                $(".btn-envelope").css("background-color", "#2196F3")
+                $(".btn-map").css("background-color", "#F44336")
+                $(".btn-phone").css("background-color", "#4CAF50")
+            } else {
+                $(".btn-envelope").css("background-color", "white")
+                $(".btn-map").css("background-color", "white")
+                $(".btn-phone").css("background-color", "white")
+            }
+        });
+    </script>
 {% endblock %}
 

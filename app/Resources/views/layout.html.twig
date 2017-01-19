@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="shorcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <title>{% block title %}Garage Gabay{% endblock %}</title>
     <meta name="description" content="{% block description %} {% endblock %}">
     {% block stylesheets %}
@@ -26,6 +27,7 @@
 </head>
 <body class="third-color">
 {% include':elements:navigation.html.twig' %}
+{% include ':elements:contactbutton.html.twig' %}
 {% block central_layout %}
 
 {% endblock %}
