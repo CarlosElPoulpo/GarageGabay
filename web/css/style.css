@@ -8,52 +8,52 @@
 $first-font: "Monthoers";
 $second-font: none;*/
 /*COLORS*/
-/* line 18, ../sass/_var.scss */
+/* line 17, ../sass/_var.scss */
 .first-color {
   background-color: #FFCC33 !important;
 }
 
-/* line 22, ../sass/_var.scss */
+/* line 21, ../sass/_var.scss */
 .first-color-text {
   color: #FFCC33 !important;
 }
 
-/* line 26, ../sass/_var.scss */
+/* line 25, ../sass/_var.scss */
 .second-color {
   background-color: #333333 !important;
 }
 
-/* line 30, ../sass/_var.scss */
+/* line 29, ../sass/_var.scss */
 .second-color-text {
   color: #333333 !important;
 }
 
-/* line 34, ../sass/_var.scss */
+/* line 33, ../sass/_var.scss */
 .third-color {
   background-color: #E9E9E9 !important;
 }
 
-/* line 38, ../sass/_var.scss */
+/* line 37, ../sass/_var.scss */
 .third-color-text {
   color: #E9E9E9 !important;
 }
 
-/* line 42, ../sass/_var.scss */
+/* line 41, ../sass/_var.scss */
 .fourth-color {
   background-color: black !important;
 }
 
-/* line 46, ../sass/_var.scss */
+/* line 45, ../sass/_var.scss */
 .fourth-color-text {
   color: black !important;
 }
 
-/* line 50, ../sass/_var.scss */
+/* line 49, ../sass/_var.scss */
 .fifth-color {
   background-color: white !important;
 }
 
-/* line 54, ../sass/_var.scss */
+/* line 53, ../sass/_var.scss */
 .fifth-color-text {
   color: white !important;
 }
