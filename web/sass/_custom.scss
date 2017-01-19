@@ -11,7 +11,7 @@ body{
 
 @media only screen and (max-width: 992px) {
   body{
-    padding-top: 37px;
+    padding-top: 60px;
   }
 }
 
@@ -71,7 +71,7 @@ footer {
 
 /*PARALLAX*/
 .parallax-n{
-  height: 350px;
+  height: 280px;
   transform: skewY(4deg);
   margin-bottom: 4%;
   margin-top: 4%;
@@ -80,14 +80,13 @@ footer {
     width: 100%;
     height: 100%;
     background-size: cover;
-    /*opacity: 0.7;*/
     &::before{
       display: block;
       position: absolute;
       content: "";
       width: 100%;
       height: 100%;
-      background-color: $first-color;
+      background-color: $second-color;
       z-index: -1;
     }
   }
@@ -107,7 +106,7 @@ footer {
   .background {
     background-image: url("../media/design/parallax-picture-2.jpg");
     &::before{
-      transform: skewY(4deg);
+      transform: skewY(6deg);
     }
   }
 }
@@ -123,4 +122,21 @@ footer {
 
 .card-footer{
   border-top: 1px solid $first-color;
+}
+
+.prestations-header{
+
+}
+
+.card-prestations{
+  /*border: 1px solid $first-color;*/
+  .card-background{
+    img{
+      padding: 10px;
+      width: 70%;
+      margin: auto;
+    }
+  }
+  .card-block{
+  }
 }

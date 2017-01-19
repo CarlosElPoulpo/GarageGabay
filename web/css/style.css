@@ -88,6 +88,11 @@ $second-font: none;*/
   font-weight: bold;
 }
 
+/* line 25, ../sass/_tools.scss */
+.half-with {
+  width: 50%;
+}
+
 /* YOUR CUSTOM STYLES */
 /* line 1, ../sass/_custom.scss */
 html,
@@ -105,7 +110,7 @@ body {
 @media only screen and (max-width: 992px) {
   /* line 13, ../sass/_custom.scss */
   body {
-    padding-top: 37px;
+    padding-top: 60px;
   }
 }
 /* line 18, ../sass/_custom.scss */
@@ -177,7 +182,7 @@ footer .footer-copyright {
 /*PARALLAX*/
 /* line 73, ../sass/_custom.scss */
 .parallax-n {
-  height: 350px;
+  height: 280px;
   transform: skewY(4deg);
   margin-bottom: 4%;
   margin-top: 4%;
@@ -188,53 +193,63 @@ footer .footer-copyright {
   width: 100%;
   height: 100%;
   background-size: cover;
-  /*opacity: 0.7;*/
 }
-/* line 84, ../sass/_custom.scss */
+/* line 83, ../sass/_custom.scss */
 .parallax-n .background::before {
   display: block;
   position: absolute;
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #FFCC33;
+  background-color: #333333;
   z-index: -1;
 }
 
-/* line 97, ../sass/_custom.scss */
+/* line 96, ../sass/_custom.scss */
 #section-1 .background {
   background-image: url("../media/design/parallax-picture-1.jpg");
 }
-/* line 99, ../sass/_custom.scss */
+/* line 98, ../sass/_custom.scss */
 #section-1 .background::before {
   transform: skewY(-8deg);
 }
 
-/* line 105, ../sass/_custom.scss */
+/* line 104, ../sass/_custom.scss */
 #section-2 {
   transform: skewY(-4deg);
 }
-/* line 107, ../sass/_custom.scss */
+/* line 106, ../sass/_custom.scss */
 #section-2 .background {
   background-image: url("../media/design/parallax-picture-2.jpg");
 }
-/* line 109, ../sass/_custom.scss */
+/* line 108, ../sass/_custom.scss */
 #section-2 .background::before {
-  transform: skewY(4deg);
+  transform: skewY(6deg);
 }
 
-/* line 116, ../sass/_custom.scss */
+/* line 115, ../sass/_custom.scss */
 #section-3 .background {
   background-image: url("../media/design/parallax-picture-3.jpg");
 }
-/* line 118, ../sass/_custom.scss */
+/* line 117, ../sass/_custom.scss */
 #section-3 .background::before {
   transform: skewY(-8deg);
 }
 
-/* line 124, ../sass/_custom.scss */
+/* line 123, ../sass/_custom.scss */
 .card-footer {
   border-top: 1px solid #FFCC33;
+}
+
+/* line 131, ../sass/_custom.scss */
+.card-prestations {
+  /*border: 1px solid $first-color;*/
+}
+/* line 134, ../sass/_custom.scss */
+.card-prestations .card-background img {
+  padding: 10px;
+  width: 70%;
+  margin: auto;
 }
 
 /* line 1, ../sass/_navigation.scss */
@@ -272,19 +287,31 @@ footer .footer-copyright {
   color: black;
   font-weight: bold;
 }
+/* line 36, ../sass/_navigation.scss */
+.navbar .navbar-mobile .side-nav ul li a:visited {
+  color: black;
+}
+/* line 45, ../sass/_navigation.scss */
+.navbar .button-collapse a {
+  color: black !important;
+}
 
-/* line 43, ../sass/_navigation.scss */
+/* line 51, ../sass/_navigation.scss */
 .scrolling-navbar {
   z-index: 998 !important;
 }
 
-/* line 47, ../sass/_navigation.scss */
+/* line 55, ../sass/_navigation.scss */
 .top-nav-collapse {
   background-color: white !important;
   color: black !important;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
-/* line 51, ../sass/_navigation.scss */
+/* line 59, ../sass/_navigation.scss */
 .top-nav-collapse .navbar-brand {
   color: black !important;
+}
+/* line 61, ../sass/_navigation.scss */
+.top-nav-collapse .navbar-brand:visited {
+  color: black;
 }
