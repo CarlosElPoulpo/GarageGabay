@@ -188,29 +188,51 @@ footer .footer-copyright {
   width: 100%;
   height: 100%;
   background-size: cover;
-  opacity: 0.7;
+  /*opacity: 0.7;*/
+}
+/* line 84, ../sass/_custom.scss */
+.parallax-n .background::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #FFCC33;
+  z-index: -1;
 }
 
-/* line 88, ../sass/_custom.scss */
+/* line 97, ../sass/_custom.scss */
 #section-1 .background {
   background-image: url("../media/design/parallax-picture-1.jpg");
 }
+/* line 99, ../sass/_custom.scss */
+#section-1 .background::before {
+  transform: skewY(-8deg);
+}
 
-/* line 93, ../sass/_custom.scss */
+/* line 105, ../sass/_custom.scss */
 #section-2 {
   transform: skewY(-4deg);
 }
-/* line 95, ../sass/_custom.scss */
+/* line 107, ../sass/_custom.scss */
 #section-2 .background {
   background-image: url("../media/design/parallax-picture-2.jpg");
 }
+/* line 109, ../sass/_custom.scss */
+#section-2 .background::before {
+  transform: skewY(4deg);
+}
 
-/* line 101, ../sass/_custom.scss */
+/* line 116, ../sass/_custom.scss */
 #section-3 .background {
   background-image: url("../media/design/parallax-picture-3.jpg");
 }
+/* line 118, ../sass/_custom.scss */
+#section-3 .background::before {
+  transform: skewY(-8deg);
+}
 
-/* line 106, ../sass/_custom.scss */
+/* line 124, ../sass/_custom.scss */
 .card-footer {
   border-top: 1px solid #FFCC33;
 }

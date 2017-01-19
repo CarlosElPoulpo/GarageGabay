@@ -80,13 +80,25 @@ footer {
     width: 100%;
     height: 100%;
     background-size: cover;
-    opacity: 0.7;
+    /*opacity: 0.7;*/
+    &::before{
+      display: block;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: $first-color;
+      z-index: -1;
+    }
   }
 }
 
 #section-1 {
   .background {
     background-image: url("../media/design/parallax-picture-1.jpg");
+    &::before{
+      transform: skewY(-8deg);
+    }
   }
 }
 
@@ -94,12 +106,18 @@ footer {
   transform: skewY(-4deg);
   .background {
     background-image: url("../media/design/parallax-picture-2.jpg");
+    &::before{
+      transform: skewY(4deg);
+    }
   }
 }
 
 #section-3 {
   .background {
     background-image: url("../media/design/parallax-picture-3.jpg");
+    &::before{
+      transform: skewY(-8deg);
+    }
   }
 }
 
