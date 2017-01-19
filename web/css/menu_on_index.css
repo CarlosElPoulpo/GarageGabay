@@ -9,52 +9,52 @@ $second-font: none;*/
 /*COLORS*/
 /* line 18, ../sass/_var.scss */
 .first-color {
-  background-color: #FFCC33;
+  background-color: #FFCC33 !important;
 }
 
 /* line 22, ../sass/_var.scss */
 .first-color-text {
-  color: #FFCC33;
+  color: #FFCC33 !important;
 }
 
 /* line 26, ../sass/_var.scss */
 .second-color {
-  background-color: #333333;
+  background-color: #333333 !important;
 }
 
 /* line 30, ../sass/_var.scss */
 .second-color-text {
-  color: #333333;
+  color: #333333 !important;
 }
 
 /* line 34, ../sass/_var.scss */
 .third-color {
-  background-color: #E9E9E9;
+  background-color: #E9E9E9 !important;
 }
 
 /* line 38, ../sass/_var.scss */
 .third-color-text {
-  color: #E9E9E9;
+  color: #E9E9E9 !important;
 }
 
 /* line 42, ../sass/_var.scss */
 .fourth-color {
-  background-color: black;
+  background-color: black !important;
 }
 
 /* line 46, ../sass/_var.scss */
 .fourth-color-text {
-  color: black;
+  color: black !important;
 }
 
 /* line 50, ../sass/_var.scss */
 .fifth-color {
-  background-color: white;
+  background-color: white !important;
 }
 
 /* line 54, ../sass/_var.scss */
 .fifth-color-text {
-  color: white;
+  color: white !important;
 }
 
 /* line 3, ../sass/menu_on_index.scss */

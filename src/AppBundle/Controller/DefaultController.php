@@ -13,7 +13,6 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig');
     }
 
@@ -22,7 +21,54 @@ class DefaultController extends Controller
      */
     public function aproposAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('default/apropos.html.twig');
+    }
+
+    /**
+     * @Route("/voitures", name="voitures")
+     */
+    public function voituresAction(Request $request)
+    {
+        return $this->render('default/voitures.html.twig');
+    }
+
+    /**
+     * @Route("/voiture/{id}", name="voiture")
+     */
+    public function detailsvoitureAction(Request $request)
+    {
+        return $this->render('default/detailsvoiture.html.twig');
+    }
+
+    /**
+     * @Route("/article/{id}", name="article")
+     */
+    public function detailsarticleAction(Request $request)
+    {
+        return $this->render('default/detailsvoiture.html.twig');
+    }
+
+    /**
+     * @Route("/articles", name="articles")
+     */
+    public function articlesAction(Request $request)
+    {
+        return $this->render('default/articles.html.twig');
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contactAction(Request $request)
+    {
+        return $this->render('default/contact.html.twig');
+    }
+
+    /**
+     * @Route("/promotions", name="promotions")
+     */
+    public function promotionsAction(Request $request)
+    {
+        return $this->render('default/promotions.html.twig');
     }
 }

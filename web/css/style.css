@@ -10,52 +10,52 @@ $second-font: none;*/
 /*COLORS*/
 /* line 18, ../sass/_var.scss */
 .first-color {
-  background-color: #FFCC33;
+  background-color: #FFCC33 !important;
 }
 
 /* line 22, ../sass/_var.scss */
 .first-color-text {
-  color: #FFCC33;
+  color: #FFCC33 !important;
 }
 
 /* line 26, ../sass/_var.scss */
 .second-color {
-  background-color: #333333;
+  background-color: #333333 !important;
 }
 
 /* line 30, ../sass/_var.scss */
 .second-color-text {
-  color: #333333;
+  color: #333333 !important;
 }
 
 /* line 34, ../sass/_var.scss */
 .third-color {
-  background-color: #E9E9E9;
+  background-color: #E9E9E9 !important;
 }
 
 /* line 38, ../sass/_var.scss */
 .third-color-text {
-  color: #E9E9E9;
+  color: #E9E9E9 !important;
 }
 
 /* line 42, ../sass/_var.scss */
 .fourth-color {
-  background-color: black;
+  background-color: black !important;
 }
 
 /* line 46, ../sass/_var.scss */
 .fourth-color-text {
-  color: black;
+  color: black !important;
 }
 
 /* line 50, ../sass/_var.scss */
 .fifth-color {
-  background-color: white;
+  background-color: white !important;
 }
 
 /* line 54, ../sass/_var.scss */
 .fifth-color-text {
-  color: white;
+  color: white !important;
 }
 
 /* line 1, ../sass/_tools.scss */
@@ -99,7 +99,7 @@ header,
 
 /* line 8, ../sass/_custom.scss */
 body {
-  padding-top: 62px;
+  padding-top: 70px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -176,65 +176,43 @@ footer .footer-copyright {
 
 /*PARALLAX*/
 /* line 73, ../sass/_custom.scss */
-.section_1 {
-  background-image: url("../media/design/parallax-picture-1.jpg");
-  -webkit-background-size: cover;
-  background-size: cover;
-  height: 400px;
-}
-
-/* line 81, ../sass/_custom.scss */
-section.parallax {
-  height: 400px;
-}
-
-/* line 85, ../sass/_custom.scss */
-.section-parallax {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-/* line 91, ../sass/_custom.scss */
-#section-1 {
-  background-image: url("../media/design/parallax-picture-1.jpg");
-  transform: skewY(4deg);
-}
-
-/* line 96, ../sass/_custom.scss */
-#section-3 {
-  background-image: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(54).jpg");
-}
-
-/* line 100, ../sass/_custom.scss */
 .parallax-n {
-  height: 500px;
+  height: 350px;
   transform: skewY(4deg);
   margin-bottom: 4%;
   margin-top: 4%;
-  position: relative;
+  background-color: black;
 }
-/* line 106, ../sass/_custom.scss */
+/* line 79, ../sass/_custom.scss */
 .parallax-n .background {
-  position: absolute;
-  background-position: 0 0;
   width: 100%;
   height: 100%;
   background-size: cover;
+  opacity: 0.7;
 }
 
-/* line 115, ../sass/_custom.scss */
+/* line 88, ../sass/_custom.scss */
 #section-1 .background {
   background-image: url("../media/design/parallax-picture-1.jpg");
 }
 
-/* line 119, ../sass/_custom.scss */
+/* line 93, ../sass/_custom.scss */
+#section-2 {
+  transform: skewY(-4deg);
+}
+/* line 95, ../sass/_custom.scss */
 #section-2 .background {
   background-image: url("../media/design/parallax-picture-2.jpg");
 }
 
-/* line 123, ../sass/_custom.scss */
+/* line 101, ../sass/_custom.scss */
 #section-3 .background {
   background-image: url("../media/design/parallax-picture-3.jpg");
+}
+
+/* line 106, ../sass/_custom.scss */
+.card-footer {
+  border-top: 1px solid #FFCC33;
 }
 
 /* line 1, ../sass/_navigation.scss */
