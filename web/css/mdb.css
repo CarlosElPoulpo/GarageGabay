@@ -14192,13 +14192,13 @@ a.pswp__share--download:hover {
     display: none;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 992px) {
   /* line 161, ../sass/mdb/pro/_navbars-pro.scss */
   .navbar .button-collapse {
     display: none;
   }
 }
-@media (max-width: 1440px) {
+@media (max-width: 992px) {
   /* line 161, ../sass/mdb/pro/_navbars-pro.scss */
   .navbar .button-collapse {
     display: block;
