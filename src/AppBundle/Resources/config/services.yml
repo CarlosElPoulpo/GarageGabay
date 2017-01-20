@@ -1,0 +1,18 @@
+services:
+    app.admin.car:
+        class: AppBundle\Admin\CarAdmin
+        arguments: [~, AppBundle\Entity\Car, AppBundle:CarAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Car }
+
+    app.admin.promotion:
+        class: AppBundle\Admin\PromotionAdmin
+        arguments: [~, AppBundle\Entity\Promotion, AppBundle:PromotionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Promotion }
+
+    app.admin.image:
+        class: AppBundle\Admin\ImageAdmin
+        arguments: [~, AppBundle\Entity\Image, AppBundle:ImageAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Image }
