@@ -75,11 +75,9 @@ vich_uploader:
     db_driver: orm
     mappings:
         image:
-            uri_prefix:         /media/voitures
+            uri_prefix:         /GarageGabay/web/media/voitures
             upload_destination: '%kernel.root_dir%/../web/media/voitures'
-            inject_on_load:     false
-            delete_on_update:   true
-            delete_on_remove:   true
+            namer:              vich_uploader.namer_origname
 
 sonata_block:
     default_contexts: [cms]

@@ -4,12 +4,14 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;;
 
 /**
  * Image
  *
  * @ORM\Table(name="image")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ImageRepository")
+ * @Vich\Uploadable
  */
 class Image
 {
@@ -46,7 +48,7 @@ class Image
     /**
      * @var string
      *
-     * @ORM\Column(name="alt", type="string", length=255)
+     * @ORM\Column(name="alt", type="string", length=255, nullable=true)
      */
     private $alt;
 
@@ -69,6 +71,7 @@ class Image
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable();
+            $this->alt = $this->imageName;
         }
 
         return $this;
@@ -85,7 +88,7 @@ class Image
     /**
      * @param string $imageName
      *
-     * @return Product
+     * @return Image
      */
     public function setImageName($imageName)
     {
@@ -121,7 +124,7 @@ class Image
     {
         return $this->id;
     }
-    
+
     /**
      * Set updatedAt
      *
@@ -159,4 +162,11 @@ class Image
 
         return $this;
     }
+
+    function __toString()
+    {
+        return $this->imageName;
+    }
+
+
 }

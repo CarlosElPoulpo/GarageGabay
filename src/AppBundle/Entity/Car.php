@@ -491,4 +491,12 @@ class Car
     {
         return $this->images;
     }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setAutomaticPublicationDate()
+    {
+        $this->publicationDate(new \DateTimeImmutable());
+    }
 }

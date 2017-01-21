@@ -17,11 +17,21 @@ class PromotionAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('id')
-            ->add('title')
-            ->add('description')
-            ->add('url')
-            ->add('publicationDate')
-            ->add('endDate')
+            ->add('title', null, array(
+                    'label' => 'Titre')
+            )
+            ->add('description', null, array(
+                    'label' => 'Description')
+            )
+            ->add('url', null, array(
+                    'label' => 'Lien vidéo')
+            )
+            ->add('publicationDate', null, array(
+                    'label' => 'Date de fin publication')
+            )
+            ->add('endDate', null, array(
+                    'label' => 'Date de fin publication')
+            )
         ;
     }
 
@@ -32,11 +42,21 @@ class PromotionAdmin extends AbstractAdmin
     {
         $listMapper
             ->add('id')
-            ->add('title')
-            ->add('description')
-            ->add('url')
-            ->add('publicationDate')
-            ->add('endDate')
+            ->add('title', null, array(
+                    'label' => 'Titre')
+            )
+            ->add('description', null, array(
+                    'label' => 'Description')
+            )
+            ->add('url', null, array(
+                    'label' => 'Lien vidéo')
+            )
+            ->add('publicationDate', null, array(
+                    'label' => 'Date de fin publication')
+            )
+            ->add('endDate', null, array(
+                    'label' => 'Date de fin publication')
+            )
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -53,12 +73,38 @@ class PromotionAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
-            ->add('title')
-            ->add('description')
-            ->add('url')
-            ->add('publicationDate')
-            ->add('endDate')
+            ->add('title', null, array(
+                    'label' => 'Titre')
+            )
+            ->add('description', null, array(
+                    'label' => 'Description')
+            )
+            ->add('url', null, array(
+                    'label' => 'Lien Vidéo')
+            )
+            ->add('publicationDate', null, array(
+                    'label' => 'Date de publication',
+                    'widget' => 'single_text',
+                    'format' => 'dd/MM/yyyy'
+                    )
+            )
+
+            ->add('endDate', null, array(
+                    'label' => 'Date de fin publication',
+                    'widget' => 'single_text',
+                    'format' => 'dd/MM/yyyy',
+                    'placeholder' => 'jj/mm/aaaa'
+                    )
+            )
+            ->end()
+
+            ->with('image')
+            ->add('image', 'sonata_type_admin', array(
+                'label' => false,
+                'required' => false,
+                'btn_list' => false
+            ))
+            ->end()
         ;
     }
 
@@ -68,12 +114,36 @@ class PromotionAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
-            ->add('title')
-            ->add('description')
-            ->add('url')
-            ->add('publicationDate')
-            ->add('endDate')
+            ->add('title', null, array(
+                    'label' => 'Titre')
+            )
+            ->add('description', null, array(
+                    'label' => 'Description')
+            )
+            ->add('url', null, array(
+                    'label' => 'Lien Vidéo')
+            )
+            ->add('publicationDate', null, array(
+                    'label' => 'Date de publication',
+                    'widget' => 'single_text',
+                )
+            )
+            ->add('endDate', null, array(
+                    'label' => 'Date de fin publication',
+                    'widget' => 'single_text',
+                    )
+            )
+            ->end()
+
+//            ->with('Image liée')
+//            ->add('image', 'entity', array(
+//                'template' => 'AppBundle:admin:image_preview.html.twig'
+//            ))
+//            ->end()
+
+            ->with('Image liée')
+            ->add('image', 'entity')
+            ->end()
         ;
     }
 }

@@ -1,0 +1,14 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field%}
+    <div>
+        {% if object != null %}
+            <img src="{{ vich_uploader_asset(object.image, 'imageFile') }}" />
+        {% else %}
+            <span>No picture</span>
+        {% endif %}
+    </div>
+    {#<img src="{{ asset(object.image.getWebPath()) }}" class="admin-preview" />#}
+    {#<img src="{{ vich_uploader_asset(object.image, 'image') }}" alt="{{ object.name }}" />#}
+
+{% endblock %}
