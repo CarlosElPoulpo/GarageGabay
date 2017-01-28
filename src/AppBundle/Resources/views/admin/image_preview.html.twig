@@ -2,7 +2,7 @@
 {% block field%}
     <div>
         {% if object != null %}
-            <img src="{{ vich_uploader_asset(object, 'imageFile') }}" />
+            <img src="{{ vich_uploader_asset(object.imageCover, 'imageFile') }}" />
         {% else %}
             <span>No picture</span>
         {% endif %}

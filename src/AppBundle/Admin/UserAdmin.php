@@ -7,10 +7,8 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
 
-class ImageAdmin extends AbstractAdmin
+class UserAdmin extends AbstractAdmin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -19,12 +17,11 @@ class ImageAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('id')
-            ->add('imageName', null, array(
-                    'label' => 'Nom')
-            )
-            ->add('updatedAt', null, array(
-                    'label' => 'Date de modification')
-            )
+            ->add('username')
+            ->add('email')
+            ->add('roles')
+            ->add('description')
+            ->add('visible')
         ;
     }
 
@@ -35,12 +32,11 @@ class ImageAdmin extends AbstractAdmin
     {
         $listMapper
             ->add('id')
-            ->add('imageName', null, array(
-                    'label' => 'Nom')
-            )
-            ->add('updatedAt', null, array(
-            'label' => 'Date de modification')
-    )
+            ->add('username')
+            ->add('email')
+            ->add('roles')
+            ->add('description')
+            ->add('visible')
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -57,12 +53,12 @@ class ImageAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('imageFile', FileType::class, array(
-                'label' => false)
-            )
-//            ->add('imageFile', VichFileType::class, array(
-//                    'label' => false)
-//            )
+            ->add('username')
+            ->add('email')
+            ->add('password')
+            ->add('roles')
+            ->add('description')
+            ->add('visible')
         ;
     }
 
@@ -72,15 +68,11 @@ class ImageAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('imageName', null, array(
-                    'label' => 'Nom')
-            )
-            ->add('updatedAt', null, array(
-                    'label' => 'Date de modification')
-            )
-            ->add('image', 'entity', array(
-                'template' => 'AppBundle:admin:image_preview.html.twig'
-            ))
+            ->add('username')
+            ->add('email')
+            ->add('roles')
+            ->add('description')
+            ->add('visible')
         ;
     }
 }

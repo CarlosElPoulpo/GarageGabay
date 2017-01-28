@@ -2,6 +2,7 @@
 
 namespace AppBundle\Admin;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -145,23 +146,25 @@ class CarAdmin extends AbstractAdmin
             ->add('gear', null, array(
                     'label' => 'Boite de vitesse')
             )
-            ->add('description', null, array(
-                    'label' => 'Description')
-            )
+            ->add('description', CKEditorType::class, array(
+                'config'      => array('uiColor' => '#ffffff'),
+            ))
             ->add('sold', null, array(
                     'label' => 'Vendu')
             )
             ->end()
 
             ->with('Images')
-            ->add('coverImage', 'sonata_type_admin', array(
-                'label' => false,
+            ->add('coverImage', 'sonata_type_model_list', array(
+                'label' => 'Photo de couverture',
                 'required' => false,
                 'btn_list' => false
             ))
-            ->add('images', 'sonata_type_collection', array(
-                'label' => false,
+            ->add('images', 'sonata_type_model', array(
+                'label' => 'Images supplémentaires',
                 'required' => false,
+                'multiple' => true
+
             ))
             ->end()
         ;
