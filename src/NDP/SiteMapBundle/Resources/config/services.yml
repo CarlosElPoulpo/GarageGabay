@@ -1,0 +1,4 @@
+services:
+    ndp_site_map.sitemap:
+        class: NDP\SiteMapBundle\Services\SiteMap\SiteMap
+        arguments: ['@router', '@doctrine.orm.entity_manager']

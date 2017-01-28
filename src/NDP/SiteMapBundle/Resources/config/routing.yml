@@ -1,0 +1,5 @@
+sitemap:
+    path:     /sitemap.{_format}
+    defaults: { _controller: NDPSiteMapBundle:Default:siteMap }
+    requirements:
+        _format: 'xml'
