@@ -124,5 +124,10 @@ class Service
     {
         return $this->price;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
 

@@ -404,5 +404,10 @@ class Garage
     {
         return $this->googlePageLink;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
 

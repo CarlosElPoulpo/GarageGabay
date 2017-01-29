@@ -186,5 +186,15 @@ class Employee
     {
         return $this->description;
     }
+
+    public function fullname(){
+        return $this->getName()." ".$this->getLastname();
+    }
+
+    public function __toString()
+    {
+        return $this->fullname();
+    }
+
 }
 

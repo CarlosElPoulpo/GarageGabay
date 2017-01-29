@@ -227,5 +227,10 @@ class Article
     {
         $this->setPublicationDate(new \DateTime());
     }
+
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }
 
