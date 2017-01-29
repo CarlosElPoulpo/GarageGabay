@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Admin;
+namespace GarageBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class UserAdmin extends AbstractAdmin
+class CarAdmin extends AbstractAdmin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -17,11 +17,15 @@ class UserAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('id')
-            ->add('username')
-            ->add('email')
-            ->add('roles')
-            ->add('description')
-            ->add('visible')
+            ->add('title')
+            ->add('brand')
+            ->add('model')
+            ->add('year')
+            ->add('price')
+            ->add('creationDate')
+            ->add('pricePerMonth')
+            ->add('gear')
+            ->add('fuel')
         ;
     }
 
@@ -30,13 +34,18 @@ class UserAdmin extends AbstractAdmin
      */
     protected function configureListFields(ListMapper $listMapper)
     {
+        unset($this->listModes['mosaic']);
         $listMapper
             ->add('id')
-            ->add('username')
-            ->add('email')
-            ->add('roles')
-            ->add('description')
-            ->add('visible')
+            ->add('title')
+            ->add('brand')
+            ->add('model')
+            ->add('year')
+            ->add('price')
+            ->add('creationDate')
+            ->add('pricePerMonth')
+            ->add('gear')
+            ->add('fuel')
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -53,12 +62,16 @@ class UserAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('username')
-            ->add('email')
-            ->add('password')
-            ->add('roles')
-            ->add('description')
-            ->add('visible')
+            ->add('id')
+            ->add('title')
+            ->add('brand')
+            ->add('model')
+            ->add('year')
+            ->add('price')
+            ->add('creationDate')
+            ->add('pricePerMonth')
+            ->add('gear')
+            ->add('fuel')
         ;
     }
 
@@ -68,11 +81,16 @@ class UserAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('username')
-            ->add('email')
-            ->add('roles')
-            ->add('description')
-            ->add('visible')
+            ->add('id')
+            ->add('title')
+            ->add('brand')
+            ->add('model')
+            ->add('year')
+            ->add('price')
+            ->add('creationDate')
+            ->add('pricePerMonth')
+            ->add('gear')
+            ->add('fuel')
         ;
     }
 }
