@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 class GarageAdmin extends AbstractAdmin
 {
@@ -24,25 +25,17 @@ class GarageAdmin extends AbstractAdmin
     private $label_facebookPageLink = "Lien de la page Facebook";
     private $label_googlePageLink = "Lien de la page Google";
 
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection->remove('create')->remove('delete');
+    }
+
     /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper
-            ->add('name', null, array('label'=>$this->label_name))
-            ->add('image', null, array('label'=>$this->label_image))
-            ->add('description', null, array('label'=>$this->label_description))
-            ->add('welcomeParagraph', null, array('label'=>$this->label_welcomeParagraph))
-            ->add('roadNumber', null, array('label'=>$this->label_roadnumber))
-            ->add('road', null, array('label'=>$this->label_road))
-            ->add('city', null, array('label'=>$this->label_city))
-            ->add('postalCode', null, array('label'=>$this->label_postalCode))
-            ->add('phone', null, array('label'=>$this->label_phone))
-            ->add('email', null, array('label'=>$this->label_email))
-            ->add('facebookPageLink', null, array('label'=>$this->label_facebookPageLink))
-            ->add('googlePageLink', null, array('label'=>$this->label_googlePageLink))
-        ;
+
     }
 
     /**
