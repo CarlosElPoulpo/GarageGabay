@@ -31,7 +31,10 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             //CKEditor
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            //Reuse Bundle
             new GarageBundle\GarageBundle(),
+            new NDP\SiteMapBundle\NDPSiteMapBundle(),
+            new NDP\DateFieldsBundle\NDPDateFieldsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

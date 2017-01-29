@@ -22,3 +22,15 @@ services:
         arguments: [~, AppBundle\Entity\User, AppBundle:UserAdmin]
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: User }
+
+    app.admin.article:
+        class: AppBundle\Admin\ArticleAdmin
+        arguments: [~, AppBundle\Entity\Article, AppBundle:ArticleAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Articles }
+
+    app.admin.employee:
+        class: AppBundle\Admin\EmployeeAdmin
+        arguments: [~, AppBundle\Entity\Employee, AppBundle:EmployeeAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Employés }

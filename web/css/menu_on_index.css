@@ -136,3 +136,11 @@ body {
 .top-nav-collapse .button-collapse a {
   color: black !important;
 }
+
+/*
+.contact-button {
+  a {
+    background-color: $fifth-color!important;
+    color: $fourth-color!important;
+  }
+}*/

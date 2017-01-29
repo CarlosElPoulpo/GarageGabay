@@ -25,86 +25,33 @@
             </div>
         </div>
     </div>
-    <div id="skrollr-body">
-        <div id="section_1" class="container">
-            <section class="section team-section">
-                <h1 class="section-heading">L'équipe</h1>
-                <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-                    amet
-                    numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-                    pariatur
-                    accusamus veniam. Quia, minima?</p>
-                <div class="row text-xs-center">
-                    <div class="col-md-4 mb-r">
-                        <div class="testimonial">
-                            <div class="avatar">
-                                <img src="{{ asset("media/design/collaborator-1.jpg") }}"
-                                     class="rounded-circle img-fluid">
-                            </div>
-                            <h4>Anna Deynah</h4>
-                            <h5>Gérant</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic
-                                tenetur quae
-                                quaerat ad velit ab.</p>
-                            <div>
-                                <a class="icons-sm drib-ic"><i class="fa fa-dribbble"> </i></a>
-                                <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
-                                <a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a>
-                                <a class="icons-sm ins-ic"><i class="fa fa-instagram"> </i></a>
-                            </div>
-                        </div>
+    <div>
+
+
+        <div class="container">
+            <div id="section_2" class="col-md-12 text-xs-center">
+                <h1>Ventes de voitures</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, consequatur doloremque ea eligendi expedita fugiat, illum inventore maxime optio perspiciatis porro recusandae sapiente. Corporis eligendi exercitationem porro ratione rerum sequi?</p>
+                <a class="btn btn-large first-color second-color-text" href="">NEUF</a><a class="btn btn-large first-color second-color-text"href="">OCCASIONS</a>
+
+                <hr class="first-color half-with">
+                <br>
+                {% for i in 0..2 %}
+                    <div class="col-md-4">
+                        {% include 'default/cardvoiture.html.twig' %}
                     </div>
-                    <div class="col-md-4 mb-r">
-                        <div class="testimonial">
-                            <div class="avatar">
-                                <img src="{{ asset("media/design/collaborator-2.jpeg") }}"
-                                     class="rounded-circle img-fluid">
-                            </div>
-                            <h4>John Doe</h4>
-                            <h5>Textile</h5>
-                            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                                nisi ut
-                                aliquid ex ea commodi.</p>
-                            <div class="orange-text">
-                                <a class="icons-sm drib-ic"><i class="fa fa-dribbble"> </i></a>
-                                <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
-                                <a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a>
-                                <a class="icons-sm ins-ic"><i class="fa fa-instagram"> </i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-r">
-                        <div class="testimonial">
-                            <div class="avatar">
-                                <img src="{{ asset("media/design/collaborator-3.jpeg") }}"
-                                     class="rounded-circle img-fluid">
-                            </div>
-                            <h4>Maria Kate</h4>
-                            <h5>Mecanicien</h5>
-                            <p><i class="fa fa-quote-left"></i> At vero eos et accusamus et iusto odio dignissimos
-                                ducimus qui
-                                blanditiis praesentium voluptatum deleniti atque corrupti.</p>
-                            <div class="orange-text">
-                                <a class="icons-sm drib-ic"><i class="fa fa-dribbble"> </i></a>
-                                <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
-                                <a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a>
-                                <a class="icons-sm ins-ic"><i class="fa fa-instagram"> </i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="text-xs-center smooth-scroll"><a href="#le-garage"
-                                           class="btn btn-large first-color second-color-text"><i
-                            class="fa fa-angle-down" aria-hidden="true"></i> Voir le garage</a></div>
+                {% endfor %}
+                <a href="{{ path("voitures") }}" class="btn btn-large first-color second-color-text"><i
+                            class="fa fa-angle-right" aria-hidden="true"></i> Voir plus de voitures</a>
+            </div>
         </div>
 
-        <div class="parallax-n" id="section-1">
+        <div class="parallax-n" id="section-2">
             <div class="background"
                  data-center="background-position: 50% 20%"
                  data-top-bottom="background-position: 50% 15%"
                  data-bottom-top="background-position: 50% 25%"
-                 data-anchor-target="#section-1"></div>
+                 data-anchor-target="#section-2"></div>
         </div>
 
         <div class="container">
@@ -142,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="row">
                     <div class="col-md-3">
                         <div class="card card-prestations">
                             <div class="card-background">
@@ -183,7 +130,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="offset-md-3 col-md-3">
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
                         <div class="card card-prestations">
                             <div class="card-background">
                                 <img src="{{ asset("media/design/icons/license-plate.svg") }}" alt="">
@@ -204,52 +153,75 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-xs-center col-md-12 smooth-scroll"><a href="#section_2"
-                                               class="btn btn-large first-color second-color-text"><i
-                                class="fa fa-angle-down" aria-hidden="true"></i> Voir l'activité de vente</a></div>
+
+                    <section class="section team-section">
+                        <h1 class="section-heading">L'équipe</h1>
+                        <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
+                            amet
+                            numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
+                            pariatur
+                            accusamus veniam. Quia, minima?</p>
+                        <div class="row text-xs-center">
+                            <div class="col-md-4 mb-r">
+                                <div class="testimonial">
+                                    <div class="avatar">
+                                        <img src="{{ asset("media/design/collaborator-1.jpg") }}"
+                                             class="rounded-circle img-fluid">
+                                    </div>
+                                    <h4>Anna Deynah</h4>
+                                    <h5>Gérant</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic
+                                        tenetur quae
+                                        quaerat ad velit ab.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-r">
+                                <div class="testimonial">
+                                    <div class="avatar">
+                                        <img src="{{ asset("media/design/collaborator-2.jpeg") }}"
+                                             class="rounded-circle img-fluid">
+                                    </div>
+                                    <h4>John Doe</h4>
+                                    <h5>Textile</h5>
+                                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+                                        nisi ut
+                                        aliquid ex ea commodi.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-r">
+                                <div class="testimonial">
+                                    <div class="avatar">
+                                        <img src="{{ asset("media/design/collaborator-3.jpeg") }}"
+                                             class="rounded-circle img-fluid">
+                                    </div>
+                                    <h4>Maria Kate</h4>
+                                    <h5>Mecanicien</h5>
+                                    <p><i class="fa fa-quote-left"></i> At vero eos et accusamus et iusto odio dignissimos
+                                        ducimus qui
+                                        blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
             </div>
         </div>
 
-        <div class="parallax-n" id="section-2">
-            <div class="background"
-                 data-center="background-position: 50% 20%"
-                 data-top-bottom="background-position: 50% 15%"
-                 data-bottom-top="background-position: 50% 25%"
-                 data-anchor-target="#section-2"></div>
-        </div>
 
-        <div class="container">
-            <div id="section_2" class="col-md-12 text-xs-center">
-                <h1>Ventes de voitures</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, consequatur doloremque ea eligendi expedita fugiat, illum inventore maxime optio perspiciatis porro recusandae sapiente. Corporis eligendi exercitationem porro ratione rerum sequi?</p>
-                <a class="btn btn-large first-color second-color-text" href="">NEUF</a><a class="btn btn-large first-color second-color-text"href="">OCCASIONS</a>
 
-                <hr class="first-color half-with">
-                <br>
-                {% for i in 0..2 %}
-                    <div class="col-md-4">
-                        {% include 'default/cardvoiture.html.twig' %}
-                    </div>
-                {% endfor %}
-                <a href="{{ path("voitures") }}" class="btn btn-large first-color second-color-text"><i
-                            class="fa fa-angle-right" aria-hidden="true"></i> Voir plus de voitures</a>
-            </div>
-        </div>
-
-        <div class="parallax-n" id="section-3">
+        {#<div class="parallax-n" id="section-3">
             <div class="background"
                  data-center="background-position: 50% 20%"
                  data-top-bottom="background-position: 50% 15%"
                  data-bottom-top="background-position: 50% 25%"
                  data-anchor-target="#section-3"></div>
-        </div>
+        </div>#}
 
-        <div class="container">
+       {# <div class="container">
             <div class="col-md-12 text-xs-center">
                 <h2>Partenaires</h2>
 
             </div>
-        </div>
+        </div>#}
     </div>
 
 {% endblock %}
@@ -257,10 +229,10 @@
 {% block javascripts %} {{ parent() }}
     <script>new WOW().init();</script>
     <script>
-        var s = skrollr.init({forceHeight: false});
+        /*skrollr.init({forceHeight: false});*/
     </script>
     <script>
-        $(window).scroll(function () {
+        /*$(window).scroll(function () {
             if ($(window).scrollTop() > $(window).height()) {
                 $(".btn-envelope").css("background-color", "#2196F3")
                 $(".btn-map").css("background-color", "#F44336")
@@ -270,7 +242,7 @@
                 $(".btn-map").css("background-color", "white")
                 $(".btn-phone").css("background-color", "white")
             }
-        });
+        });*/
     </script>
 {% endblock %}
 

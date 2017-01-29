@@ -267,12 +267,23 @@ footer .footer-copyright {
   transition: left 0.2s;
   transition-timing-function: ease-in;
   width: 40px;
-  background-color: white;
-  color: black !important;
+  color: white !important;
 }
-/* line 158, ../sass/_custom.scss */
+/* line 157, ../sass/_custom.scss */
 .contact-button a:hover {
   left: 10px;
+}
+/* line 161, ../sass/_custom.scss */
+.contact-button a.btn-envelope {
+  background-color: #2196F3;
+}
+/* line 164, ../sass/_custom.scss */
+.contact-button a.btn-map {
+  background-color: #F44336;
+}
+/* line 167, ../sass/_custom.scss */
+.contact-button a.btn-phone {
+  background-color: #4CAF50;
 }
 
 /* line 1, ../sass/_navigation.scss */

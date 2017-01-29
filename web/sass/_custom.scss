@@ -153,13 +153,18 @@ footer {
     transition: left 0.2s;
     transition-timing-function: ease-in;
     width: 40px;
-    background-color: $fifth-color;
-    color: $fourth-color!important;
+    color: $fifth-color!important;
     &:hover {
       left: 10px;
     }
   }
   a.btn-envelope {
-
-   }
+    background-color: #2196F3;
+  }
+  a.btn-map{
+    background-color: #F44336;
+  }
+  a.btn-phone{
+    background-color: #4CAF50;
+  }
 }
