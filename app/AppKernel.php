@@ -35,6 +35,7 @@ class AppKernel extends Kernel
             new GarageBundle\GarageBundle(),
             new NDP\SiteMapBundle\NDPSiteMapBundle(),
             new NDP\DateFieldsBundle\NDPDateFieldsBundle(),
+            new UserBundle\UserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -1,7 +1,27 @@
 services:
-#    garage.example:
-#        class: GarageBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+#    garage.admin.car:
+#        class: GarageBundle\Admin\CarAdmin
+#        arguments: [~, GarageBundle\Entity\Car, GarageBundle:CarAdmin]
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: admin, label: Car }
+
+    garage.admin.second_hand_car:
+        class: GarageBundle\Admin\SecondHandCarAdmin
+        arguments: [~, GarageBundle\Entity\SecondHandCar, GarageBundle:SecondHandCarAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Voiture, label: Voitures d'occasion }
+
+    garage.admin.new_car:
+        class: GarageBundle\Admin\NewCarAdmin
+        arguments: [~, GarageBundle\Entity\NewCar, GarageBundle:NewCarAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Voiture, label: Voitures neuves }
+
+    garage.admin.vehicule_type:
+        class: GarageBundle\Admin\VehiculeTypeAdmin
+        arguments: [~, GarageBundle\Entity\VehiculeType, GarageBundle:VehiculeTypeAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Voiture, label: Type de véhicule }
     garage.admin.garage:
         class: GarageBundle\Admin\GarageAdmin
         arguments: [~, GarageBundle\Entity\Garage, GarageBundle:GarageAdmin]
