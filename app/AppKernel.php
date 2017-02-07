@@ -36,6 +36,8 @@ class AppKernel extends Kernel
             new NDP\SiteMapBundle\NDPSiteMapBundle(),
             new NDP\DateFieldsBundle\NDPDateFieldsBundle(),
             new UserBundle\UserBundle(),
+            new ImageBundle\ImageBundle(),
+            new ImageSFBundle\ImageSFBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -1,14 +1,14 @@
 <?php
 
-namespace AppBundle\Admin;
+namespace ImageSFBundle\Admin;
 
+use ImageSFBundle\Entity\Image;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ImageAdmin extends AbstractAdmin
 {
@@ -18,13 +18,7 @@ class ImageAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
-            ->add('imageName', null, array(
-                    'label' => 'Nom')
-            )
-            ->add('updatedAt', null, array(
-                    'label' => 'Date de modification')
-            )
+            ->add('image')
         ;
     }
 
@@ -34,13 +28,7 @@ class ImageAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
-            ->add('imageName', null, array(
-                    'label' => 'Nom')
-            )
-            ->add('updatedAt', null, array(
-            'label' => 'Date de modification')
-    )
+            ->add('image')
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -57,12 +45,7 @@ class ImageAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('imageFile', FileType::class, array(
-                'label' => false)
-            )
-//            ->add('imageFile', VichFileType::class, array(
-//                    'label' => false)
-//            )
+            ->add('image', FileType::class, array('label' => 'Choisir une image',))
         ;
     }
 
@@ -72,15 +55,14 @@ class ImageAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('imageName', null, array(
-                    'label' => 'Nom')
-            )
-            ->add('updatedAt', null, array(
-                    'label' => 'Date de modification')
-            )
-            ->add('image', 'entity', array(
-                'template' => 'AppBundle:admin:image_preview.html.twig'
-            ))
+            ->add('image')
         ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => Image::class,
+        ));
     }
 }

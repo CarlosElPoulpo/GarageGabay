@@ -23,6 +23,9 @@ class NewCarAdmin extends AbstractAdmin
     private  $label_description = "Description";
     private  $label_renaultLink = "Lien Renault.fr";
     private  $label_vehiculeType = "Type de véhicule";
+    private  $label_coverImage = "Image de couverture";
+    private  $label_icone = "Icone";
+
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -163,6 +166,16 @@ class NewCarAdmin extends AbstractAdmin
             ->add('vehiculeType', null, array(
                 'label' => $this->label_vehiculeType
             ))
+            ->end()
+
+            ->with('Images')
+            ->add('coverImage', 'sonata_type_model', array(
+                'label' => $this->label_coverImage,
+            ))
+            ->add('icone', 'sonata_type_model', array(
+                'label' => $this->label_icone
+            ))
+            ->end()
         ;
     }
 
@@ -208,6 +221,8 @@ class NewCarAdmin extends AbstractAdmin
             ->add('vehiculeType', null, array(
                 'label' => $this->label_vehiculeType
             ))
+            ->add('coverImage')
+            ->add('icone')
         ;
     }
 

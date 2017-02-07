@@ -29,6 +29,10 @@ class DefaultController extends Controller
      */
     public function voituresAction(Request $request)
     {
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:NewCar');
+
+        $newCars = $repository->findAll();
+
         return $this->render('default/voitures.html.twig');
     }
 

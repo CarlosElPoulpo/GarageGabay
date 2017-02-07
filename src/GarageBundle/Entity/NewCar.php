@@ -3,6 +3,7 @@
 namespace GarageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * NewCar
@@ -32,6 +33,20 @@ class NewCar extends Car
      * @ORM\JoinColumn(nullable=true)
      */
     private $vehiculeType;
+
+    /**
+     * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
+     */
+    private $coverImage;
+
+    /**
+     * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
+     */
+    private $icone;
 
 
     /**
@@ -109,5 +124,53 @@ class NewCar extends Car
     function __toString()
     {
         return $this->getTitle();
+    }
+
+    /**
+     * Set coverImage
+     *
+     * @param \ImageBundle\Entity\Image $coverImage
+     *
+     * @return NewCar
+     */
+    public function setCoverImage(\ImageBundle\Entity\Image $coverImage = null)
+    {
+        $this->coverImage = $coverImage;
+
+        return $this;
+    }
+
+    /**
+     * Get coverImage
+     *
+     * @return \ImageBundle\Entity\Image
+     */
+    public function getCoverImage()
+    {
+        return $this->coverImage;
+    }
+
+    /**
+     * Set icone
+     *
+     * @param \ImageBundle\Entity\Image $icone
+     *
+     * @return NewCar
+     */
+    public function setIcone(\ImageBundle\Entity\Image $icone = null)
+    {
+        $this->icone = $icone;
+
+        return $this;
+    }
+
+    /**
+     * Get icone
+     *
+     * @return \ImageBundle\Entity\Image
+     */
+    public function getIcone()
+    {
+        return $this->icone;
     }
 }

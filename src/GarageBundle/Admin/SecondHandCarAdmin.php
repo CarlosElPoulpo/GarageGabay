@@ -23,6 +23,7 @@ class SecondHandCarAdmin extends AbstractAdmin
     private  $label_LBCLink = "Lien LeBonCoin";
     private  $label_description = "Description";
     private  $label_sold = "Vendu";
+    private  $label_coverImage = "Image de couverture";
 
 
 
@@ -152,9 +153,6 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->add('price', null, array(
                 'label' => $this->label_price
             ))
-            ->add('creationDate', null, array(
-                'label' => $this->label_creationDate
-            ))
             ->add('pricePerMonth', null, array(
                 'label' => $this->label_pricePerMonth
             ))
@@ -176,6 +174,17 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->add('sold', null, array(
                 'label' => $this->label_sold
             ))
+            ->end()
+
+            ->with('Images')
+            ->add('coverImage', 'sonata_type_model', array(
+                'label' => $this->label_coverImage
+            ))
+            ->add('images','sonata_type_model',array(
+                'label' => false,
+                'multiple' => true
+            ))
+            ->end()
         ;
     }
 
@@ -224,6 +233,8 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->add('sold', null, array(
                 'label' => $this->label_sold
             ))
+            ->add('coverImage')
+            ->add('images')
         ;
     }
 }
