@@ -1,6 +1,55 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <h2>Vehicules neuves</h2>
+    <div class="row">
+    <ul class="nav nav-tabs tabs-3 second-color" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#panel5" role="tab">Véhicules PARTICULIERS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#panel6" role="tab">Véhicules UTILITAIRES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#panel7" role="tab">Véhicules électriques</a>
+        </li>
+    </ul>
+    <!-- Tab panels -->
+    <div class="tab-content">
+        <!--Panel 1-->
+        <div class="tab-pane fade in show active row-centered" id="panel5" role="tabpanel">
+            {% for i in 0..15 %}
+            <a class="col-md-2 col-xs-4 text-xs-center renault-link col-centered" href="{{ path("homepage") }}">
+                <img src="{{ asset('media/voitures-neuves/icons/asset 4.jpeg') }}" class="img-fluid" alt="">
+                TWINGO
+            </a>
+            {% endfor %}
+        </div>
+        <!--/.Panel 1-->
+        <!--Panel 2-->
+        <div class="tab-pane fade row-centered" id="panel6" role="tabpanel">
+            {% for i in 0..8 %}
+                <a class="col-md-2 col-xs-4 text-xs-center renault-link col-centered" href="{{ path("homepage") }}">
+                    <img src="{{ asset('media/voitures-neuves/icons/asset 4.jpeg') }}" class="img-fluid" alt="">
+                    TWINGO
+                </a>
+            {% endfor %}
+        </div>
+        <!--/.Panel 2-->
+        <!--Panel 3-->
+        <div class="tab-pane fade row-centered" id="panel7" role="tabpanel">
+            {% for i in 0..4 %}
+                <a class="col-md-2 col-xs-4 text-xs-center renault-link col-centered" href="{{ path("homepage") }}">
+                    <img src="{{ asset('media/voitures-neuves/icons/asset 4.jpeg') }}" class="img-fluid" alt="">
+                    TWINGO
+                </a>
+            {% endfor %}
+        </div>
+        <!--/.Panel 3-->
+    </div>
+    </div>
+    <hr class="renault-primary">
+    <h2>Vehicules d'occasions</h2>
     {% for i in 0..6 %}
         <div class="col-md-6 col-lg-4">
             {% include 'default/cardvoiture.html.twig' %}

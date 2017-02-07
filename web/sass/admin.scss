@@ -1,0 +1,16 @@
+/*VARIABLES, TOOLS & ADD-ON*/
+@import "var";
+@import "tools";
+
+
+.box{
+  border-top-color: $second-color!important;
+  .box-header {
+    color: $second-color;
+    background: $first-color;
+    background-color: $first-color;
+  }
+}
+
+.btn-link-dashboard{
+}

@@ -1,61 +1,98 @@
 /*VARIABLES, TOOLS & ADD-ON*/
 /*FONTS*/
-/*@font-face {
-  font-family: "Monthoers";
-  src: url("../fonts/Monthoers.ttf");
+@font-face {
+  font-family: "RenaultLife-Regular";
+  src: url("../font/Renault/RenaultLife-Regular.ttf");
 }
-
-$first-font: "Monthoers";
-$second-font: none;*/
+@font-face {
+  font-family: "RenaultLife-Bold";
+  src: url("../font/Renault/RenaultLife-Bold.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-BoldItalic";
+  src: url("../font/Renault/RenaultLife-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-Italic";
+  src: url("../font/Renault/RenaultLife-Italic.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-Light";
+  src: url("../font/Renault/RenaultLife-Light.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-LightItalic";
+  src: url("../font/Renault/RenaultLife-LightItalic.ttf");
+}
 /*COLORS*/
-/* line 17, ../sass/_var.scss */
+/* line 56, ../sass/_var.scss */
 .first-color {
   background-color: #FFCC33 !important;
 }
 
-/* line 21, ../sass/_var.scss */
+/* line 60, ../sass/_var.scss */
 .first-color-text {
   color: #FFCC33 !important;
 }
 
-/* line 25, ../sass/_var.scss */
+/* line 64, ../sass/_var.scss */
 .second-color {
   background-color: #333333 !important;
 }
 
-/* line 29, ../sass/_var.scss */
+/* line 68, ../sass/_var.scss */
 .second-color-text {
   color: #333333 !important;
 }
 
-/* line 33, ../sass/_var.scss */
+/* line 72, ../sass/_var.scss */
 .third-color {
-  background-color: #E9E9E9 !important;
+  background-color: #666666 !important;
 }
 
-/* line 37, ../sass/_var.scss */
+/* line 76, ../sass/_var.scss */
 .third-color-text {
-  color: #E9E9E9 !important;
+  color: #666666 !important;
 }
 
-/* line 41, ../sass/_var.scss */
+/* line 80, ../sass/_var.scss */
 .fourth-color {
   background-color: black !important;
 }
 
-/* line 45, ../sass/_var.scss */
+/* line 84, ../sass/_var.scss */
 .fourth-color-text {
   color: black !important;
 }
 
-/* line 49, ../sass/_var.scss */
+/* line 88, ../sass/_var.scss */
 .fifth-color {
   background-color: white !important;
 }
 
-/* line 53, ../sass/_var.scss */
+/* line 92, ../sass/_var.scss */
 .fifth-color-text {
   color: white !important;
+}
+
+/* line 96, ../sass/_var.scss */
+.sixth-color {
+  background-color: #999999 !important;
+}
+
+/* line 100, ../sass/_var.scss */
+.sixth-color-text {
+  color: #999999 !important;
+}
+
+/* line 104, ../sass/_var.scss */
+.seventh-color {
+  background-color: #CCCCCC !important;
+}
+
+/* line 108, ../sass/_var.scss */
+.seventh-color-text {
+  color: #CCCCCC !important;
 }
 
 /* line 1, ../sass/_tools.scss */
@@ -105,20 +142,22 @@ header,
 /* line 8, ../sass/_custom.scss */
 body {
   padding-top: 70px;
+  background-color: white;
+  font-family: "RenaultLife-Regular";
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 13, ../sass/_custom.scss */
+  /* line 15, ../sass/_custom.scss */
   body {
     padding-top: 60px;
   }
 }
-/* line 18, ../sass/_custom.scss */
+/* line 20, ../sass/_custom.scss */
 .img-fluid {
   height: auto;
 }
 
-/* line 22, ../sass/_custom.scss */
+/* line 24, ../sass/_custom.scss */
 .view {
   background: url("../media/design/index-full-screen.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -127,8 +166,14 @@ body {
   background-size: cover;
 }
 
+/* line 32, ../sass/_custom.scss */
+.content-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
-  /* line 31, ../sass/_custom.scss */
+  /* line 38, ../sass/_custom.scss */
   .full-bg-img,
   .view {
     height: auto;
@@ -136,116 +181,137 @@ body {
   }
 }
 @media (max-width: 992px) {
-  /* line 38, ../sass/_custom.scss */
+  /* line 45, ../sass/_custom.scss */
   .description {
     padding-top: 7rem;
     text-align: center;
   }
 
-  /* line 42, ../sass/_custom.scss */
+  /* line 49, ../sass/_custom.scss */
   #garage {
     max-height: 400px;
   }
 }
-/* line 47, ../sass/_custom.scss */
+/* line 54, ../sass/_custom.scss */
 #home {
   padding-top: 37px;
 }
-/* line 49, ../sass/_custom.scss */
+/* line 56, ../sass/_custom.scss */
 #home .description {
   color: white;
   padding-top: 25%;
   padding-bottom: 3rem;
 }
-/* line 54, ../sass/_custom.scss */
+/* line 61, ../sass/_custom.scss */
 #home .button-bottom-row {
-  margin-top: 15%;
-}
-/* line 56, ../sass/_custom.scss */
-#home .button-bottom-row a {
-  color: black !important;
+  margin-top: 25%;
 }
 
-/* line 62, ../sass/_custom.scss */
+/* line 66, ../sass/_custom.scss */
 footer {
   background-color: #333333 !important;
 }
-/* line 64, ../sass/_custom.scss */
+/* line 68, ../sass/_custom.scss */
 footer div {
   background-color: transparent;
 }
-/* line 67, ../sass/_custom.scss */
+/* line 71, ../sass/_custom.scss */
 footer .footer-copyright {
   background-color: black !important;
 }
 
 /*PARALLAX*/
-/* line 73, ../sass/_custom.scss */
-.parallax-n {
+/*.parallax-n{
   height: 280px;
   transform: skewY(4deg);
   margin-bottom: 4%;
   margin-top: 4%;
-  background-color: black;
-}
-/* line 79, ../sass/_custom.scss */
-.parallax-n .background {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
-/* line 83, ../sass/_custom.scss */
-.parallax-n .background::before {
-  display: block;
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #333333;
-  z-index: -1;
+  background-color: $fourth-color;
+  .background {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    &::before{
+      display: block;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: $second-color;
+      z-index: -1;
+    }
+  }
 }
 
-/* line 96, ../sass/_custom.scss */
-#section-1 .background {
-  background-image: url("../media/design/parallax-picture-1.jpg");
-}
-/* line 98, ../sass/_custom.scss */
-#section-1 .background::before {
-  transform: skewY(-8deg);
+#section-1 {
+  .background {
+    background-image: url("../media/design/parallax-picture-1.jpg");
+    &::before{
+      transform: skewY(-8deg);
+    }
+  }
 }
 
-/* line 104, ../sass/_custom.scss */
 #section-2 {
   transform: skewY(-4deg);
-}
-/* line 106, ../sass/_custom.scss */
-#section-2 .background {
-  background-image: url("../media/design/parallax-picture-2.jpg");
-}
-/* line 108, ../sass/_custom.scss */
-#section-2 .background::before {
-  transform: skewY(6deg);
+  .background {
+    background-image: url("../media/design/parallax-picture-2.jpg");
+    &::before{
+      transform: skewY(6deg);
+    }
+  }
 }
 
-/* line 115, ../sass/_custom.scss */
-#section-3 .background {
+#section-3 {
+  .background {
+    background-image: url("../media/design/parallax-picture-3.jpg");
+    &::before{
+      transform: skewY(-8deg);
+    }
+  }
+}*/
+/* line 127, ../sass/_custom.scss */
+.new-parallax {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+/* line 130, ../sass/_custom.scss */
+.new-parallax .streak-photo {
+  height: 400px;
+}
+/* line 133, ../sass/_custom.scss */
+.new-parallax h2 {
+  font-family: "RenaultLife-Light";
+  font-size: 3em;
+}
+
+/* line 140, ../sass/_custom.scss */
+#section-1 .streak-photo {
+  background-image: url("../media/design/parallax-picture-1-sombre.jpg");
+}
+
+/* line 146, ../sass/_custom.scss */
+#section-2 .streak-photo {
+  height: 200px;
+  background-image: url("../media/design/atelier-1.jpg");
+}
+
+/* line 153, ../sass/_custom.scss */
+#section-3 .streak-photo {
+  height: 200px;
   background-image: url("../media/design/parallax-picture-3.jpg");
 }
-/* line 117, ../sass/_custom.scss */
-#section-3 .background::before {
-  transform: skewY(-8deg);
-}
 
-/* line 123, ../sass/_custom.scss */
+/* line 159, ../sass/_custom.scss */
 .card-footer {
   border-top: 1px solid #FFCC33;
 }
 
-/* line 131, ../sass/_custom.scss */
+/* line 167, ../sass/_custom.scss */
 .card-prestations {
   /*border: 1px solid $first-color;*/
 }
-/* line 134, ../sass/_custom.scss */
+/* line 170, ../sass/_custom.scss */
 .card-prestations .card-background img {
   padding: 10px;
   width: 70%;
@@ -253,14 +319,14 @@ footer .footer-copyright {
 }
 
 /*Button Left*/
-/* line 145, ../sass/_custom.scss */
+/* line 181, ../sass/_custom.scss */
 .contact-button {
   position: fixed;
   left: -25px;
   top: 100px;
   z-index: 900;
 }
-/* line 150, ../sass/_custom.scss */
+/* line 186, ../sass/_custom.scss */
 .contact-button a {
   left: 0px;
   -webkit-transition: left 0.2s;
@@ -268,22 +334,134 @@ footer .footer-copyright {
   transition-timing-function: ease-in;
   width: 40px;
   color: white !important;
+  border-radius: 0;
 }
-/* line 157, ../sass/_custom.scss */
+/* line 194, ../sass/_custom.scss */
 .contact-button a:hover {
   left: 10px;
 }
-/* line 161, ../sass/_custom.scss */
+/* line 198, ../sass/_custom.scss */
 .contact-button a.btn-envelope {
   background-color: #2196F3;
 }
-/* line 164, ../sass/_custom.scss */
+/* line 201, ../sass/_custom.scss */
 .contact-button a.btn-map {
   background-color: #F44336;
 }
-/* line 167, ../sass/_custom.scss */
+/* line 204, ../sass/_custom.scss */
 .contact-button a.btn-phone {
   background-color: #4CAF50;
+}
+
+/*RENAULT ELEMENTS*/
+/*BUTTON*/
+/* line 211, ../sass/_custom.scss */
+.btn-renault, .btn-renault-black-text, .btn-renault-primary, .btn-renault-secondary, .btn-renault-tertiary-white, .btn-renault-white-text, .btn-renault-tertiary-grey {
+  font-family: "RenaultLife-Bold";
+  border-radius: 0;
+}
+/* line 214, ../sass/_custom.scss */
+.btn-renault i, .btn-renault-black-text i, .btn-renault-primary i, .btn-renault-secondary i, .btn-renault-tertiary-white i, .btn-renault-white-text i, .btn-renault-tertiary-grey i {
+  margin-left: 10px;
+}
+
+/* line 219, ../sass/_custom.scss */
+.btn-renault-black-text, .btn-renault-primary, .btn-renault-secondary, .btn-renault-tertiary-white {
+  color: black !important;
+}
+
+/* line 224, ../sass/_custom.scss */
+.btn-renault-white-text, .btn-renault-tertiary-grey {
+  color: white !important;
+}
+
+/* line 229, ../sass/_custom.scss */
+.btn-renault-primary {
+  background-color: #FFCC33;
+}
+/* line 232, ../sass/_custom.scss */
+.btn-renault-primary:hover {
+  background-color: #FFDD33;
+}
+
+/* line 237, ../sass/_custom.scss */
+.btn-renault-secondary {
+  background-color: #CCCCCC;
+}
+/* line 240, ../sass/_custom.scss */
+.btn-renault-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+/* line 245, ../sass/_custom.scss */
+.btn-renault-tertiary-white {
+  background-color: white;
+}
+/* line 248, ../sass/_custom.scss */
+.btn-renault-tertiary-white:hover {
+  background-color: #e0e0e0;
+}
+
+/* line 253, ../sass/_custom.scss */
+.btn-renault-tertiary-grey {
+  background-color: #333333;
+  color: white;
+}
+/* line 257, ../sass/_custom.scss */
+.btn-renault-tertiary-grey:hover {
+  background-color: #555555;
+}
+
+/*HORIZONTAL BAR*/
+/* line 263, ../sass/_custom.scss */
+hr.renault-primary {
+  background-color: #FFCC33;
+  height: 3px;
+  border: none;
+}
+
+/*LINK*/
+/* line 270, ../sass/_custom.scss */
+a.renault-link {
+  color: black;
+  text-transform: uppercase;
+  /*font-family: $second-font;*/
+}
+/* line 274, ../sass/_custom.scss */
+a.renault-link i {
+  margin-left: 10px;
+}
+/* line 277, ../sass/_custom.scss */
+a.renault-link:hover {
+  color: #666666;
+  text-decoration: underline;
+}
+
+/* line 283, ../sass/_custom.scss */
+.row-centered {
+  text-align: center;
+}
+
+/* line 286, ../sass/_custom.scss */
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
+
+/* line 297, ../sass/_custom.scss */
+.tabs-3 .nav-item .nav-link {
+  border-radius: 0px;
+  text-transform: uppercase;
+}
+/* line 300, ../sass/_custom.scss */
+.tabs-3 .nav-item .nav-link.active {
+  background-color: transparent !important;
+  color: #fff;
+  border-bottom: solid 1px #FFCC33 !important;
 }
 
 /* line 1, ../sass/_navigation.scss */
@@ -294,58 +472,59 @@ footer .footer-copyright {
 .navbar .navbar-desktop .navbar-brand {
   color: black !important;
   font-weight: bold;
+  font-family: "RenaultLife-Light";
 }
-/* line 10, ../sass/_navigation.scss */
+/* line 11, ../sass/_navigation.scss */
 .navbar .navbar-desktop .navbar-nav .nav-item a {
   color: black;
   font-weight: bold;
 }
-/* line 14, ../sass/_navigation.scss */
+/* line 15, ../sass/_navigation.scss */
 .navbar .navbar-desktop .navbar-nav .nav-item .dropdown-menu {
   background-color: white;
 }
-/* line 17, ../sass/_navigation.scss */
+/* line 18, ../sass/_navigation.scss */
 .navbar .navbar-desktop .navbar-nav .nav-item .dropdown-menu a:hover {
   background-color: white;
 }
-/* line 26, ../sass/_navigation.scss */
+/* line 27, ../sass/_navigation.scss */
 .navbar .navbar-mobile .side-nav {
   background: white !important;
 }
-/* line 27, ../sass/_navigation.scss */
+/* line 28, ../sass/_navigation.scss */
 .navbar .navbar-mobile .side-nav ul.social {
   border: none !important;
 }
-/* line 33, ../sass/_navigation.scss */
+/* line 34, ../sass/_navigation.scss */
 .navbar .navbar-mobile .side-nav ul li a {
   color: black;
   font-weight: bold;
 }
-/* line 36, ../sass/_navigation.scss */
+/* line 37, ../sass/_navigation.scss */
 .navbar .navbar-mobile .side-nav ul li a:visited {
   color: black;
 }
-/* line 45, ../sass/_navigation.scss */
+/* line 46, ../sass/_navigation.scss */
 .navbar .button-collapse a {
   color: black !important;
 }
 
-/* line 51, ../sass/_navigation.scss */
+/* line 52, ../sass/_navigation.scss */
 .scrolling-navbar {
   z-index: 998 !important;
 }
 
-/* line 55, ../sass/_navigation.scss */
+/* line 56, ../sass/_navigation.scss */
 .top-nav-collapse {
   background-color: white !important;
   color: black !important;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
-/* line 59, ../sass/_navigation.scss */
+/* line 60, ../sass/_navigation.scss */
 .top-nav-collapse .navbar-brand {
   color: black !important;
 }
-/* line 61, ../sass/_navigation.scss */
+/* line 62, ../sass/_navigation.scss */
 .top-nav-collapse .navbar-brand:visited {
   color: black;
 }

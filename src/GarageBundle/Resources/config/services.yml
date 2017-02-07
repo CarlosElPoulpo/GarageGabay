@@ -9,27 +9,28 @@ services:
         class: GarageBundle\Admin\SecondHandCarAdmin
         arguments: [~, GarageBundle\Entity\SecondHandCar, GarageBundle:SecondHandCarAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Voiture, label: Voitures d'occasion }
+            - { name: sonata.admin, manager_type: orm, group: voitures, label: Voitures d'occasion }
 
     garage.admin.new_car:
         class: GarageBundle\Admin\NewCarAdmin
         arguments: [~, GarageBundle\Entity\NewCar, GarageBundle:NewCarAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Voiture, label: Voitures neuves }
+            - { name: sonata.admin, manager_type: orm, group: voitures, label: Voitures neuves }
 
     garage.admin.vehicule_type:
         class: GarageBundle\Admin\VehiculeTypeAdmin
         arguments: [~, GarageBundle\Entity\VehiculeType, GarageBundle:VehiculeTypeAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Voiture, label: Type de véhicule }
+            - { name: sonata.admin, manager_type: orm, group: voitures, label: Types de véhicule }
+
     garage.admin.garage:
         class: GarageBundle\Admin\GarageAdmin
         arguments: [~, GarageBundle\Entity\Garage, GarageBundle:GarageAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Le garage }
+            - { name: sonata.admin, manager_type: orm, group: generale, label: Le garage }
 
     garage.admin.service:
         class: GarageBundle\Admin\ServiceAdmin
         arguments: [~, GarageBundle\Entity\Service, GarageBundle:ServiceAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Prestations }
+            - { name: sonata.admin, manager_type: orm, group: generale, label: Prestations }

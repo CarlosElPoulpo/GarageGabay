@@ -1,0 +1,41 @@
+
+{% extends sonata_block.templates.block_base %}
+
+{% block block %}
+    {% for group in groups %}
+        {% set display = (group.roles is empty or is_granted('ROLE_SUPER_ADMIN') ) %}
+        {% for role in group.roles if not display %}
+            {% set display = is_granted(role)%}
+        {% endfor %}
+
+        {% if display %}
+            <div class="box box-solid box-yellow">
+                <div class="box-header">
+                    <h3 class="box-title">{{ group.label|trans({}, group.label_catalogue) }}</h3>
+                </div>
+                <div class="box-body">
+                    <table class="table table-hover">
+                        <tbody>
+                        {% for admin in group.items %}
+                            {% if admin.dashboardActions|length > 0 %}
+                                <tr>
+                                    <td class="sonata-ba-list-label" width="40%">
+                                        {{ admin.label|trans({}, admin.translationdomain) }}
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            {% for action in admin.dashboardActions %}
+                                                {% include action.template|default(':admin:dashboard__action.html.twig') with {'action': action} %}
+                                            {% endfor %}
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

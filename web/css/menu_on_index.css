@@ -1,60 +1,97 @@
 /*FONTS*/
-/*@font-face {
-  font-family: "Monthoers";
-  src: url("../fonts/Monthoers.ttf");
+@font-face {
+  font-family: "RenaultLife-Regular";
+  src: url("../font/Renault/RenaultLife-Regular.ttf");
 }
-
-$first-font: "Monthoers";
-$second-font: none;*/
+@font-face {
+  font-family: "RenaultLife-Bold";
+  src: url("../font/Renault/RenaultLife-Bold.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-BoldItalic";
+  src: url("../font/Renault/RenaultLife-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-Italic";
+  src: url("../font/Renault/RenaultLife-Italic.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-Light";
+  src: url("../font/Renault/RenaultLife-Light.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-LightItalic";
+  src: url("../font/Renault/RenaultLife-LightItalic.ttf");
+}
 /*COLORS*/
-/* line 17, ../sass/_var.scss */
+/* line 56, ../sass/_var.scss */
 .first-color {
   background-color: #FFCC33 !important;
 }
 
-/* line 21, ../sass/_var.scss */
+/* line 60, ../sass/_var.scss */
 .first-color-text {
   color: #FFCC33 !important;
 }
 
-/* line 25, ../sass/_var.scss */
+/* line 64, ../sass/_var.scss */
 .second-color {
   background-color: #333333 !important;
 }
 
-/* line 29, ../sass/_var.scss */
+/* line 68, ../sass/_var.scss */
 .second-color-text {
   color: #333333 !important;
 }
 
-/* line 33, ../sass/_var.scss */
+/* line 72, ../sass/_var.scss */
 .third-color {
-  background-color: #E9E9E9 !important;
+  background-color: #666666 !important;
 }
 
-/* line 37, ../sass/_var.scss */
+/* line 76, ../sass/_var.scss */
 .third-color-text {
-  color: #E9E9E9 !important;
+  color: #666666 !important;
 }
 
-/* line 41, ../sass/_var.scss */
+/* line 80, ../sass/_var.scss */
 .fourth-color {
   background-color: black !important;
 }
 
-/* line 45, ../sass/_var.scss */
+/* line 84, ../sass/_var.scss */
 .fourth-color-text {
   color: black !important;
 }
 
-/* line 49, ../sass/_var.scss */
+/* line 88, ../sass/_var.scss */
 .fifth-color {
   background-color: white !important;
 }
 
-/* line 53, ../sass/_var.scss */
+/* line 92, ../sass/_var.scss */
 .fifth-color-text {
   color: white !important;
+}
+
+/* line 96, ../sass/_var.scss */
+.sixth-color {
+  background-color: #999999 !important;
+}
+
+/* line 100, ../sass/_var.scss */
+.sixth-color-text {
+  color: #999999 !important;
+}
+
+/* line 104, ../sass/_var.scss */
+.seventh-color {
+  background-color: #CCCCCC !important;
+}
+
+/* line 108, ../sass/_var.scss */
+.seventh-color-text {
+  color: #CCCCCC !important;
 }
 
 /* line 3, ../sass/menu_on_index.scss */

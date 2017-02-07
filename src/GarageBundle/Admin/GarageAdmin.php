@@ -73,18 +73,26 @@ class GarageAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', null, array('label'=>$this->label_name))
-            ->add('image', null, array('label'=>$this->label_image))
-            ->add('description', null, array('label'=>$this->label_description))
-            ->add('welcomeParagraph', null, array('label'=>$this->label_welcomeParagraph))
-            ->add('roadNumber', null, array('label'=>$this->label_roadnumber))
-            ->add('road', null, array('label'=>$this->label_road))
-            ->add('city', null, array('label'=>$this->label_city))
-            ->add('postalCode', null, array('label'=>$this->label_postalCode))
-            ->add('phone', null, array('label'=>$this->label_phone))
-            ->add('email', null, array('label'=>$this->label_email))
-            ->add('facebookPageLink', null, array('label'=>$this->label_facebookPageLink))
-            ->add('googlePageLink', null, array('label'=>$this->label_googlePageLink))
+            ->with('Informations générales', array(
+                'class'       => 'col-md-6',
+            ))
+                ->add('name', null, array('label'=>$this->label_name))
+                ->add('image', null, array('label'=>$this->label_image))
+                ->add('description', null, array('label'=>$this->label_description))
+                ->add('welcomeParagraph', null, array('label'=>$this->label_welcomeParagraph))
+            ->end()
+            ->with('Informations de contact', array(
+                'class'       => 'col-md-6',
+            ))
+                ->add('roadNumber', null, array('label'=>$this->label_roadnumber))
+                ->add('road', null, array('label'=>$this->label_road))
+                ->add('city', null, array('label'=>$this->label_city))
+                ->add('postalCode', null, array('label'=>$this->label_postalCode))
+                ->add('phone', null, array('label'=>$this->label_phone))
+                ->add('email', null, array('label'=>$this->label_email))
+                ->add('facebookPageLink', null, array('label'=>$this->label_facebookPageLink))
+                ->add('googlePageLink', null, array('label'=>$this->label_googlePageLink))
+            ->end()
         ;
     }
 

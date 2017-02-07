@@ -3,7 +3,7 @@ services:
         class: AppBundle\Admin\PromotionAdmin
         arguments: [~, AppBundle\Entity\Promotion, AppBundle:PromotionAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Promotion }
+            - { name: sonata.admin, manager_type: orm, group: autres, label: Promotions }
 
     app.admin.image:
         class: AppBundle\Admin\ImageAdmin
@@ -16,10 +16,10 @@ services:
         class: AppBundle\Admin\ArticleAdmin
         arguments: [~, AppBundle\Entity\Article, AppBundle:ArticleAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Articles }
+            - { name: sonata.admin, manager_type: orm, group: autres, label: Articles }
 
     app.admin.employee:
         class: AppBundle\Admin\EmployeeAdmin
         arguments: [~, AppBundle\Entity\Employee, AppBundle:EmployeeAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Employés }
+            - { name: sonata.admin, manager_type: orm, group: generale, label: Employés }

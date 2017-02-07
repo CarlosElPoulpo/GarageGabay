@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Employee
@@ -53,6 +54,12 @@ class Employee
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\Length(
+     *      min = 50,
+     *      max = 200,
+     *      minMessage = "Votre description dois être supérieure à {{ limit }} caractères",
+     *      maxMessage = "Votre description dois être inférieure à {{ limit }} caractères"
+     * )
      */
     private $description;
 

@@ -11,4 +11,17 @@
 
 {% block javascripts %} {{ parent() }}
     <!--<script type="text/javascript" src="{{ asset("js/skrollr.js") }}"></script>-->
+    <script>
+        $("#white-logo").removeClass("hidden-xs-up");
+        $("#black-logo").addClass("hidden-xs-up");
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 60) {
+                $("#black-logo").removeClass("hidden-xs-up");
+                $("#white-logo").addClass("hidden-xs-up");
+            } else {
+                $("#white-logo").removeClass("hidden-xs-up");
+                $("#black-logo").addClass("hidden-xs-up");
+            }
+        });
+    </script>
 {% endblock %}
