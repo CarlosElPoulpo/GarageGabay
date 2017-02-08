@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace ImageSFBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController;
 

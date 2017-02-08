@@ -57,12 +57,12 @@ class Promotion
      */
     private $endDate;
 
-    /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=true)
-     * @Assert\Valid()
-     */
-    private $image;
+//    /**
+//     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image", cascade={"persist", "remove"})
+//     * @ORM\JoinColumn(nullable=true)
+//     * @Assert\Valid()
+//     */
+//    private $image;
 
 
     /**
