@@ -305,3 +305,15 @@ a.renault-link{
     }
   }
 }
+
+.car-header{
+  .streak-photo{
+    height: 500px;
+    margin-top: -15px;
+    .car-title-header{
+      font-family: "RenaultLife-Light";
+      padding: 20px;
+      background-color: $header-car;
+    }
+  }
+}

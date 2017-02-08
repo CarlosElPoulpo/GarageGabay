@@ -24,72 +24,72 @@
   src: url("../font/Renault/RenaultLife-LightItalic.ttf");
 }
 /*COLORS*/
-/* line 56, ../sass/_var.scss */
+/* line 57, ../sass/_var.scss */
 .first-color {
   background-color: #FFCC33 !important;
 }
 
-/* line 60, ../sass/_var.scss */
+/* line 61, ../sass/_var.scss */
 .first-color-text {
   color: #FFCC33 !important;
 }
 
-/* line 64, ../sass/_var.scss */
+/* line 65, ../sass/_var.scss */
 .second-color {
   background-color: #333333 !important;
 }
 
-/* line 68, ../sass/_var.scss */
+/* line 69, ../sass/_var.scss */
 .second-color-text {
   color: #333333 !important;
 }
 
-/* line 72, ../sass/_var.scss */
+/* line 73, ../sass/_var.scss */
 .third-color {
   background-color: #666666 !important;
 }
 
-/* line 76, ../sass/_var.scss */
+/* line 77, ../sass/_var.scss */
 .third-color-text {
   color: #666666 !important;
 }
 
-/* line 80, ../sass/_var.scss */
+/* line 81, ../sass/_var.scss */
 .fourth-color {
   background-color: black !important;
 }
 
-/* line 84, ../sass/_var.scss */
+/* line 85, ../sass/_var.scss */
 .fourth-color-text {
   color: black !important;
 }
 
-/* line 88, ../sass/_var.scss */
+/* line 89, ../sass/_var.scss */
 .fifth-color {
   background-color: white !important;
 }
 
-/* line 92, ../sass/_var.scss */
+/* line 93, ../sass/_var.scss */
 .fifth-color-text {
   color: white !important;
 }
 
-/* line 96, ../sass/_var.scss */
+/* line 97, ../sass/_var.scss */
 .sixth-color {
   background-color: #999999 !important;
 }
 
-/* line 100, ../sass/_var.scss */
+/* line 101, ../sass/_var.scss */
 .sixth-color-text {
   color: #999999 !important;
 }
 
-/* line 104, ../sass/_var.scss */
+/* line 105, ../sass/_var.scss */
 .seventh-color {
   background-color: #CCCCCC !important;
 }
 
-/* line 108, ../sass/_var.scss */
+/* line 109, ../sass/_var.scss */
 .seventh-color-text {
   color: #CCCCCC !important;
 }

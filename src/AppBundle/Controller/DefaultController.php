@@ -33,7 +33,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/voiture/{id}", name="voiture")
+     * @Route("/voiture", name="voiture")
      */
     public function detailsvoitureAction(Request $request)
     {

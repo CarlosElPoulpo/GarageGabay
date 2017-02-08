@@ -1,4 +1,35 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+    <div class="car-header fourth-color">
+        <div class="streak streak-photo" style="background-image: url('../media/voitures-neuves/cover/nouvelle-clio-desktop.jpg.ximg.l_full_m.smart.jpg')">
+            <div class="container">
+                <div class="car-title-header col-md-3">
+                    <h1 class="h2-responsive wow fadeIn">Nouvelle CLIO</h1>
+                    <h4>Instinct de séduction</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block body %}
+    <br>
+    <div class="row">
+        <div class="col-md-6 text-xs-left">
+            <div>
+                A partir de :
+
+            </div>
+            <div>
+                Mensualité de :
+
+                <p>Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</p>
+                <a href="" class="renault-link">financez</a>
+            </div>
+        </div>
+        <div class="col-md-6 text-xs-right">
+            <a href="" class="btn btn-large btn-renault-tertiary-grey">Réserver un essai</a>
+        </div>
+    </div>
 {% endblock %}
