@@ -6,4 +6,4 @@ services:
         class: ImageBundle\Admin\ImageAdmin
         arguments: [~, ImageBundle\Entity\Image, SonataAdminBundle:CRUD]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Images, label: Image }
+            - { name: sonata.admin, manager_type: orm, group: images, label: ImageOld }

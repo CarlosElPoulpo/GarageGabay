@@ -173,6 +173,8 @@ sonata_admin:
             admin:
                 label: Administration
                 icon: ''
+#            images:
+#                label: Upload d'image (old)
     title:      'Administration'
     title_logo: 'media/design/Menu-mobile-Logo.png'
     assets:
@@ -218,3 +220,6 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: AppBundle\Entity\User
+    from_email:
+        address: you@example.com
+        sender_name: You

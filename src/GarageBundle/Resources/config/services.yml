@@ -17,11 +17,11 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: voitures, label: Voitures neuves }
 
-    garage.admin.vehicule_type:
-        class: GarageBundle\Admin\VehiculeTypeAdmin
-        arguments: [~, GarageBundle\Entity\VehiculeType, GarageBundle:VehiculeTypeAdmin]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: voitures, label: Types de véhicule }
+#    garage.admin.vehicule_type:
+#        class: GarageBundle\Admin\VehiculeTypeAdmin
+#        arguments: [~, GarageBundle\Entity\VehiculeType, GarageBundle:VehiculeTypeAdmin]
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: voitures, label: Types de véhicule }
 
     garage.admin.garage:
         class: GarageBundle\Admin\GarageAdmin
