@@ -17,6 +17,34 @@ class SecondHandCar extends Car
 {
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="brand", type="string", length=255)
+     */
+    private $brand;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="year", type="integer")
+     */
+    private $year;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fuel", type="string", length=255)
+     */
+    private $fuel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gear", type="string", length=255)
+     */
+    private $gear;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="km", type="integer")
@@ -66,6 +94,102 @@ class SecondHandCar extends Car
 //     *
 //     */
 //    private $images;
+
+    /**
+     * Set brand
+     *
+     * @param string $brand
+     *
+     * @return Car
+     */
+    public function setBrand($brand)
+    {
+        $this->brand = $brand;
+
+        return $this;
+    }
+
+    /**
+     * Get brand
+     *
+     * @return string
+     */
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+
+    /**
+     * Set fuel
+     *
+     * @param string $fuel
+     *
+     * @return Car
+     */
+    public function setFuel($fuel)
+    {
+        $this->fuel = $fuel;
+
+        return $this;
+    }
+
+    /**
+     * Get fuel
+     *
+     * @return string
+     */
+    public function getFuel()
+    {
+        return $this->fuel;
+    }
+
+    /**
+     * Set year
+     *
+     * @param integer $year
+     *
+     * @return Car
+     */
+    public function setYear($year)
+    {
+        $this->year = $year;
+
+        return $this;
+    }
+
+    /**
+     * Get year
+     *
+     * @return int
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * Set gear
+     *
+     * @param string $gear
+     *
+     * @return Car
+     */
+    public function setGear($gear)
+    {
+        $this->gear = $gear;
+
+        return $this;
+    }
+
+    /**
+     * Get gear
+     *
+     * @return string
+     */
+    public function getGear()
+    {
+        return $this->gear;
+    }
 
     /**
      * Set km

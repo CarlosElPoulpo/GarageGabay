@@ -33,12 +33,7 @@ class Car
      */
     private $title;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="brand", type="string", length=255)
-     */
-    private $brand;
+
 
     /**
      * @var string
@@ -47,12 +42,7 @@ class Car
      */
     private $model;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="year", type="integer")
-     */
-    private $year;
+
 
     /**
      * @var int
@@ -67,27 +57,6 @@ class Car
      * @ORM\Column(name="creationDate", type="datetime", nullable=true)
      */
     private $creationDate;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="pricePerMonth", type="integer", nullable=true)
-     */
-    private $pricePerMonth;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="gear", type="string", length=255)
-     */
-    private $gear;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="fuel", type="string", length=255)
-     */
-    private $fuel;
 
 
     /**
@@ -124,29 +93,6 @@ class Car
         return $this->title;
     }
 
-    /**
-     * Set brand
-     *
-     * @param string $brand
-     *
-     * @return Car
-     */
-    public function setBrand($brand)
-    {
-        $this->brand = $brand;
-
-        return $this;
-    }
-
-    /**
-     * Get brand
-     *
-     * @return string
-     */
-    public function getBrand()
-    {
-        return $this->brand;
-    }
 
     /**
      * Set model
@@ -170,30 +116,6 @@ class Car
     public function getModel()
     {
         return $this->model;
-    }
-
-    /**
-     * Set year
-     *
-     * @param integer $year
-     *
-     * @return Car
-     */
-    public function setYear($year)
-    {
-        $this->year = $year;
-
-        return $this;
-    }
-
-    /**
-     * Get year
-     *
-     * @return int
-     */
-    public function getYear()
-    {
-        return $this->year;
     }
 
     /**
@@ -245,78 +167,6 @@ class Car
     }
 
     /**
-     * Set pricePerMonth
-     *
-     * @param integer $pricePerMonth
-     *
-     * @return Car
-     */
-    public function setPricePerMonth($pricePerMonth)
-    {
-        $this->pricePerMonth = $pricePerMonth;
-
-        return $this;
-    }
-
-    /**
-     * Get pricePerMonth
-     *
-     * @return int
-     */
-    public function getPricePerMonth()
-    {
-        return $this->pricePerMonth;
-    }
-
-    /**
-     * Set gear
-     *
-     * @param string $gear
-     *
-     * @return Car
-     */
-    public function setGear($gear)
-    {
-        $this->gear = $gear;
-
-        return $this;
-    }
-
-    /**
-     * Get gear
-     *
-     * @return string
-     */
-    public function getGear()
-    {
-        return $this->gear;
-    }
-
-    /**
-     * Set fuel
-     *
-     * @param string $fuel
-     *
-     * @return Car
-     */
-    public function setFuel($fuel)
-    {
-        $this->fuel = $fuel;
-
-        return $this;
-    }
-
-    /**
-     * Get fuel
-     *
-     * @return string
-     */
-    public function getFuel()
-    {
-        return $this->fuel;
-    }
-
-    /**
      * @ORM\PrePersist
      * @ORM\PreUpdate
      */
@@ -324,4 +174,5 @@ class Car
     {
         $this->setCreationDate(new \DateTimeImmutable());
     }
+
 }

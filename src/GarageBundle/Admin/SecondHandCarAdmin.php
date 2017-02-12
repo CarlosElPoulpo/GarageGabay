@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class SecondHandCarAdmin extends AbstractAdmin
 {
@@ -16,7 +17,6 @@ class SecondHandCarAdmin extends AbstractAdmin
     private  $label_year = "Année";
     private  $label_price = "Prix";
     private  $label_creationDate = "Date de création";
-    private  $label_pricePerMonth = "Prix par Mois";
     private  $label_gear = "Boite de vitesse";
     private  $label_fuel = "Carburant";
     private  $label_km = "Kilométrage";
@@ -24,6 +24,7 @@ class SecondHandCarAdmin extends AbstractAdmin
     private  $label_description = "Description";
     private  $label_sold = "Vendu";
     private  $label_coverImage = "Image de couverture";
+    private  $label_images = "Images supplémentaires";
 
 
 
@@ -34,7 +35,7 @@ class SecondHandCarAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('title', null, array(
-                'label' => $this->label_description
+                'label' => $this->label_title
             ))
             ->add('brand', null, array(
                 'label' => $this->label_brand
@@ -50,9 +51,6 @@ class SecondHandCarAdmin extends AbstractAdmin
             ))
             ->add('creationDate', null, array(
                 'label' => $this->label_creationDate
-            ))
-            ->add('pricePerMonth', null, array(
-                'label' => $this->label_pricePerMonth
             ))
             ->add('gear', null, array(
                 'label' => $this->label_gear
@@ -83,7 +81,7 @@ class SecondHandCarAdmin extends AbstractAdmin
         unset($this->listModes['mosaic']);
         $listMapper
             ->add('title', null, array(
-                'label' => $this->label_description
+                'label' => $this->label_title
             ))
             ->add('brand', null, array(
                 'label' => $this->label_brand
@@ -99,9 +97,6 @@ class SecondHandCarAdmin extends AbstractAdmin
             ))
             ->add('creationDate', null, array(
                 'label' => $this->label_creationDate
-            ))
-            ->add('pricePerMonth', null, array(
-                'label' => $this->label_pricePerMonth
             ))
             ->add('gear', null, array(
                 'label' => $this->label_gear
@@ -139,7 +134,7 @@ class SecondHandCarAdmin extends AbstractAdmin
         $formMapper
 
             ->add('title', null, array(
-                'label' => $this->label_description
+                'label' => $this->label_title
             ))
             ->add('brand', null, array(
                 'label' => $this->label_brand
@@ -153,13 +148,12 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->add('price', null, array(
                 'label' => $this->label_price
             ))
-            ->add('pricePerMonth', null, array(
-                'label' => $this->label_pricePerMonth
-            ))
-            ->add('gear', null, array(
+            ->add('gear', ChoiceType::class, array(
+                'choices' => array('Manuelle' => 'Manuelle', 'Automatique' => 'Automatique'),
                 'label' => $this->label_gear
             ))
-            ->add('fuel', null, array(
+            ->add('fuel', ChoiceType::class, array(
+                'choices' => array('Essence' => 'Essence', 'Diesel' => 'Diesel'),
                 'label' => $this->label_fuel
             ))
             ->add('km', null, array(
@@ -177,12 +171,14 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->end()
 
             ->with('Images')
-            ->add('coverImage', 'sonata_type_model', array(
-                'label' => $this->label_coverImage
+            ->add('coverImage', 'sonata_type_model_list', array(
+                'label' => $this->label_coverImage,
+                'btn_list' => false
             ))
             ->add('images','sonata_type_model',array(
-                'label' => false,
-                'multiple' => true
+                'label' => $this->label_images,
+                'multiple' => true,
+                'required' => false
             ))
             ->end()
         ;
@@ -195,7 +191,7 @@ class SecondHandCarAdmin extends AbstractAdmin
     {
         $showMapper
             ->add('title', null, array(
-                'label' => $this->label_description
+                'label' => $this->label_title
             ))
             ->add('brand', null, array(
                 'label' => $this->label_brand
@@ -211,9 +207,6 @@ class SecondHandCarAdmin extends AbstractAdmin
             ))
             ->add('creationDate', null, array(
                 'label' => $this->label_creationDate
-            ))
-            ->add('pricePerMonth', null, array(
-                'label' => $this->label_pricePerMonth
             ))
             ->add('gear', null, array(
                 'label' => $this->label_gear

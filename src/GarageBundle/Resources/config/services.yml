@@ -34,3 +34,9 @@ services:
         arguments: [~, GarageBundle\Entity\Service, GarageBundle:ServiceAdmin]
         tags:
             - { name: sonata.admin, manager_type: orm, group: generale, label: Prestations }
+
+    garage.admin.partnership:
+        class: GarageBundle\Admin\PartnershipAdmin
+        arguments: [~, GarageBundle\Entity\Partnership, GarageBundle:PartnershipAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: voitures, label: Partenariats }
