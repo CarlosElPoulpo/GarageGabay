@@ -8,19 +8,19 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class CarAdmin extends AbstractAdmin
+class PartnershipAdmin extends AbstractAdmin
 {
+    private  $label_name = "Nom";
+
     /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('title')
-            ->add('model')
-            ->add('price')
-            ->add('creationDate')
-            ->add('pricePerMonth')
+            ->add('name', null, array(
+        'label' => $this->label_name
+    ))
         ;
     }
 
@@ -29,13 +29,10 @@ class CarAdmin extends AbstractAdmin
      */
     protected function configureListFields(ListMapper $listMapper)
     {
-        unset($this->listModes['mosaic']);
         $listMapper
-            ->add('title')
-            ->add('model')
-            ->add('price')
-            ->add('creationDate')
-            ->add('pricePerMonth')
+            ->add('name', null, array(
+                'label' => $this->label_name
+            ))
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -52,11 +49,14 @@ class CarAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title')
-            ->add('model')
-            ->add('price')
-            ->add('creationDate')
-            ->add('pricePerMonth')
+            ->add('name', null, array(
+                'label' => $this->label_name
+            ))
+            ->end()
+
+            ->with('Image')
+            ->add('image', 'sonata_type_model')
+            ->end()
         ;
     }
 
@@ -66,11 +66,10 @@ class CarAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('title')
-            ->add('model')
-            ->add('price')
-            ->add('creationDate')
-            ->add('pricePerMonth')
+            ->add('name', null, array(
+                'label' => $this->label_name
+            ))
+//            ->add('image')
         ;
     }
 }

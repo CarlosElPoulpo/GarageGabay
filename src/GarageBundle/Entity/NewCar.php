@@ -2,6 +2,7 @@
 
 namespace GarageBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -13,18 +14,24 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class NewCar extends Car
 {
-
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="description", type="string", length=100)
+     * @ORM\Column(name="pricePerMonth", type="integer", nullable=true)
      */
-    private $description;
+    private $pricePerMonth;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="duration", type="integer", nullable=true)
+     */
+    private $duration;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="renault_link", type="string", length=100)
+     * @ORM\Column(name="renault_link", type="text")
      */
     private $renaultLink;
 
@@ -47,6 +54,48 @@ class NewCar extends Car
      * @Assert\Valid()
      */
     private $icone;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="GarageBundle\Entity\Partnership")
+     * @ORM\JoinTable(name="newCars_partnerships",
+     *      joinColumns={@ORM\JoinColumn(name="newCar_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="partnership_id", referencedColumnName="id")}
+     *      )
+     */
+    private $partnerships;
+
+    /**
+     * NewCar constructor.
+     * @param $partnerships
+     */
+    public function __construct()
+    {
+        $this->partnerships = new \Doctrine\Common\Collections\ArrayCollection() ;
+    }
+
+    /**
+     * Set pricePerMonth
+     *
+     * @param integer $pricePerMonth
+     *
+     * @return Car
+     */
+    public function setPricePerMonth($pricePerMonth)
+    {
+        $this->pricePerMonth = $pricePerMonth;
+
+        return $this;
+    }
+
+    /**
+     * Get pricePerMonth
+     *
+     * @return int
+     */
+    public function getPricePerMonth()
+    {
+        return $this->pricePerMonth;
+    }
 
 
     /**
@@ -172,5 +221,63 @@ class NewCar extends Car
     public function getIcone()
     {
         return $this->icone;
+    }
+
+    /**
+     * Add partnership
+     *
+     * @param \GarageBundle\Entity\Partnership $partnership
+     *
+     * @return NewCar
+     */
+    public function addPartnership(\GarageBundle\Entity\Partnership $partnership)
+    {
+        $this->partnerships[] = $partnership;
+
+        return $this;
+    }
+
+    /**
+     * Remove partnership
+     *
+     * @param \GarageBundle\Entity\Partnership $partnership
+     */
+    public function removePartnership(\GarageBundle\Entity\Partnership $partnership)
+    {
+        $this->partnerships->removeElement($partnership);
+    }
+
+    /**
+     * Get partnerships
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPartnerships()
+    {
+        return $this->partnerships;
+    }
+
+    /**
+     * Set duration
+     *
+     * @param integer $duration
+     *
+     * @return Car
+     */
+    public function setDuration($duration)
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Get duration
+     *
+     * @return integer
+     */
+    public function getDuration()
+    {
+        return $this->duration;
     }
 }
