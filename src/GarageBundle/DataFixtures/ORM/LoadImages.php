@@ -103,7 +103,7 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('iconeCaptur', $iconeCaptur);
 
         $this->addReference('imageTrafic', $trafic);
-        $this->addReference('iconeTrafic', $trafic);
+        $this->addReference('iconeTrafic', $iconeTrafic);
         $this->addReference('imageKangoo', $kangoo);
         $this->addReference('iconeKangoo', $iconeKangoo);
         $this->addReference('imageMaster', $master);

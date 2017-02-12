@@ -2,11 +2,11 @@
 
 {% block header %}
     <div class="car-header fourth-color">
-        <div class="streak streak-photo" style="background-image: url('../media/voitures-neuves/cover/nouvelle-clio-desktop.jpg.ximg.l_full_m.smart.jpg')">
+        <div class="streak streak-photo" style="background-image: url('/edsa-garage-gabay/web/{{ car.coverImage.webPath }}')">
             <div class="container">
                 <div class="car-title-header col-md-3">
-                    <h1 class="h2-responsive wow fadeIn">Nouvelle CLIO</h1>
-                    <h4>Instinct de séduction</h4>
+                    <p class="h2-responsive wow fadeIn header-1">{{ car.model }}</p>
+                    <p class="header-2">{{ car.title }}</p>
                 </div>
             </div>
         </div>
@@ -19,11 +19,13 @@
         <div class="col-md-6 text-xs-left">
             <div>
                 A partir de :
-
+                {{ car.price }} €
             </div>
             <div>
-                Mensualité de :
-
+                {% if car.pricePerMonth %}
+                    Mensualité de :
+                    {{ car.pricePerMonth }} €
+                {% endif %}àè
                 <p>Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</p>
                 <a href="" class="renault-link">financez</a>
             </div>

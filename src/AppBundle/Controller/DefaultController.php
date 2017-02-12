@@ -13,7 +13,12 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('default/index.html.twig');
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:NewCar');
+
+        $utilitaires = $repository->findByType("Utilitaire");
+        $particuliers = $repository->findByType("Particulier");
+        $electriques = $repository->findByType("Electrique");
+        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques));
     }
 
     /**
@@ -29,19 +34,25 @@ class DefaultController extends Controller
      */
     public function voituresAction(Request $request)
     {
+
         $repository = $this->getDoctrine()->getRepository('GarageBundle:NewCar');
 
-        $newCars = $repository->findAll();
+        $utilitaires = $repository->findByType("Utilitaire");
+        $particuliers = $repository->findByType("Particulier");
+        $electriques = $repository->findByType("Electrique");
 
-        return $this->render('default/voitures.html.twig');
+        return $this->render('default/voitures.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques));
     }
 
     /**
-     * @Route("/voiture", name="voiture")
+     * @Route("/voiture/{id}", name="voiture")
      */
-    public function detailsvoitureAction(Request $request)
+    public function detailsvoitureAction(Request $request, $id)
     {
-        return $this->render('default/detailsvoiture.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('GarageBundle:NewCar');
+        $car = $repository->find($id);
+        return $this->render('default/detailsvoiture.html.twig', array("car"=>$car));
     }
 
     /**

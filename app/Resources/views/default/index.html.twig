@@ -15,7 +15,7 @@
                                 Nulla.</p>
                         </div>
                     </div>
-                    <div class="col-md-12 text-xs-center button-bottom-row smooth-scroll" id="enter">
+                    <div class="col-md-12 text-xs-center button-bottom-row smooth-scroll" >
                         <a id="btn-enter-index" href="#enter"
                            class="btn btn-large btn-renault-primary">Entrer <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
@@ -23,14 +23,19 @@
             </div>
         </div>
     </div>
-    <div>
+    <div >
+        <div id="enter">
+            <br>
+            <br>
+        </div>
         <div id="section_1" class="container content-section">
             <div class="col-md-12 text-xs-center">
                 <h1>Ventes de voitures</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, consequatur doloremque ea eligendi expedita fugiat, illum inventore maxime optio perspiciatis porro recusandae sapiente. Corporis eligendi exercitationem porro ratione rerum sequi?</p>
-                <a class="btn btn-large btn-renault-primary" href="{{ path("voitures") }}">NEUVES</a><a class="btn btn-large btn-renault-primary" href="{{ path("voitures") }}">OCCASIONS</a>
+                {% include ":default:tabsnewcars.html.twig" with {'particuliers': particuliers, 'utilitaires': utilitaires, 'electriques': electriques} %}
                 <hr class="renault-primary half-with">
-                <h3 class="text-xs-left">Les dernières voitures d'occasion</h3>
+                <h3 class="text-xs-left">Les dernières voitures d'occasion <a class="btn btn-large btn-renault-primary" href="{{ path("voitures") }}">Voir toute les voitures <i
+                                class="fa fa-angle-right" aria-hidden="true"></i></a></h3>
                 <br>
                 {% for i in 0..2 %}
                     <div class="col-md-4">
