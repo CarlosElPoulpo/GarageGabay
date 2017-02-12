@@ -85,7 +85,7 @@ class Image
     // On déplace le fichier envoyé dans le répertoire de notre choix
     $this->file->move(
       $this->getUploadRootDir(), // Le répertoire de destination
-      $this->id.'.'.$this->url   // Le nom du fichier à créer, ici « id.extension »
+      md5(uniqid()).'.'.$this->file->guessExtension()   // Le nom du fichier à créer, ici « id.extension »
     );
   }
 
@@ -188,6 +188,7 @@ class Image
     // On vérifie si on avait déjà un fichier pour cette entité
     if (null !== $this->url) {
       // On sauvegarde l'extension du fichier pour le supprimer plus tard
+//      $this->tempFilename = $this->url;
       $this->tempFilename = $this->url;
 
       // On réinitialise les valeurs des attributs url et alt

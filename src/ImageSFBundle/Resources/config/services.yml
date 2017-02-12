@@ -3,7 +3,7 @@ services:
         class: ImageSFBundle\Admin\ImageAdmin
         arguments: [~, ImageSFBundle\Entity\Image, ImageSFBundle:ImageAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Image }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: ImageNew }
 
     image_sf.image_uploader:
             class: ImageSFBundle\ImageUploader\ImageUploader
