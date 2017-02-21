@@ -156,7 +156,7 @@ sonata_admin:
                 position: right
                 type: sonata.admin.block.admin_list
                 settings:
-                    groups: [admin, users, generale]
+                    groups: [users, generale]
         groups:
             voitures:
                 label: Gestion des voitures
@@ -170,9 +170,9 @@ sonata_admin:
             users:
                 label: Gestion des utilisateurs
                 icon:  '<i class="fa fa-users"></i>'
-            admin:
-                label: Administration
-                icon: ''
+            #admin:
+                #label: Administration
+                #icon: ''
 #            images:
 #                label: Upload d'image (old)
     title:      'Administration'

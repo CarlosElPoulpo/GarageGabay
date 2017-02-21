@@ -1,15 +1,18 @@
 
-<div class="card">
-    <div class="view overlay hm-white-slight z-depth-1">
-        <img src="{{ asset("media/voitures/voiture-1.jpg") }}" class="img-fluid" alt="">
+<div class="card card-voiture">
+    <div class="voiture-image view overlay hm-white-slight z-depth-1">
+        <img src="{{ asset("media/voitures/b4900aa3941c0abceaf79a4761ef360e08a3b2a2.jpg") }}" class="img-fluid" alt="">
         <a>
             <div class="mask"></div>
         </a>
+        <div class="status">
+            En arrivage
+        </div>
     </div>
 
     <div class="card-block">
         <h4 class="card-title text-xs-left"><strong><a href="{{ path("voiture", {'id': 2}) }}" class="fourth-color-text">Renault captur intens 1.5l dci energy 90ch eco2</a></strong></h4>
-        <p class="card-text text-xs-center">
+        <p class="card-text text-xs-center hidden-sm-down">
             <i class="material-icons">timeline</i> 32 152 Km
             <br>
             <i class="material-icons">local_gas_station</i> Diesel
@@ -21,7 +24,7 @@
         <br>
         <div class="card-footer">
             <span class="left">15 000€</span>
-            <span class="right">Occasion</span>
+            <span class="right hidden-sm-down">Occasion</span>
         </div>
     </div>
 </div>

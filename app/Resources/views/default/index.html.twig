@@ -7,7 +7,7 @@
                 <div class="row" id="home">
                     <div class="col-md-6">
                         <div class="description">
-                            <h2 class="h2-responsive wow fadeInLeft ">Garage GABAY</h2>
+                            <h2 class="h2-responsive wow fadeInLeft ">Garage HERITIER</h2>
                             <hr class="first-color">
                             <p class="wow fadeInLeft" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur
                                 adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam
@@ -30,18 +30,26 @@
         </div>
         <div id="section_1" class="container content-section">
             <div class="col-md-12 text-xs-center">
+
+                <br>
                 <h1>Ventes de voitures</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, consequatur doloremque ea eligendi expedita fugiat, illum inventore maxime optio perspiciatis porro recusandae sapiente. Corporis eligendi exercitationem porro ratione rerum sequi?</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/gNX9ktDjV4s" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <br>
                 {% include ":default:tabsnewcars.html.twig" with {'particuliers': particuliers, 'utilitaires': utilitaires, 'electriques': electriques} %}
                 <hr class="renault-primary half-with">
                 <h3 class="text-xs-left">Les dernières voitures d'occasion <a class="btn btn-large btn-renault-primary" href="{{ path("voitures") }}">Voir toute les voitures <i
                                 class="fa fa-angle-right" aria-hidden="true"></i></a></h3>
                 <br>
+                <div class="row">
                 {% for i in 0..2 %}
                     <div class="col-md-4">
                         {% include 'default/cardvoiture.html.twig' %}
                     </div>
                 {% endfor %}
+                </div>
                 <br>
                 <div class="col-md-12 text-xs-center button-bottom-row smooth-scroll">
                     <a href="#section-1" class="btn btn-large btn-renault-primary">Voir le garage <i

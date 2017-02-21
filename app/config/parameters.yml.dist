@@ -16,4 +16,4 @@ parameters:
     mailer_password:   ~
 
     # A secret key that's used to generate certain security-related tokens
-    secret:            3a0005ec59f74bc149abb100524f4fb7f9bd8c08
+    secret:            bd2e6b01a7fcfe23ac0299ade4d5a329dc63cb9e
