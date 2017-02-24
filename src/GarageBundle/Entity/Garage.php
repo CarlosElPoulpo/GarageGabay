@@ -3,6 +3,7 @@
 namespace GarageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Garage
@@ -29,10 +30,9 @@ class Garage
     private $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=150)
-     *
+     * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
      */
     private $image;
 
@@ -42,13 +42,6 @@ class Garage
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="welcomeParagraph", type="text")
-     */
-    private $welcomeParagraph;
 
     /**
      * @var string
@@ -141,29 +134,6 @@ class Garage
         return $this->name;
     }
 
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Garage
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
 
     /**
      * Set description
@@ -187,30 +157,6 @@ class Garage
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Set welcomeParagraph
-     *
-     * @param string $welcomeParagraph
-     *
-     * @return Garage
-     */
-    public function setWelcomeParagraph($welcomeParagraph)
-    {
-        $this->welcomeParagraph = $welcomeParagraph;
-
-        return $this;
-    }
-
-    /**
-     * Get welcomeParagraph
-     *
-     * @return string
-     */
-    public function getWelcomeParagraph()
-    {
-        return $this->welcomeParagraph;
     }
 
     /**
@@ -409,5 +355,28 @@ class Garage
     {
         return $this->getName();
     }
-}
 
+    /**
+     * Set image
+     *
+     * @param \ImageBundle\Entity\Image $image
+     *
+     * @return Garage
+     */
+    public function setImage(\ImageBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \ImageBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+}

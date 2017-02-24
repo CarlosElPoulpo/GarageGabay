@@ -21,7 +21,10 @@ class DefaultController extends Controller
 
         $repository = $this->getDoctrine()->getRepository('GarageBundle:Service');
         $services = $repository->findAll();
-        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services));
+
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
+        $garage = $repository->findOneBy([]);
+        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage));
     }
 
     /**
@@ -79,7 +82,18 @@ class DefaultController extends Controller
      */
     public function contactAction(Request $request)
     {
-        return $this->render('default/contact.html.twig');
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
+        $garage = $repository->findOneBy([]);
+        return $this->render('default/contact.html.twig', array("garage"=>$garage));
+    }
+
+    public function contactButtonAction()
+    {
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
+        $garage = $repository->findOneBy([]);
+        return $this->render('elements/contactbutton.html.twig', array(
+            'garage' => $garage,
+        ));
     }
 
     /**

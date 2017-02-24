@@ -170,6 +170,9 @@
         &.dd-right { 
             left: -100px;
         }
+        .dropdown-item:hover {
+            background-color: $primary-color;
+        }
         &.dropdown-primary .dropdown-item:hover {
             background-color: $primary-color;
         }

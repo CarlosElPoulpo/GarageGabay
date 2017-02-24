@@ -11,12 +11,15 @@
         a {
           color: $fourth-color;
           font-weight: bold;
+          &:hover{
+            color: #FFCC33;
+          }
         }
         .dropdown-menu{
           background-color: white;
           a{
             &:hover{
-              background-color: white;
+              color: black;
             }
           }
         }

@@ -161,6 +161,14 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('icon_climatisation', $climatisation);
         $this->addReference('icon_batterie', $batterie);
         /*END SERVICES ICONS*/
+
+        /*GARAGE IMAGE*/
+        $garage = new Image();
+        $this->jpg($garage,'garage');
+        $manager->persist($garage);
+
+        $this->addReference('image_garage', $garage);
+        /*END GARAGE IMAGE*/
     }
 
     public function jpg($image, $imageName, $ext='.jpg')

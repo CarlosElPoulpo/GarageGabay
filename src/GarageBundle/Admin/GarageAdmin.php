@@ -15,7 +15,6 @@ class GarageAdmin extends AbstractAdmin
     private $label_name = "Nom du garage";
     private $label_image = "Photo";
     private $label_description = "Description";
-    private $label_welcomeParagraph = "Paragraphe de bienvenue sur la page d'accueil";
     private $label_roadnumber = "Numéro de rue";
     private $label_road = "Rue";
     private $label_city = "Ville";
@@ -48,7 +47,6 @@ class GarageAdmin extends AbstractAdmin
             ->add('name', null, array('label'=>$this->label_name))
             ->add('image', null, array('label'=>$this->label_image))
             ->add('description', null, array('label'=>$this->label_description))
-            ->add('welcomeParagraph', null, array('label'=>$this->label_welcomeParagraph))
             ->add('roadNumber', null, array('label'=>$this->label_roadnumber))
             ->add('road', null, array('label'=>$this->label_road))
             ->add('city', null, array('label'=>$this->label_city))
@@ -79,7 +77,6 @@ class GarageAdmin extends AbstractAdmin
                 ->add('name', null, array('label'=>$this->label_name))
                 ->add('image', null, array('label'=>$this->label_image))
                 ->add('description', null, array('label'=>$this->label_description))
-                ->add('welcomeParagraph', null, array('label'=>$this->label_welcomeParagraph))
             ->end()
             ->with('Informations de contact', array(
                 'class'       => 'col-md-6',
@@ -105,7 +102,6 @@ class GarageAdmin extends AbstractAdmin
             ->add('name', null, array('label'=>$this->label_name))
             ->add('image', null, array('label'=>$this->label_image))
             ->add('description', null, array('label'=>$this->label_description))
-            ->add('welcomeParagraph', null, array('label'=>$this->label_welcomeParagraph))
             ->add('roadNumber', null, array('label'=>$this->label_roadnumber))
             ->add('road', null, array('label'=>$this->label_road))
             ->add('city', null, array('label'=>$this->label_city))

@@ -1,37 +1,39 @@
-<nav class="navbar navbar-fixed-top scrolling-navbar">
+<nav class="navbar fixed-top navbar-toggleable-md navbar-dark scrolling-navbar">
     <!--Collapse button-->
     <div data-activates="mobile-menu" class="button-collapse">
         <a href="#"><i class="fa fa-bars"></i><div class="float-xs-right">Garage HERITIER</div></a>
     </div>
 
-    <div class="navbar-desktop container">
+    <div class="navbar-desktop container d-flex justify-content-between">
         <!--Navbar Brand-->
-        <a class="navbar-brand" href="{{ path("homepage") }}">
-            Garage HERITIER{# <img class="" height="30" src="{{ asset("/media/design/renault-logo.png") }}" alt="Logo Renault">#}
-        </a>
-        <!--Links-->
-        <ul class="nav navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path("homepage") }}">Accueil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path("voitures") }}">Voitures</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path("promotions") }}">Promotions</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path("articles") }}">Articles</a>
-            </li>
-            <!--<li class="nav-item">
-                <a class="nav-link" href="{{ path("apropos") }}">A propos</a>
-            </li>-->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path("contact") }}">Contact</a>
-            </li>
-        </ul>
-        <a href="https://www.renault.fr/"><img id="white-logo" class="float-xs-right hidden-xs-up" height="30" src="{{ asset("media/design/logos/Logo-Renault-Negative-Baseline.png") }}" alt="">
-        <img id="black-logo" class="float-xs-right" height="30" src="{{ asset("media/design/logos/Logo-Renault-Positive-Baseline.png") }}" alt=""></a>
+        <div class="d-flex justify-content-start">
+            <a class="navbar-brand" href="{{ path("homepage") }}">
+                Garage HERITIER{# <img class="" height="30" src="{{ asset("/media/design/renault-logo.png") }}" alt="Logo Renault">#}
+            </a>
+            <!--Links-->
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path("homepage") }}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path("voitures") }}">Voitures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path("promotions") }}">Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path("articles") }}">Articles</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="{{ path("apropos") }}">A propos</a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path("contact") }}">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <a href="https://www.renault.fr/"><img id="white-logo" class="dd-right hidden-xs-up" height="30" src="{{ asset("media/design/logos/Logo-Renault-Negative-Baseline.png") }}" alt="">
+        <img id="black-logo" class="dd-right" height="30" src="{{ asset("media/design/logos/Logo-Renault-Positive-Baseline.png") }}" alt=""></a>
     </div>
 
 
