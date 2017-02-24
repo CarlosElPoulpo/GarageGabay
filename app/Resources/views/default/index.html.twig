@@ -104,89 +104,22 @@
                 numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
                 pariatur
                 accusamus veniam. Quia, minima?</p>
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <div class="card card-prestations">
-                        <div class="card-background">
-                            <img src="{{ asset("media/design/icons/engine.svg") }}" alt="">
-                        </div>
-                        <div class="card-block text-xs-center">
-                            <h4 class="second-color-text text-fluid">Moteur</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <div class="card card-prestations">
-                        <div class="card-background">
-                            <img src="{{ asset("media/design/icons/chassis.svg") }}" alt="">
-                        </div>
-                        <div class="card-block text-xs-center">
-                            <h4 class="second-color-text text-fluid">Parallélisme</h4>
+            <div class="row-centered">
+                {%  for service in services %}
+                    <div class="col-xs-6 col-md-3 col-centered">
+                        <div class="card card-prestations">
+                            <div class="card-background">
+                                <img src="{{ asset(service.icon.webPath) }}" alt="">
+                            </div>
+                            <div class="card-block text-xs-center">
+                                <h4 class="second-color-text text-fluid">{{  service.name }}</h4>
+                            </div>
+                            <div class="card-footer text-xs-center">
+                                <p>A partir de {{ service.price }} €</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <div class="card card-prestations">
-                        <div class="card-background">
-                            <img src="{{ asset("media/design/icons/wheel.svg") }}" alt="">
-                        </div>
-                        <div class="card-block text-xs-center">
-                            <h4 class="second-color-text text-fluid">Pneus</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <div class="card card-prestations">
-                        <div class="card-background">
-                            <img src="{{ asset("media/design/icons/exhaust-pipe.svg") }}" alt="">
-                        </div>
-                        <div class="card-block text-xs-center">
-                            <h4 class="second-color-text text-fluid">Echappement</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <div class="card card-prestations">
-                        <div class="card-background">
-                            <img src="{{ asset("media/design/icons/license-plate.svg") }}" alt="">
-                        </div>
-                        <div class="card-block text-xs-center">
-                            <h4 class="second-color-text text-fluid">Immatriculation</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <div class="card card-prestations">
-                        <div class="card-background">
-                            <img src="{{ asset("media/design/icons/suspension.svg") }}" alt="">
-                        </div>
-                        <div class="card-block text-xs-center">
-                            <h4 class="second-color-text text-fluid">Suspensions</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <div class="card card-prestations">
-                        <div class="card-background">
-                            <img src="{{ asset("media/design/icons/snowflake.svg") }}" alt="">
-                        </div>
-                        <div class="card-block text-xs-center">
-                            <h4 class="second-color-text text-fluid">Climatisation</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <div class="card card-prestations">
-                        <div class="card-background">
-                            <img src="{{ asset("media/design/icons/battery.svg") }}" alt="">
-                        </div>
-                        <div class="card-block text-xs-center">
-                            <h4 class="second-color-text text-fluid">Batterie</h4>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="col-md-12 text-xs-center button-bottom-row smooth-scroll">
                 <a href="#section-3" class="btn btn-large btn-renault-primary">Voir l'équipe<i

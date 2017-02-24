@@ -18,9 +18,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class LoadImages extends AbstractFixture implements OrderedFixtureInterface
 {
     private $imgPath = __DIR__ .'/../../../../'.'web/media/imgFixtures/';
+    private $imgpath_services = __DIR__ .'/../../../../'.'web/media/imgFixtures/services/';
 
     public function load(ObjectManager $manager)
     {
+        /*VEHICULES NEUFS*/
         $twingo = new Image();
         $this->jpg($twingo,'twingo');
         $manager->persist($twingo);
@@ -115,13 +117,64 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('iconeKangooE', $iconeKangooE);
         $this->addReference('imageMasterE', $masterE);
         $this->addReference('iconeMasterE', $iconeMasterE);
+        /*END VEHICULES NEUFS*/
 
+        /*SERVICES ICONS*/
+        $moteur = new Image();
+        $this->svg($moteur,'engine');
+        $manager->persist($moteur);
+
+        $parallelisme = new Image();
+        $this->svg($parallelisme,'chassis');
+        $manager->persist($parallelisme);
+
+        $pneus = new Image();
+        $this->svg($pneus,'wheel');
+        $manager->persist($pneus);
+
+        $echappement = new Image();
+        $this->svg($echappement,'exhaust-pipe');
+        $manager->persist($echappement);
+
+        $immatriculation = new Image();
+        $this->svg($immatriculation,'license-plate');
+        $manager->persist($immatriculation);
+
+        $suspensions = new Image();
+        $this->svg($suspensions,'suspension');
+        $manager->persist($suspensions);
+
+        $climatisation = new Image();
+        $this->svg($climatisation,'snowflake');
+        $manager->persist($climatisation);
+
+        $batterie = new Image();
+        $this->svg($batterie,'battery');
+        $manager->persist($batterie);
+
+        $this->addReference('icon_moteur', $moteur);
+        $this->addReference('icon_parallelisme', $parallelisme);
+        $this->addReference('icon_pneus', $pneus);
+        $this->addReference('icon_echappement', $echappement);
+        $this->addReference('icon_immatriculation', $immatriculation);
+        $this->addReference('icon_suspensions', $suspensions);
+        $this->addReference('icon_climatisation', $climatisation);
+        $this->addReference('icon_batterie', $batterie);
+        /*END SERVICES ICONS*/
     }
 
     public function jpg($image, $imageName, $ext='.jpg')
     {
         $copiedImage = $this->imgPath.$imageName . '(1)' . $ext;
         copy($this->imgPath.$imageName . $ext, $copiedImage);
+        $file = new UploadedFile($copiedImage,$imageName . $ext, null, null, null, true);
+        $image->setFile($file);
+    }
+
+    public function svg($image, $imageName, $ext='.svg')
+    {
+        $copiedImage = $this->imgpath_services.$imageName . '(1)' . $ext;
+        copy($this->imgpath_services.$imageName . $ext, $copiedImage);
         $file = new UploadedFile($copiedImage,$imageName . $ext, null, null, null, true);
         $image->setFile($file);
     }

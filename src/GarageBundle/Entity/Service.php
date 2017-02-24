@@ -3,7 +3,7 @@
 namespace GarageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Service
  *
@@ -29,9 +29,9 @@ class Service
     private $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="icon", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
      */
     private $icon;
 
@@ -78,30 +78,6 @@ class Service
     }
 
     /**
-     * Set icon
-     *
-     * @param string $icon
-     *
-     * @return Service
-     */
-    public function setIcon($icon)
-    {
-        $this->icon = $icon;
-
-        return $this;
-    }
-
-    /**
-     * Get icon
-     *
-     * @return string
-     */
-    public function getIcon()
-    {
-        return $this->icon;
-    }
-
-    /**
      * Set price
      *
      * @param float $price
@@ -129,5 +105,28 @@ class Service
     {
         return $this->getName();
     }
-}
 
+    /**
+     * Set icon
+     *
+     * @param \ImageBundle\Entity\Image $icon
+     *
+     * @return Service
+     */
+    public function setIcon(\ImageBundle\Entity\Image $icon = null)
+    {
+        $this->icon = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Get icon
+     *
+     * @return \ImageBundle\Entity\Image
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+}

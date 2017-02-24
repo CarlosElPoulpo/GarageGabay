@@ -18,7 +18,10 @@ class DefaultController extends Controller
         $utilitaires = $repository->findByType("Utilitaire");
         $particuliers = $repository->findByType("Particulier");
         $electriques = $repository->findByType("Electrique");
-        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques));
+
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:Service');
+        $services = $repository->findAll();
+        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services));
     }
 
     /**

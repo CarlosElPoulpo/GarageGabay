@@ -53,8 +53,11 @@ class ServiceAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('name', null, array('label'=>$this->label_name))
-            ->add('icon', null, array('label'=>$this->label_icon))
             ->add('price', null, array('label'=>$this->label_price))
+            ->add('icon', 'sonata_type_model_list', array(
+                'label' => $this->label_icon,
+                'btn_list' => false,
+            ))
         ;
     }
 
