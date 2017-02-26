@@ -14,7 +14,6 @@ class ArticleAdmin extends AbstractAdmin
 
     private $label_title = "Titre";
     private $label_coverImage = "Image de couverture";
-    private $label_description = "Description";
     private $label_content = "Contenu";
     private $label_writtenBy = "Ecris par";
     private $label_publicationDate = "Date de publication";
@@ -26,7 +25,6 @@ class ArticleAdmin extends AbstractAdmin
         $datagridMapper
             ->add('title', null, array('label'=>$this->label_title))
             ->add('coverImage', null, array('label'=>$this->label_coverImage))
-            ->add('description', null, array('label'=>$this->label_description))
             ->add('content', null, array('label'=>$this->label_content))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
             ->add('publicationDate', null, array('label'=>$this->label_publicationDate))
@@ -42,7 +40,6 @@ class ArticleAdmin extends AbstractAdmin
         $listMapper
             ->add('title', null, array('label'=>$this->label_title))
             ->add('coverImage', null, array('label'=>$this->label_coverImage))
-            ->add('description', null, array('label'=>$this->label_description))
             ->add('content', null, array('label'=>$this->label_content))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
             ->add('publicationDate', null, array('label'=>$this->label_publicationDate))
@@ -63,10 +60,14 @@ class ArticleAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('title', null, array('label'=>$this->label_title))
-            ->add('coverImage', null, array('label'=>$this->label_coverImage))
-            ->add('description', CKEditorType::class, array('label'=>$this->label_description,'config' => array('uiColor' => '#ffffff')))
-            ->add('content', null, array('label'=>$this->label_content))
+            ->add('content', CKEditorType::class, array('label'=>$this->label_content,'config' => array('uiColor' => '#ffffff')))
+            ->add('coverImage', 'sonata_type_model_list', array(
+                'label' => $this->label_coverImage,
+                'required' => false,
+                'btn_list' => false
+            ))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
+            ->end()
         ;
     }
 
@@ -78,7 +79,6 @@ class ArticleAdmin extends AbstractAdmin
         $showMapper
             ->add('title', null, array('label'=>$this->label_title))
             ->add('coverImage', null, array('label'=>$this->label_coverImage))
-            ->add('description', null, array('label'=>$this->label_description))
             ->add('content', null, array('label'=>$this->label_content))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
             ->add('publicationDate', null, array('label'=>$this->label_publicationDate))

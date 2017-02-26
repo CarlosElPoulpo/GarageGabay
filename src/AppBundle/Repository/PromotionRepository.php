@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+
 /**
  * PromotionRepository
  *
@@ -10,4 +11,21 @@ namespace AppBundle\Repository;
  */
 class PromotionRepository extends \Doctrine\ORM\EntityRepository
 {
+    // retourne les promos pour lesquelles la date du jour est comprise entre publicationDate et endDate
+    public function findPromosToDisplay(){
+
+        $qb = $this->createQueryBuilder('p');
+        $qb->add('where', $qb->expr()->between(
+                ':now',
+                'p.publicationDate',
+                'p.endDate'
+            ))
+            ->setParameters(array('now' => new \DateTimeImmutable()))
+        ;
+
+        return $qb
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

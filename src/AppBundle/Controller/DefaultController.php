@@ -24,6 +24,10 @@ class DefaultController extends Controller
 
         $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
         $garage = $repository->findOneBy([]);
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Promotion');
+        $promos = $repository->findPromosToDisplay();
+
         return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage));
     }
 

@@ -28,7 +28,6 @@ class Image
      */
     private $image;
 
-
     /**
      * Get id
      *
@@ -56,7 +55,5 @@ class Image
 
         return $this;
     }
-
-
 }
 

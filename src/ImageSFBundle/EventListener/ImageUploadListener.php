@@ -40,6 +40,26 @@ class ImageUploadListener
         $this->uploadFile($entity);
     }
 
+    public function preRemove(LifecycleEventArgs $args)
+    {
+        $entity = $args->getEntity();
+
+        $this->uploadFile($entity);
+    }
+
+    public function postRemove()
+    {
+        if (file_exists($this->tempFilename)) {
+            // On supprime le fichier
+            unlink($this->tempFilename);
+        }
+    }
+
+    private function deleteFile()
+    {
+
+    }
+
     private function uploadFile($entity)
     {
         // upload only works for Product entities
@@ -52,6 +72,11 @@ class ImageUploadListener
         // only upload new files
         if (!$file instanceof UploadedFile) {
             return;
+        }
+
+        // Si on avait un ancien fichier (attribut tempFilename non null), on le supprime
+        if (null !== $entity->getImage()) {
+            $this->uploader->deleteOldFile($entity->getImage());
         }
 
         $fileName = $this->uploader->upload($file);

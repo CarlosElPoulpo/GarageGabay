@@ -26,6 +26,8 @@ class Promotion
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     *
+     * @Assert\NotNull()
      */
     private $title;
 
@@ -47,22 +49,34 @@ class Promotion
      * @var \DateTime
      *
      * @ORM\Column(name="publicationDate", type="datetime", nullable=true)
+     *
+     * @Assert\GreaterThanOrEqual("today")
      */
+
     private $publicationDate;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="endDate", type="datetime", nullable=true)
+     *
+     * @Assert\GreaterThanOrEqual("today")
      */
     private $endDate;
 
-//    /**
-//     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image", cascade={"persist", "remove"})
-//     * @ORM\JoinColumn(nullable=true)
-//     * @Assert\Valid()
-//     */
-//    private $image;
+    /**
+     * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
+     */
+     private $image;
+
+    /**
+     * @ORM\OneToOne(targetEntity="GarageBundle\Entity\SecondHandCar", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
+     */
+    private $secondHandCar;
 
 
     /**
@@ -174,11 +188,11 @@ class Promotion
     /**
      * Set image
      *
-     * @param \AppBundle\Entity\Image $image
+     * @param \ImageBundle\Entity\Image $image
      *
      * @return Promotion
      */
-    public function setImage(\AppBundle\Entity\Image $image = null)
+    public function setImage(\ImageBundle\Entity\Image $image = null)
     {
         $this->image = $image;
 
@@ -188,7 +202,7 @@ class Promotion
     /**
      * Get image
      *
-     * @return \AppBundle\Entity\Image
+     * @return \ImageBundle\Entity\Image
      */
     public function getImage()
     {
@@ -217,5 +231,29 @@ class Promotion
     public function getEndDate()
     {
         return $this->endDate;
+    }
+
+    /**
+     * Set secondHandCar
+     *
+     * @param \GarageBundle\Entity\SecondHandCar $secondHandCar
+     *
+     * @return Promotion
+     */
+    public function setSecondHandCar(\GarageBundle\Entity\SecondHandCar $secondHandCar = null)
+    {
+        $this->secondHandCar = $secondHandCar;
+
+        return $this;
+    }
+
+    /**
+     * Get secondHandCar
+     *
+     * @return \GarageBundle\Entity\SecondHandCar
+     */
+    public function getSecondHandCar()
+    {
+        return $this->secondHandCar;
     }
 }

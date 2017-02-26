@@ -7,30 +7,36 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 
 class PromotionAdmin extends AbstractAdmin
 {
+    private $label_title = "Titre";
+    private $label_description = "Description";
+    private $label_url = "Lien Vidéo";
+    private $label__publicationDate = "Date de publication";
+    private $label_endDate = "Date de fin de publication";
+
     /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('title', null, array(
-                    'label' => 'Titre')
+                    'label' => $this->label_title)
             )
             ->add('description', null, array(
-                    'label' => 'Description')
+                    'label' => $this->label_description)
             )
             ->add('url', null, array(
-                    'label' => 'Lien vidéo')
+                    'label' => $this->label_url)
             )
             ->add('publicationDate', null, array(
-                    'label' => 'Date de fin publication')
+                    'label' => $this->label__publicationDate)
             )
             ->add('endDate', null, array(
-                    'label' => 'Date de fin publication')
+                    'label' => $this->label_endDate)
             )
         ;
     }
@@ -41,21 +47,20 @@ class PromotionAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('title', null, array(
-                    'label' => 'Titre')
+                    'label' => $this->label_title)
             )
             ->add('description', null, array(
-                    'label' => 'Description')
+                    'label' => $this->label_description)
             )
             ->add('url', null, array(
-                    'label' => 'Lien vidéo')
+                    'label' => $this->label_url)
             )
             ->add('publicationDate', null, array(
-                    'label' => 'Date de fin publication')
+                    'label' => $this->label__publicationDate)
             )
             ->add('endDate', null, array(
-                    'label' => 'Date de fin publication')
+                    'label' => $this->label_endDate)
             )
             ->add('_action', null, array(
                 'actions' => array(
@@ -74,35 +79,35 @@ class PromotionAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('title', null, array(
-                    'label' => 'Titre')
+                    'label' => $this->label_title)
             )
-            ->add('description', null, array(
-                    'label' => 'Description')
-            )
+            ->add('description', CKEditorType::class, array('label'=>$this->label_description,'config' => array('uiColor' => '#ffffff')))
             ->add('url', null, array(
-                    'label' => 'Lien Vidéo')
-            )
-            ->add('publicationDate', null, array(
-                    'label' => 'Date de publication',
-                    'widget' => 'single_text',
-                    'format' => 'dd/MM/yyyy'
-                    )
+                    'label' => $this->label_url)
             )
 
-            ->add('endDate', null, array(
-                    'label' => 'Date de fin publication',
-                    'widget' => 'single_text',
-                    'format' => 'dd/MM/yyyy',
-                    'placeholder' => 'jj/mm/aaaa'
+            ->add('publicationDate', 'sonata_type_date_picker' , array(
+                    'label' => $this->label__publicationDate,
+                )
+            )
+
+            ->add('endDate', 'sonata_type_date_picker', array(
+                    'label' => $this->label_endDate,
                     )
             )
             ->end()
 
-            ->with('image')
-            ->add('image', 'sonata_type_admin', array(
+            ->with('Image')
+            ->add('image', 'sonata_type_model_list', array(
                 'label' => false,
                 'required' => false,
                 'btn_list' => false
+            ))
+            ->end()
+
+            ->with('Voiture')
+            ->add('secondHandCar', null, array(
+                'label' => false,
             ))
             ->end()
         ;
@@ -115,21 +120,21 @@ class PromotionAdmin extends AbstractAdmin
     {
         $showMapper
             ->add('title', null, array(
-                    'label' => 'Titre')
+                    'label' => $this->label_title)
             )
             ->add('description', null, array(
-                    'label' => 'Description')
+                    'label' => $this->label_description)
             )
             ->add('url', null, array(
-                    'label' => 'Lien Vidéo')
+                    'label' => $this->label_url)
             )
             ->add('publicationDate', null, array(
-                    'label' => 'Date de publication',
+                    'label' => $this->label__publicationDate,
                     'widget' => 'single_text',
                 )
             )
             ->add('endDate', null, array(
-                    'label' => 'Date de fin publication',
+                    'label' => $this->label_endDate,
                     'widget' => 'single_text',
                     )
             )

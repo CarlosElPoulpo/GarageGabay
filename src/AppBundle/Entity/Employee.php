@@ -26,6 +26,8 @@ class Employee
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
+     *
+     * @Assert\NotNull()
      */
     private $name;
 
@@ -33,13 +35,15 @@ class Employee
      * @var string
      *
      * @ORM\Column(name="lastname", type="string", length=100)
+     *
+     * @Assert\NotNull()
      */
     private $lastname;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
      */
     private $image;
 
@@ -47,6 +51,8 @@ class Employee
      * @var string
      *
      * @ORM\Column(name="jobTitle", type="string", length=200)
+     *
+     * @Assert\NotNull()
      */
     private $jobTitle;
 
@@ -54,14 +60,23 @@ class Employee
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     *
      * @Assert\Length(
      *      min = 50,
      *      max = 200,
      *      minMessage = "Votre description dois être supérieure à {{ limit }} caractères",
      *      maxMessage = "Votre description dois être inférieure à {{ limit }} caractères"
      * )
+     * @Assert\NotNull()
      */
     private $description;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="arrange", type="integer", nullable=true)
+     */
+    private $arrange;
 
 
     /**
@@ -122,29 +137,6 @@ class Employee
         return $this->lastname;
     }
 
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Employee
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
 
     /**
      * Set jobTitle
@@ -203,5 +195,52 @@ class Employee
         return $this->fullname();
     }
 
-}
 
+    /**
+     * Set image
+     *
+     * @param \ImageBundle\Entity\Image $image
+     *
+     * @return Employee
+     */
+    public function setImage(\ImageBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \ImageBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set arrange
+     *
+     * @param integer $arrange
+     *
+     * @return Employee
+     */
+    public function setArrange($arrange)
+    {
+        $this->arrange = $arrange;
+
+        return $this;
+    }
+
+    /**
+     * Get arrange
+     *
+     * @return integer
+     */
+    public function getArrange()
+    {
+        return $this->arrange;
+    }
+}

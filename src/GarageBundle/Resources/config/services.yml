@@ -40,3 +40,9 @@ services:
         arguments: [~, GarageBundle\Entity\Partnership, GarageBundle:PartnershipAdmin]
         tags:
             - { name: sonata.admin, manager_type: orm, group: voitures, label: Partenariats }
+
+    garage.admin.status:
+        class: GarageBundle\Admin\StatusAdmin
+        arguments: [~, GarageBundle\Entity\Status, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: hidden, label: Status }

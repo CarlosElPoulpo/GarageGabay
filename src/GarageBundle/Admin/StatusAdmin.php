@@ -1,6 +1,6 @@
 <?php
 
-namespace ImageBundle\Admin;
+namespace GarageBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class ImageAdmin extends AbstractAdmin
+class StatusAdmin extends AbstractAdmin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -16,8 +16,7 @@ class ImageAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('url')
-            ->add('alt')
+            ->add('status')
         ;
     }
 
@@ -27,8 +26,7 @@ class ImageAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('url')
-            ->add('alt')
+            ->add('status')
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -45,11 +43,7 @@ class ImageAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-//            ->add('url')
-//            ->add('alt')
-            ->add('file','file',array(
-                'label' => false,
-            ))
+            ->add('status')
         ;
     }
 
@@ -59,11 +53,7 @@ class ImageAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('url')
-            ->add('alt')
-            ->add('image', null, array(
-                'template' => 'ImageBundle:admin:image_preview.html.twig'
-            ))
+            ->add('status')
         ;
     }
 }

@@ -184,7 +184,15 @@ class NewCarAdmin extends AbstractAdmin
                 'label' => $this->label_vehiculeType
             ))
             ->add('coverImage')
+//            ->add('coverImage', 'entity', array(
+//                'class' => 'ImageBundle\Entity\Image',
+//                'template' => 'GarageBundle:admin:image_preview_coverImage.html.twig'
+//            ))
             ->add('icone')
+//            ->add('icone', 'entity', array(
+//                'class' => 'ImageBundle\Entity\Image',
+//                'template' => 'AppBundle:admin:image_preview_embedded.html.twig'
+//            ))
         ;
     }
 

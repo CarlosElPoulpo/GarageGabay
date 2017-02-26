@@ -25,6 +25,8 @@ class Service
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     *
+     * @Assert\NotNull()
      */
     private $name;
 
@@ -39,6 +41,9 @@ class Service
      * @var float
      *
      * @ORM\Column(name="price", type="float")
+     *
+     * @Assert\NotNull()
+     * @Assert\GreaterThanOrEqual(0)
      */
     private $price;
 

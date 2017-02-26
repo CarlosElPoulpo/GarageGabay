@@ -1,17 +1,17 @@
 <?php
 
-namespace GarageBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Partnership
+ * HomePage
  *
- * @ORM\Table(name="partnership")
- * @ORM\Entity(repositoryClass="GarageBundle\Repository\PartnershipRepository")
+ * @ORM\Table(name="home_page")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\HomePageRepository")
  */
-class Partnership
+class HomePage
 {
     /**
      * @var int
@@ -25,11 +25,16 @@ class Partnership
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
-     *
-     * @Assert\NotNull()
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
-    private $name;
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="videoUrl", type="string", length=255, nullable=true)
+     */
+    private $videoUrl;
 
     /**
      * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
@@ -37,6 +42,7 @@ class Partnership
      * @Assert\Valid()
      */
     private $image;
+
 
     /**
      * Get id
@@ -49,27 +55,51 @@ class Partnership
     }
 
     /**
-     * Set name
+     * Set description
      *
-     * @param string $name
+     * @param string $description
      *
-     * @return Partnership
+     * @return HomePage
      */
-    public function setName($name)
+    public function setDescription($description)
     {
-        $this->name = $name;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get description
      *
      * @return string
      */
-    public function getName()
+    public function getDescription()
     {
-        return $this->name;
+        return $this->description;
+    }
+
+    /**
+     * Set videoUrl
+     *
+     * @param string $videoUrl
+     *
+     * @return HomePage
+     */
+    public function setVideoUrl($videoUrl)
+    {
+        $this->videoUrl = $videoUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get videoUrl
+     *
+     * @return string
+     */
+    public function getVideoUrl()
+    {
+        return $this->videoUrl;
     }
 
     /**
@@ -77,7 +107,7 @@ class Partnership
      *
      * @param \ImageBundle\Entity\Image $image
      *
-     * @return Partnership
+     * @return HomePage
      */
     public function setImage(\ImageBundle\Entity\Image $image = null)
     {
@@ -95,11 +125,4 @@ class Partnership
     {
         return $this->image;
     }
-
-    function __toString()
-    {
-        return $this->name;
-    }
-
-
 }

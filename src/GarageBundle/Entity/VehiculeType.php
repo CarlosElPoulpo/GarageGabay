@@ -3,6 +3,7 @@
 namespace GarageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * VehiculeType
@@ -25,6 +26,8 @@ class VehiculeType
      * @var string
      *
      * @ORM\Column(name="string", type="string", length=255)
+     *
+     * @Assert\NotNull()
      */
     private $name;
 

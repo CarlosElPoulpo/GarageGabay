@@ -29,6 +29,13 @@ class ImageUploader
         return $fileName;
     }
 
+    public function deleteOldFile($fileName)
+    {
+        $oldFile = $this->targetDir().$fileName;
+        if (file_exists($oldFile)) {
+            unlink($oldFile);
+        }
+    }
     /**
      * @return mixed
      */

@@ -4,7 +4,6 @@ namespace GarageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ImageBundle\Entity\Image;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -20,6 +19,8 @@ class SecondHandCar extends Car
      * @var string
      *
      * @ORM\Column(name="brand", type="string", length=255)
+     *
+     * @Assert\NotNull()
      */
     private $brand;
 
@@ -27,6 +28,9 @@ class SecondHandCar extends Car
      * @var int
      *
      * @ORM\Column(name="year", type="integer")
+     *
+     * @Assert\GreaterThanOrEqual(1900)
+     * @Assert\NotNull()
      */
     private $year;
 
@@ -34,6 +38,8 @@ class SecondHandCar extends Car
      * @var string
      *
      * @ORM\Column(name="fuel", type="string", length=255)
+     *
+     * @Assert\NotNull()
      */
     private $fuel;
 
@@ -41,6 +47,8 @@ class SecondHandCar extends Car
      * @var string
      *
      * @ORM\Column(name="gear", type="string", length=255)
+     *
+     * @Assert\NotNull()
      */
     private $gear;
 
@@ -48,13 +56,16 @@ class SecondHandCar extends Car
      * @var int
      *
      * @ORM\Column(name="km", type="integer")
+     *
+     * @Assert\NotNull()
+     * @Assert\GreaterThanOrEqual(0)
      */
     private $km;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="LBClink", type="string", length=255)
+     * @ORM\Column(name="LBClink", type="string", length=255, nullable=true)
      */
     private $lBClink;
 
@@ -62,15 +73,10 @@ class SecondHandCar extends Car
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     *
+     * @Assert\NotNull()
      */
     private $description;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="sold", type="boolean", nullable=true)
-     */
-    private $sold;
 
     /**
      * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
@@ -80,7 +86,6 @@ class SecondHandCar extends Car
     private $coverImage;
 
     /**
-     * Many User have Many Phonenumbers.
      * @ORM\ManyToMany(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
      * @ORM\JoinTable(name="images_secondHandCars",
      *      joinColumns={@ORM\JoinColumn(name="secondHandCar_id", referencedColumnName="id")},
@@ -89,11 +94,13 @@ class SecondHandCar extends Car
      */
      private $images;
 
-//    /**
-//     * @ORM\OneToMany(targetEntity="ImageBundle\Entity\Image", mappedBy="secondHandCar", cascade={"persist", "remove"}, orphanRemoval = true)
-//     *
-//     */
-//    private $images;
+    /**
+     * @ORM\OneToOne(targetEntity="GarageBundle\Entity\Status", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
+     */
+    private $status;
+
 
     /**
      * Set brand
@@ -265,35 +272,6 @@ class SecondHandCar extends Car
     }
 
     /**
-     * Set sold
-     *
-     * @param boolean $sold
-     *
-     * @return SecondHandCar
-     */
-    public function setSold($sold)
-    {
-        $this->sold = $sold;
-
-        return $this;
-    }
-
-    /**
-     * Get sold
-     *
-     * @return boolean
-     */
-    public function getSold()
-    {
-        return $this->sold;
-    }
-
-    function __toString()
-    {
-        return $this->getTitle();
-    }
-
-    /**
      * Set coverImage
      *
      * @param \ImageBundle\Entity\Image $coverImage
@@ -324,44 +302,6 @@ class SecondHandCar extends Car
     {
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-//    /**
-//     * Add image
-//     *
-//     * @param Image $image
-//     *
-//     * @return SecondHandCar
-//     */
-//    public function addImage(UploadedFile $file)
-//    {
-//        $image = new Image();
-//        $image->setFile($file);
-//        $image->setAlt("test");
-//        $image->setSecondHandCar($this);
-//        $this->images[] = $image;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Remove image
-//     *
-//     * @param Image $image
-//     */
-//    public function removeImage(\GarageBundle\Entity\Image $image)
-//    {
-//        $this->images->removeElement($image);
-//    }
-//
-//    /**
-//     * Get images
-//     *
-//     * @return \Doctrine\Common\Collections\Collection
-//     */
-//    public function getImages()
-//    {
-//        return $this->images;
-//    }
 
     /**
      * Add image
@@ -396,5 +336,34 @@ class SecondHandCar extends Car
     public function getImages()
     {
         return $this->images;
+    }
+
+    function __toString()
+    {
+        return $this->getTitle();
+    }
+
+    /**
+     * Set status
+     *
+     * @param \GarageBundle\Entity\Status $status
+     *
+     * @return SecondHandCar
+     */
+    public function setStatus(\GarageBundle\Entity\Status $status = null)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return \GarageBundle\Entity\Status
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }

@@ -22,7 +22,6 @@ class SecondHandCarAdmin extends AbstractAdmin
     private  $label_km = "Kilométrage";
     private  $label_LBCLink = "Lien LeBonCoin";
     private  $label_description = "Description";
-    private  $label_sold = "Vendu";
     private  $label_coverImage = "Image de couverture";
     private  $label_images = "Images supplémentaires";
 
@@ -67,9 +66,6 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->add('description', null, array(
                 'label' => $this->label_description
             ))
-            ->add('sold', null, array(
-                'label' => $this->label_sold
-            ))
         ;
     }
 
@@ -112,9 +108,6 @@ class SecondHandCarAdmin extends AbstractAdmin
             ))
             ->add('description', null, array(
                 'label' => $this->label_description
-            ))
-            ->add('sold', null, array(
-                'label' => $this->label_sold
             ))
             ->add('_action', null, array(
                 'actions' => array(
@@ -165,9 +158,7 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->add('description', null, array(
                 'label' => $this->label_description
             ))
-            ->add('sold', null, array(
-                'label' => $this->label_sold
-            ))
+            ->add('status')
             ->end()
 
             ->with('Images')
@@ -222,9 +213,6 @@ class SecondHandCarAdmin extends AbstractAdmin
             ))
             ->add('description', null, array(
                 'label' => $this->label_description
-            ))
-            ->add('sold', null, array(
-                'label' => $this->label_sold
             ))
             ->add('coverImage')
             ->add('images')

@@ -18,6 +18,8 @@ class NewCar extends Car
      * @var int
      *
      * @ORM\Column(name="pricePerMonth", type="integer", nullable=true)
+     *
+     * @Assert\GreaterThanOrEqual(0)
      */
     private $pricePerMonth;
 
@@ -25,6 +27,8 @@ class NewCar extends Car
      * @var int
      *
      * @ORM\Column(name="duration", type="integer", nullable=true)
+     *
+     * @Assert\GreaterThanOrEqual(0)
      */
     private $duration;
 
@@ -32,6 +36,8 @@ class NewCar extends Car
      * @var string
      *
      * @ORM\Column(name="renault_link", type="text")
+     *
+     * @Assert\NotNull()
      */
     private $renaultLink;
 

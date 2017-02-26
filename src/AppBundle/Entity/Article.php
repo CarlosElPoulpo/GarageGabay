@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Article
@@ -26,34 +27,32 @@ class Article
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     *
+     * @Assert\NotNull()
      */
     private $title;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="coverImage", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
      */
     private $coverImage;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
-     */
-    private $description;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="content", type="text")
+     *
+     * @Assert\NotNull()
      */
     private $content;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="writtenBy", type="string", length=255)
+     * @ORM\Column(name="writtenBy", type="string", length=255, nullable=true)
+     *
      */
     private $writtenBy;
 
@@ -99,53 +98,6 @@ class Article
         return $this->title;
     }
 
-    /**
-     * Set coverImage
-     *
-     * @param string $coverImage
-     *
-     * @return Article
-     */
-    public function setCoverImage($coverImage)
-    {
-        $this->coverImage = $coverImage;
-
-        return $this;
-    }
-
-    /**
-     * Get coverImage
-     *
-     * @return string
-     */
-    public function getCoverImage()
-    {
-        return $this->coverImage;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Article
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
 
     /**
      * Set content
@@ -232,5 +184,28 @@ class Article
     {
         return $this->getTitle();
     }
-}
 
+    /**
+     * Set coverImage
+     *
+     * @param \ImageBundle\Entity\Image $coverImage
+     *
+     * @return Article
+     */
+    public function setCoverImage(\ImageBundle\Entity\Image $coverImage = null)
+    {
+        $this->coverImage = $coverImage;
+
+        return $this;
+    }
+
+    /**
+     * Get coverImage
+     *
+     * @return \ImageBundle\Entity\Image
+     */
+    public function getCoverImage()
+    {
+        return $this->coverImage;
+    }
+}

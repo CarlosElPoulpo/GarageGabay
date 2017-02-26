@@ -16,3 +16,9 @@ services:
         arguments: [~, AppBundle\Entity\Employee, AppBundle:EmployeeAdmin]
         tags:
             - { name: sonata.admin, manager_type: orm, group: generale, label: Employés }
+
+    app.admin.home_page:
+        class: AppBundle\Admin\HomePageAdmin
+        arguments: [~, AppBundle\Entity\HomePage, AppBundle:HomePageAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: generale, label: HomePage }

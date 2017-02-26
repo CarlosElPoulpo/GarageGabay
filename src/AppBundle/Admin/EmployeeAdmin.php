@@ -16,6 +16,7 @@ class EmployeeAdmin extends AbstractAdmin
     private $label_image = "Photo";
     private $label_jobTitle = "Intitulé du poste";
     private $label_description = "Description";
+    private $label_arrange = "Ordre d'apparition";
     /**
      * @param DatagridMapper $datagridMapper
      */
@@ -24,9 +25,9 @@ class EmployeeAdmin extends AbstractAdmin
         $datagridMapper
             ->add('name', null, array('label'=>$this->label_name))
             ->add('lastname', null, array('label'=>$this->label_lastname))
-            ->add('image', null, array('label'=>$this->label_image))
             ->add('jobTitle', null, array('label'=>$this->label_jobTitle))
             ->add('description', null, array('label'=>$this->label_description))
+            ->add('arrange', null, array('label'=>$this->label_arrange))
         ;
     }
 
@@ -42,6 +43,7 @@ class EmployeeAdmin extends AbstractAdmin
             ->add('image', null, array('label'=>$this->label_image))
             ->add('jobTitle', null, array('label'=>$this->label_jobTitle))
             ->add('description', null, array('label'=>$this->label_description))
+            ->add('arrange', null, array('label'=>$this->label_arrange))
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -60,9 +62,14 @@ class EmployeeAdmin extends AbstractAdmin
         $formMapper
             ->add('name', null, array('label'=>$this->label_name))
             ->add('lastname', null, array('label'=>$this->label_lastname))
-            ->add('image', null, array('label'=>$this->label_image))
+            ->add('image', 'sonata_type_model_list', array(
+                'label' => $this->label_image,
+                'required' => false,
+                'btn_list' => false,
+            ))
             ->add('jobTitle', null, array('label'=>$this->label_jobTitle))
             ->add('description', null, array('label'=>$this->label_description))
+            ->add('arrange', null, array('label'=>$this->label_arrange))
         ;
     }
 
@@ -74,9 +81,14 @@ class EmployeeAdmin extends AbstractAdmin
         $showMapper
             ->add('name', null, array('label'=>$this->label_name))
             ->add('lastname', null, array('label'=>$this->label_lastname))
-            ->add('image', null, array('label'=>$this->label_image))
+//            ->add('image', null, array(
+//                'label'=>$this->label_image,
+            ->add('image', null, array(
+                'template' => 'ImageBundle:admin:image_preview_embedded.html.twig'
+            ))
             ->add('jobTitle', null, array('label'=>$this->label_jobTitle))
             ->add('description', null, array('label'=>$this->label_description))
+            ->add('arrange', null, array('label'=>$this->label_arrange))
         ;
     }
 }

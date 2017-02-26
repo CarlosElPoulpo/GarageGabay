@@ -169,6 +169,30 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
 
         $this->addReference('image_garage', $garage);
         /*END GARAGE IMAGE*/
+
+        /*HOMEPAGE*/
+        $indexFullScreen = new Image();
+        $this->jpg($indexFullScreen, 'index-full-screen');
+        $manager->persist($indexFullScreen);
+        $this->addReference('imageIndexFullScreen', $indexFullScreen);
+        /*END HOMEPAGE*/
+
+        /*EMPLOYEES*/
+        $adrien = new Image();
+        $this->jpg($adrien, 'adrien');
+        $manager->persist($adrien);
+        $this->addReference('imageAdrien', $adrien);
+
+        $djuda = new Image();
+        $this->jpg($djuda, 'djuda');
+        $manager->persist($djuda);
+        $this->addReference('imageDjuda', $djuda);
+
+        $giles = new Image();
+        $this->jpg($giles, 'giles','.jpeg');
+        $manager->persist($giles);
+        $this->addReference('imageGiles', $giles);
+        /*END EMPLOYEES*/
     }
 
     public function jpg($image, $imageName, $ext='.jpg')
