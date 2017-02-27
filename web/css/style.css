@@ -545,6 +545,16 @@ span.renault-italic {
   padding: 5px;
 }
 
+/* line 375, ../sass/_custom.scss */
+.accordion .card-header {
+  background-color: #333333 !important;
+}
+/* line 377, ../sass/_custom.scss */
+.accordion .card-header a {
+  color: white !important;
+  text-transform: uppercase;
+}
+
 /* line 1, ../sass/_navigation.scss */
 .renault-nav {
   background-color: white !important;

@@ -107,12 +107,12 @@
                 accusamus veniam. Quia, minima?</p>
             <div class="row-centered">
                 {%  for service in services %}
-                    <div class="col-xs-6 col-sm-6 col-md-3 col-centered">
+                    <div class="col-6 col-sm-6 col-md-3 col-centered">
                         <div class="card card-prestations">
                             <div class="card-background">
                                 <img src="{{ asset(service.icon.webPath) }}" alt="{{  service.name }}">
                             </div>
-                            <div class="card-block text-center">
+                            <div class="card-block text-center hidden-sm-down">
                                 <h4 class="second-color-text text-fluid">{{  service.name }}</h4>
                             </div>
                             <div class="card-footer text-center">
@@ -145,7 +145,7 @@
                     numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
                     pariatur
                     accusamus veniam. Quia, minima?</p>
-                <div class="row text-sm-center">
+                <div class="row text-center">
                     {% for employee in employees %}
                         <div class="col-md-4 mb-r">
                             <div class="testimonial">

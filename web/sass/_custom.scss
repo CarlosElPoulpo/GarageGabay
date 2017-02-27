@@ -370,3 +370,13 @@ span.renault-italic{
     }
   }
 }
+
+.accordion{
+  .card-header{
+    background-color: $second-color!important;
+    a{
+      color: $fifth-color!important;
+      text-transform: uppercase;
+    }
+  }
+}
