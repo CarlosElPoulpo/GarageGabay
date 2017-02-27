@@ -497,19 +497,26 @@ span.renault-italic {
   margin: 0;
 }
 
-/* line 330, ../sass/_custom.scss */
+@media only screen and (max-width: 992px) {
+  /* line 333, ../sass/_custom.scss */
+  .car-header .streak-photo {
+    height: 300px;
+    margin-top: -38px;
+  }
+}
+/* line 341, ../sass/_custom.scss */
 .new-car-price {
   min-width: 25%;
   padding: 10px;
 }
 
-/* line 335, ../sass/_custom.scss */
+/* line 346, ../sass/_custom.scss */
 .new-car-price-per-month {
   padding: 10px;
   border-left: 2px solid black;
 }
 
-/* line 340, ../sass/_custom.scss */
+/* line 351, ../sass/_custom.scss */
 .video-container {
   position: relative;
   padding-bottom: 37%;
@@ -519,7 +526,7 @@ span.renault-italic {
   margin: auto;
 }
 
-/* line 349, ../sass/_custom.scss */
+/* line 360, ../sass/_custom.scss */
 .video-container iframe,
 .video-container object,
 .video-container embed {
@@ -530,11 +537,11 @@ span.renault-italic {
   height: 100%;
 }
 
-/* line 360, ../sass/_custom.scss */
+/* line 371, ../sass/_custom.scss */
 .card-voiture .voiture-image {
   position: relative;
 }
-/* line 362, ../sass/_custom.scss */
+/* line 373, ../sass/_custom.scss */
 .card-voiture .voiture-image .status {
   position: absolute;
   bottom: 0;
@@ -545,11 +552,11 @@ span.renault-italic {
   padding: 5px;
 }
 
-/* line 375, ../sass/_custom.scss */
+/* line 386, ../sass/_custom.scss */
 .accordion .card-header {
   background-color: #333333 !important;
 }
-/* line 377, ../sass/_custom.scss */
+/* line 388, ../sass/_custom.scss */
 .accordion .card-header a {
   color: white !important;
   text-transform: uppercase;

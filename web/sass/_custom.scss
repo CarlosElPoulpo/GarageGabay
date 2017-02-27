@@ -327,6 +327,17 @@ span.renault-italic{
   }
 }
 
+
+@media only screen and (max-width: 992px) {
+  .car-header{
+    .streak-photo{
+      height: 300px;
+      margin-top: -38px;
+    }
+  }
+}
+
+
 .new-car-price{
   min-width: 25%;
   padding: 10px;
