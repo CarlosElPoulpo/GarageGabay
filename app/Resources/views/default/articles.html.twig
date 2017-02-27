@@ -1,50 +1,45 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <br>
     <section class="section extra-margins">
 
-        <!--Section heading-->
-        <h1 class="section-heading">Section title</h1>
-        <!--Section sescription-->
-        <p class="section-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.</p>
-
-        <!--First row-->
+        {% for article in articles %}
         <div class="row">
 
-            <!--First column-->
+
             <div class="col-md-5 mb-r">
-                <!--Featured image-->
                 <div class="view overlay hm-white-slight">
-                    <img src="{{ asset("media/articles/article-1.jpeg") }}">
+                    <img src="{{ asset(article.coverImage.webPath) }}">
                     <a>
                         <div class="mask"></div>
                     </a>
                 </div>
             </div>
-            <!--/First column-->
 
-            <!--Second column-->
+
             <div class="col-md-7 mb-r">
-                <h4>Classic outfit - white off-shoulder top and denim.</h4>
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                    placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
-                    debitis aut rerum.</p>
-                <p>par <a><strong>Carine Fox</strong></a>, 19/08/2016</p>
+                <h4>{{ article.title }}</h4>
+                {% set content = formation.description|slice(0, 200)~"..." %}
+                <p>{{ content }}</p>
+                <p>par <a><strong>{{ article.writtenBy }}</strong></a>, {{ article.publicationDate|date('d/m/Y') }}</p>
                 <a class="btn first-color second-color-text">Lire plus</a>
             </div>
-            <!--/Second column-->
+
 
         </div>
-        <!--/First row-->
+
 
         <hr class="renault-primary">
+        {% else %}
+            <div class="col-md-12 text-sm-center">
+                <p>Aucun articles</p>
+            </div>
+        {% endfor %}
 
-        <!--Second row-->
-        <div class="row">
+       <!-- <div class="row">
 
-            <!--First column-->
+
             <div class="col-md-7 mb-r">
                 <h4>Berlin at the weekend - the best donuts in the city.</h4>
                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
@@ -53,11 +48,10 @@
                 <p>par <a><strong>Carine Fox</strong></a>, 14/08/2016</p>
                 <a class="btn first-color second-color-text">Lire plus</a>
             </div>
-            <!--/First column-->
 
-            <!--Second column-->
+
             <div class="col-md-5 mb-r">
-                <!--Featured image-->
+
                 <div class="view overlay hm-white-slight">
                     <img src="{{ asset("media/articles/article-2.jpg") }}">
                     <a>
@@ -65,19 +59,17 @@
                     </a>
                 </div>
             </div>
-            <!--/Second column-->
+
 
         </div>
-        <!--/Second row-->
 
         <hr class="renault-primary">
 
-        <!--Third row-->
+
         <div class="row">
 
-            <!--First column-->
+
             <div class="col-md-5 mb-r">
-                <!--Featured image-->
                 <div class="view overlay hm-white-slight">
                     <img src="{{ asset("media/articles/article-3.jpg") }}">
                     <a>
@@ -85,9 +77,8 @@
                     </a>
                 </div>
             </div>
-            <!--/First column-->
 
-            <!--Second column-->
+
             <div class="col-md-7 mb-r">
                 <h4>Guide to the beautiful Cinque Terre.</h4>
                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
@@ -96,10 +87,9 @@
                 <p>par <a><strong>Carine Fox</strong></a>, 11/08/2016</p>
                 <a class="btn first-color second-color-text">Lire plus</a>
             </div>
-            <!--/Second column-->
 
-        </div>
-        <!--/Third row-->
+        </div>-->
+
 
     </section>
 {% endblock %}

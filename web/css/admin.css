@@ -140,3 +140,8 @@
   background: #FFCC33;
   background-color: #FFCC33;
 }
+
+/* line 18, ../sass/admin.scss */
+.admin-img-preview, .admin-icon-preview {
+  width: 20%;
+}

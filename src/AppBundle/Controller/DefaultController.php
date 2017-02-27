@@ -28,7 +28,13 @@ class DefaultController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Promotion');
         $promos = $repository->findPromosToDisplay();
 
-        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage));
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Employee');
+        $employees = $repository->findAll(array('arrange' => 'ASC'));
+
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
+        $secondhandcars = $repository->findAll(array('creationDate' => 'DESC'));
+
+        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage, "secondhandcars"=>$secondhandcars , "employees"=>$employees));
     }
 
     /**
@@ -51,7 +57,10 @@ class DefaultController extends Controller
         $particuliers = $repository->findByType("Particulier");
         $electriques = $repository->findByType("Electrique");
 
-        return $this->render('default/voitures.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques));
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
+        $secondhandcars = $repository->findAll();
+
+        return $this->render('default/voitures.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "secondhandcars"=>$secondhandcars));
     }
 
     /**
@@ -78,7 +87,9 @@ class DefaultController extends Controller
      */
     public function articlesAction(Request $request)
     {
-        return $this->render('default/articles.html.twig');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Article');
+        $articles = $repository->findAll(array('publicationDate' => 'DESC'));
+        return $this->render('default/articles.html.twig', array("articles"=>$articles));
     }
 
     /**

@@ -10,46 +10,37 @@ body{
   }
 }
 
-.navbar {
-  background-color: transparent;
-  .navbar-desktop{
-    .navbar-brand{
-      color: $fifth-color!important;
-    }
+.renault-nav{
+  .navbar-brand{
+    color: $fifth-color!important;
+    font-weight: bold;
+    font-family: $fifth-font;
+  }
+  .navbar{
     .navbar-nav {
       .nav-item {
         a {
           color: $fifth-color;
+          font-weight: bold;
+          &:hover{
+            color: #FFCC33;
+          }
         }
         .dropdown-menu{
           background-color: white;
           a{
             &:hover{
-              background-color: white;
+              color: black;
             }
           }
         }
       }
     }
   }
-  .navbar-mobile{
-    .side-nav{
-      ul.social{
-        border: none!important;
-      }
-      background: white !important;
-      ul {
-        li{
-          a{
-            color: $fourth-color;
-            font-weight: bold;
-          }
-        }
-      }
-    }
-  }
-  .button-collapse{
-    a{
+  .head-mobile-nav{
+    width: 100%;
+    color: $fifth-color!important;
+    .button-collapse {
       color: $fifth-color!important;
     }
   }
@@ -60,33 +51,31 @@ body{
 }
 
 .top-nav-collapse {
-  background-color: $fifth-color!important;
-  .navbar-desktop{
-    .navbar-brand{
-      color: $fourth-color!important;
-    }
-    .navbar-nav {
-      .nav-item {
+  background-color: $fifth-color !important;
+  .navbar-brand {
+    color: $fourth-color !important;
+  }
+  .navbar-nav {
+    .nav-item {
+      a {
+        color: $fourth-color !important;
+      }
+      .dropdown-menu {
+        background-color: white;
         a {
-          color: $fourth-color!important;
-        }
-        .dropdown-menu{
-          background-color: white;
-          a{
-            &:hover{
-              background-color: white;
-            }
+          &:hover {
+            background-color: white;
           }
         }
       }
     }
   }
-  .button-collapse{
-    a{
-      color: $fourth-color!important;
+  .head-mobile-nav {
+    .button-collapse {
+        color: $fourth-color !important;
     }
   }
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)!important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12) !important;
 }
 
 

@@ -1,21 +1,23 @@
 html,
 body,
-header,
 .view {
   height: 100%;
 }
 
 body{
-  padding-top: 70px;
   background-color: $fifth-color;
   font-family: $first-font;
 }
 
-@media only screen and (max-width: 992px) {
+main{
+  min-height: 90%;
+}
+
+/*@media only screen and (max-width: 992px) {
   body{
     padding-top: 60px;
   }
-}
+}*/
 
 .img-fluid{
   height: auto;
@@ -54,6 +56,10 @@ body{
 
   .description{
     color: $fifth-color;
+  }
+
+  #btn-enter-index{
+    margin-bottom: 20px;
   }
 
 
@@ -103,10 +109,6 @@ footer {
   border-top: 1px solid $first-color;
 }
 
-.prestations-header{
-
-}
-
 .card-prestations{
   /*border: 1px solid $first-color;*/
   .card-background{
@@ -135,13 +137,13 @@ footer {
     right: -10px;
   }
   a.btn-envelope {
-    background-color: rgba(33,150,243, 0.5);
+    background-color: rgba(33,150,243, 1);
   }
   a.btn-map{
-    background-color: rgba(244,67,54, 0.5);
+    background-color: rgba(244,67,54, 1);
   }
   a.btn-phone{
-    background-color: rgba(76,175,80, 0.5);
+    background-color: rgba(76,175,80, 1);
   }
 }
 
@@ -183,7 +185,7 @@ footer {
     }
   }
   a.btn-phone{
-    left: -120px;
+    left: -123px;
     background-color: #4CAF50;
     &:hover {
       left: -10px;
@@ -194,10 +196,10 @@ footer {
 /*RENAULT ELEMENTS*/
 /*BUTTON*/
 .btn-renault{
-  font-family: $second-font;
-  border-radius: 0;
+  font-family: $second-font!important;
+  border-radius: 0!important;
   i{
-    margin-left: 10px;
+    margin-left: 10px!important;
   }
 }
 
@@ -213,9 +215,9 @@ footer {
 
 .btn-renault-primary{
   @extend .btn-renault-black-text;
-  background-color: $first-color;
+  background-color: $first-color!important;
   &:hover{
-    background-color: $first-color-off;
+    background-color: $first-color-off!important;
   }
 }
 
@@ -265,9 +267,21 @@ a.renault-link{
   }
 }
 
+/*OTHERS*/
+span.renault-sub-heading{
+  font-family: "RenaultLife-Light";
+  text-transform: uppercase;
+}
+
+span.renault-italic{
+  font-family: "RenaultLife-LightItalic";
+}
+/*END RENAULT*/
+
 .row-centered {
   text-align:center;
 }
+
 .col-centered {
   display:inline-block;
   float:none;
@@ -292,7 +306,7 @@ a.renault-link{
 .car-header{
   .streak-photo{
     height: 700px;
-    margin-top: -15px;
+    margin-top: -25px;
     .car-title-header{
       padding: 20px;
       background-color: $header-car;
@@ -313,6 +327,15 @@ a.renault-link{
   }
 }
 
+.new-car-price{
+  min-width: 25%;
+  padding: 10px;
+}
+
+.new-car-price-per-month{
+  padding: 10px;
+  border-left: 2px solid black;
+}
 
 .video-container {
   position: relative;

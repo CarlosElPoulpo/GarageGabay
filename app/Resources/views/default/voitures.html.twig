@@ -6,9 +6,13 @@
     <hr class="renault-primary">
     <h2>Vehicules d'occasions</h2>
     <div class="row">
-    {% for i in 0..6 %}
+    {% for secondhandcar in secondhandcars %}
         <div class="col-md-6 col-lg-4">
-            {% include 'default/cardvoiture.html.twig' %}
+            {% include 'default/cardvoiture.html.twig' with {'car': secondhandcar}%}
+        </div>
+    {% else %}
+        <div class="col-md-12 text-sm-center">
+            <p>Aucunes voitures d'occasions</p>
         </div>
     {% endfor %}
     </div>

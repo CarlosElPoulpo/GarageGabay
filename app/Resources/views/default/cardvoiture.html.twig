@@ -1,29 +1,29 @@
 
 <div class="card card-voiture">
     <div class="voiture-image view overlay hm-white-slight z-depth-1">
-        <img src="{{ asset("media/voitures/b4900aa3941c0abceaf79a4761ef360e08a3b2a2.jpg") }}" class="img-fluid" alt="">
+        <img src="{{ asset(car.coverImage.webPath) }}" class="img-fluid" alt="">
         <a>
             <div class="mask"></div>
         </a>
         <div class="status">
-            En arrivage
+            {{ car.status.status }}
         </div>
     </div>
 
     <div class="card-block">
-        <h4 class="card-title text-xs-left"><strong><a href="{{ path("voiture", {'id': 2}) }}" class="fourth-color-text">Renault captur intens 1.5l dci energy 90ch eco2</a></strong></h4>
-        <p class="card-text text-xs-center hidden-sm-down">
-            <i class="material-icons">timeline</i> 32 152 Km
+        <h4 class="card-title text-sm-left"><strong><a href="{{ path("voiture", {'id': car.id}) }}" class="fourth-color-text">{{ car.title }}</a></strong></h4>
+        <p class="card-text text-sm-center hidden-sm-down">
+            <i class="material-icons">timeline</i> {{ car.km }} Km
             <br>
-            <i class="material-icons">local_gas_station</i> Diesel
+            <i class="material-icons">local_gas_station</i> {{ car.fuel }}
         </p>
         <br>
         <div class="text-sm-right">
-            <a href="{{ path("voiture", {'id': 2}) }}" class="renault-link">Détails<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="{{ path("voiture", {'id': car.id}) }}" class="renault-link">Détails<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
         <br>
         <div class="card-footer">
-            <span class="left">15 000€</span>
+            <span class="left">{{ car.price }}€</span>
             <span class="right hidden-sm-down">Occasion</span>
         </div>
     </div>

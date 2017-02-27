@@ -27,7 +27,7 @@
         <meta property="og:image" content="{{ app.request.scheme ~'://' ~ app.request.httpHost }}" />
     {% endblock %}
 </head>
-<body>
+<body class="hidden-sn">
 {% include':elements:navigation.html.twig' %}
 {{ render(controller('AppBundle:Default:contactButton')) }}
 {% block central_layout %}

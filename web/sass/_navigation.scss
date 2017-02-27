@@ -1,11 +1,28 @@
-.navbar {
-  background-color: $fifth-color;
-  .navbar-desktop{
-    .navbar-brand{
-      color: $fourth-color!important;
-      font-weight: bold;
-      font-family: $fifth-font;
+.renault-nav{
+  background-color: $fifth-color!important;
+  .side-nav{
+    ul.social{
+      border: none!important;
     }
+    background: white !important;
+    ul {
+      li{
+        a{
+          color: $fourth-color;
+          font-weight: bold;
+          &:visited{
+            color: $fourth-color;
+          }
+        }
+      }
+    }
+  }
+  .navbar-brand{
+    color: $fourth-color!important;
+    font-weight: bold;
+    font-family: $fifth-font;
+  }
+  .navbar{
     .navbar-nav {
       .nav-item {
         a {
@@ -26,35 +43,18 @@
       }
     }
   }
-  .navbar-mobile{
-    .side-nav{
-      ul.social{
-        border: none!important;
-      }
-      background: white !important;
-      ul {
-        li{
-          a{
-            color: $fourth-color;
-            font-weight: bold;
-            &:visited{
-              color: $fourth-color;
-            }
-          }
-        }
-      }
-    }
-  }
-  .button-collapse{
-    a{
+  .head-mobile-nav{
+    width: 100%;
+    color: $fourth-color!important;
+    .button-collapse {
       color: $fourth-color!important;
     }
   }
 }
 
-  .scrolling-navbar {
-    z-index: 998 !important;
-  }
+.scrolling-navbar {
+  z-index: 998 !important;
+}
 
 .top-nav-collapse {
   background-color: $fifth-color!important;
