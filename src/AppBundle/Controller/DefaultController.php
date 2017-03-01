@@ -34,7 +34,10 @@ class DefaultController extends Controller
         $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
         $secondhandcars = $repository->findAll(array('creationDate' => 'DESC'));
 
-        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage, "secondhandcars"=>$secondhandcars , "employees"=>$employees));
+        $repository = $this->getDoctrine()->getRepository('AppBundle:HomePage');
+        $homepage = $repository->findOneBy([]);
+
+        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage, "secondhandcars"=>$secondhandcars , "employees"=>$employees, "homepage"=>$homepage));
     }
 
     /**

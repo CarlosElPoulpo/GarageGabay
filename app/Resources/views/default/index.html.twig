@@ -6,12 +6,9 @@
             <div class="container"></div>
             <div class="container">
                 <div class="col-md-6 description">
-                    <h2 class="h2-responsive wow fadeInLeft ">Garage HERITIER</h2>
+                    <h2 class="h2-responsive wow fadeInLeft ">{{ homepage.title }}</h2>
                     <hr class="first-color">
-                    <p class="wow fadeInLeft" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam
-                        sapiente, fugiat! Commodi sequi non animi ea dolor molestiae, quisquam iste, maiores.
-                        Nulla.</p>
+                    <p class="wow fadeInLeft" data-wow-delay="0.4s">{{ homepage.welcomeParagraph }}</p>
                 </div>
             </div>
             <div class="container text-center">
@@ -30,15 +27,15 @@
             <div class="col-md-12">
 
                 <br>
-                <h1 class="flex-center">Ventes de voitures</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, consequatur doloremque ea eligendi expedita fugiat, illum inventore maxime optio perspiciatis porro recusandae sapiente. Corporis eligendi exercitationem porro ratione rerum sequi?</p>
+                <h1 class="flex-center">{{ homepage.titleCarSales }}</h1>
+                <p>{{ homepage.descriptionCarSales }}</p>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/gNX9ktDjV4s" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="{{ homepage.videoUrl }}" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <br>
                     {% include ":default:tabsnewcars.html.twig" with {'particuliers': particuliers, 'utilitaires': utilitaires, 'electriques': electriques} %}
                     <hr class="renault-primary half-with">
-                <h3 class="text-xs-left">Les dernières voitures d'occasion <a class="btn btn-large btn-renault-primary" href="{{ path("voitures") }}">Voir toute les voitures <i
+                <h3 class="text-xs-left">{{ homepage.titleCarSalesSecondHand }} <a class="btn btn-large btn-renault-primary" href="{{ path("voitures") }}">Voir toute les voitures <i
                                 class="fa fa-angle-right" aria-hidden="true"></i></a></h3>
                 <br>
                 <div class="row">
@@ -92,19 +89,14 @@
                  style="background-image:url('{{ asset("media/design/atelier-1.jpg") }}')">
                 <div class="flex-center white-text">
                     <ul>
-                        <li><h2 class="h2-responsive wow fadeIn">Nos
-                                prestations</h2></li>
+                        <li><h2 class="h2-responsive wow fadeIn">{{ homepage.titleServices }}</h2></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div id="section_3" class="container content-section">
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-                amet
-                numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-                pariatur
-                accusamus veniam. Quia, minima?</p>
+            <p class="text-center">{{ homepage.descriptionServices }}</p>
             <div class="row-centered">
                 {%  for service in services %}
                     <div class="col-6 col-sm-6 col-md-3 col-centered">
@@ -132,7 +124,7 @@
             <div class="streak streak-photo">
                 <div class="flex-center white-text">
                     <ul>
-                        <li><h2 class="h2-responsive wow fadeIn">L'équipe</h2></li>
+                        <li><h2 class="h2-responsive wow fadeIn">{{ homepage.titleTeam }}</h2></li>
                     </ul>
                 </div>
             </div>
@@ -140,11 +132,7 @@
 
         <div id="section_3" class="section container content-section team-section">
             <div>
-                <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-                    amet
-                    numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-                    pariatur
-                    accusamus veniam. Quia, minima?</p>
+                <p class="section-description">{{ homepage.descriptionTeam }}</p>
                 <div class="row text-center">
                     {% for employee in employees %}
                         <div class="col-md-4 mb-r">

@@ -24,9 +24,21 @@ class GarageAdmin extends AbstractAdmin
     private $label_facebookPageLink = "Lien de la page Facebook";
     private $label_googlePageLink = "Lien de la page Google";
 
+    public function getDashboardActions()
+    {
+        $actions = parent::getDashboardActions();
+        unset($actions['list']);
+        $actions['modify'] = array(
+            'label'              => ' Modifier',
+            'url'                => $this->generateUrl('modify'),
+            'icon'               => 'edit',
+        );
+        return $actions;
+    }
+
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection->remove('create')->remove('delete');
+        $collection->add('modify')->remove('create')->remove('delete');
     }
 
     /**
