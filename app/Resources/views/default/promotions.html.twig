@@ -1,5 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<h1 class="flex-center">Promotions du moments</h1>
+    {% for promotions in promotions %}
+        <div class="col-md-6 col-lg-4">
+            {% include 'default/cardvoiture.html.twig' with {'promotion': promotion}%}
+        </div>
+    {% else %}
+        <div class="col-md-12 text-center">
+            <p>Aucunes promotions</p>
+        </div>
+    {% endfor %}
 {% endblock %}
