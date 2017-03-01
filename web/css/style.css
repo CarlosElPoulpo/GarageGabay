@@ -546,17 +546,31 @@ span.renault-italic {
   position: absolute;
   bottom: 0;
   right: 0;
-  /*background-color: rgba(0,190,60,0.7);*/
-  background-color: rgba(255, 138, 36, 0.7);
   color: white;
   padding: 5px;
 }
+/* line 379, ../sass/_custom.scss */
+.card-voiture .voiture-image .status.arrive {
+  background-color: rgba(255, 138, 36, 0.7);
+}
+/* line 382, ../sass/_custom.scss */
+.card-voiture .voiture-image .status.delay {
+  background-color: rgba(0, 166, 255, 0.7);
+}
+/* line 385, ../sass/_custom.scss */
+.card-voiture .voiture-image .status.on-sale {
+  background-color: rgba(0, 190, 60, 0.7);
+}
+/* line 388, ../sass/_custom.scss */
+.card-voiture .voiture-image .status.sold {
+  background-color: rgba(255, 0, 35, 0.7);
+}
 
-/* line 386, ../sass/_custom.scss */
+/* line 396, ../sass/_custom.scss */
 .accordion .card-header {
   background-color: #333333 !important;
 }
-/* line 388, ../sass/_custom.scss */
+/* line 398, ../sass/_custom.scss */
 .accordion .card-header a {
   color: white !important;
   text-transform: uppercase;

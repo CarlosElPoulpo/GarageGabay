@@ -24,9 +24,16 @@ class Status
     /**
      * @var string
      *
-     * @ORM\Column(name="status", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $status;
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tagcss", type="string", length=255)
+     */
+    private $tagcss;
 
 
     /**
@@ -39,31 +46,55 @@ class Status
         return $this->id;
     }
 
+    function __toString() {
+        return $this->name;
+    }
+
     /**
-     * Set status
+     * Set tagcss
      *
-     * @param string $status
+     * @param string $tagcss
      *
      * @return Status
      */
-    public function setStatus($status)
+    public function setTagcss($tagcss)
     {
-        $this->status = $status;
+        $this->tagcss = $tagcss;
 
         return $this;
     }
 
     /**
-     * Get status
+     * Get tagcss
      *
      * @return string
      */
-    public function getStatus()
+    public function getTagcss()
     {
-        return $this->status;
+        return $this->tagcss;
     }
 
-    function __toString() {
-        return $this->status;
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Status
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

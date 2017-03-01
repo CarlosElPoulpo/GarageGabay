@@ -374,10 +374,20 @@ span.renault-italic{
       position: absolute;
       bottom: 0;
       right: 0;
-      /*background-color: rgba(0,190,60,0.7);*/
-      background-color: rgba(255, 138, 36, 0.7);
       color: white;
       padding: 5px;
+      &.arrive{
+        background-color: rgba(255, 138, 36, 0.7);
+      }
+      &.delay{
+        background-color: rgba(0, 166, 255, 0.7);
+      }
+      &.on-sale{
+        background-color: rgba(0,190,60, 0.7);
+      }
+      &.sold{
+        background-color: rgba(255, 0, 35, 0.7);
+      }
     }
   }
 }

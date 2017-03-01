@@ -20,16 +20,20 @@ class LoadStatus extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $status = new Status();
-        $status->setStatus('En arrivage');
+        $status->setName('En arrivage');
+        $status->setTagcss('arrive');
 
         $status1 = new Status();
-        $status1->setStatus('Disponible sous 15 jours');
+        $status1->setName('Disponible sous 15 jours');
+        $status1->setTagcss('delay');
 
         $status2 = new Status();
-        $status2->setStatus('En Vente');
+        $status2->setName('En Vente');
+        $status2->setTagcss('on-sale');
 
         $status3 = new Status();
-        $status3->setStatus('Vendue');
+        $status3->setName('Vendue');
+        $status3->setTagcss('sold');
 
         $manager->persist($status);
         $manager->persist($status1);
