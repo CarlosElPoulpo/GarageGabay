@@ -33,8 +33,6 @@ class Image
 
   /**
    * @var UploadedFile
-   *
-   * @Assert\NotNull()
    */
   private $file;
 
