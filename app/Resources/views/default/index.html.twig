@@ -70,13 +70,18 @@
         <div id="section_2" class="container content-section">
             <div id="le-garage" class="col-md-12 flex-center flex-column">
                 <h1><img src="{{ asset("media/design/logo-renault.png") }}" alt=""></h1>
-                <br>
-                <p class="text-xs-left">{{ garage.description }}
-                </p>
-                <figure class="figure">
-                    <img src="{{ asset(garage.image.webPath) }}" class="figure-img img-fluid" alt="{{ garage.name }}">
-                    <figcaption class="figure-caption float-right">{{ garage.name }}</figcaption>
-                </figure>
+                <div class="col-md-12 flex-center flex-column flex-md-row flex-lg-row">
+                    <div class="">
+                        <p class="text-xs-left">{{ garage.description }}</p>
+                    </div>
+                    <div class="">
+                        <figure class="figure">
+                            <img src="{{ asset(garage.image.webPath) }}" class="figure-img img-fluid" alt="{{ garage.name }}">
+                            <figcaption class="figure-caption float-right">{{ garage.name }}</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
                 <div class="col-md-12 d-flex justify-content-center button-bottom-row smooth-scroll">
                     <a href="#section-2" class="btn btn-large btn-renault-primary">Nos prestations <i
                                 class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -99,7 +104,7 @@
             <p class="text-center">{{ homepage.descriptionServices }}</p>
             <div class="row-centered">
                 {%  for service in services %}
-                    <div class="col-6 col-sm-6 col-md-3 col-centered">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-centered">
                         <div class="card card-prestations">
                             <div class="card-background">
                                 <img src="{{ asset(service.icon.webPath) }}" alt="{{  service.name }}">
@@ -133,9 +138,9 @@
         <div id="section_3" class="section container content-section team-section">
             <div>
                 <p class="section-description">{{ homepage.descriptionTeam }}</p>
-                <div class="row text-center">
+                <div class="row flex-center text-center">
                     {% for employee in employees %}
-                        <div class="col-md-4 mb-r">
+                        <div class="col-6 col-sm-6 col-md-3 col-lg-4 mb-r">
                             <div class="testimonial">
                                 <div class="avatar">
                                     <img src="{{ asset(employee.image.webPath) }}"

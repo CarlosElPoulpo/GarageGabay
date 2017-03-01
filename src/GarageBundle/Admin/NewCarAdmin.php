@@ -69,7 +69,10 @@ class NewCarAdmin extends AbstractAdmin
             ->add('title', null, array(
                 'label' => $this->label_title
             ))
-            ->add('coverImage', null, array(
+            ->add('price', null, array(
+                'label' => $this->label_price
+            ))
+            /*->add('coverImage', null, array(
                 'label' => $this->label_coverImage,
             ))
             ->add('icone')
@@ -91,7 +94,7 @@ class NewCarAdmin extends AbstractAdmin
             ))
             ->add('renaultLink', null, array(
                 'label' => $this->label_renaultLink
-            ))
+            ))*/
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),

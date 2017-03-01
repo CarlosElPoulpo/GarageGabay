@@ -13,6 +13,7 @@ class ArticleAdmin extends AbstractAdmin
 {
 
     private $label_title = "Titre";
+    private $label_introduction = "Introduction";
     private $label_coverImage = "Image de couverture";
     private $label_content = "Contenu";
     private $label_writtenBy = "Ecris par";
@@ -24,6 +25,7 @@ class ArticleAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('title', null, array('label'=>$this->label_title))
+            ->add('introduction', null, array('label'=>$this->label_introduction))
             ->add('coverImage', null, array('label'=>$this->label_coverImage))
             ->add('content', null, array('label'=>$this->label_content))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
@@ -39,6 +41,7 @@ class ArticleAdmin extends AbstractAdmin
         unset($this->listModes['mosaic']);
         $listMapper
             ->add('title', null, array('label'=>$this->label_title))
+            ->add('introduction', null, array('label'=>$this->label_introduction))
             ->add('coverImage', null, array('label'=>$this->label_coverImage))
             ->add('content', null, array('label'=>$this->label_content))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
@@ -60,6 +63,7 @@ class ArticleAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('title', null, array('label'=>$this->label_title))
+            ->add('introduction', null, array('label'=>$this->label_introduction))
             ->add('content', CKEditorType::class, array('label'=>$this->label_content,'config' => array('uiColor' => '#ffffff')))
             ->add('coverImage', 'sonata_type_model_list', array(
                 'label' => $this->label_coverImage,
@@ -67,7 +71,6 @@ class ArticleAdmin extends AbstractAdmin
                 'btn_list' => false
             ))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
-            ->end()
         ;
     }
 
@@ -78,6 +81,7 @@ class ArticleAdmin extends AbstractAdmin
     {
         $showMapper
             ->add('title', null, array('label'=>$this->label_title))
+            ->add('introduction', null, array('label'=>$this->label_introduction))
             ->add('coverImage', null, array('label'=>$this->label_coverImage))
             ->add('content', null, array('label'=>$this->label_content))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))

@@ -160,6 +160,8 @@ footer {
     color: $fifth-color!important;
     border-radius: 0;
     padding: $var1;
+    height: 42.3px;
+    font-size: 12.8px;
     i{
       margin-left:$var1;
     }
@@ -398,6 +400,9 @@ span.renault-italic{
     a{
       color: $fifth-color!important;
       text-transform: uppercase;
+      &[aria-expanded=true]{
+        color: $first-color!important;
+      }
     }
   }
 }

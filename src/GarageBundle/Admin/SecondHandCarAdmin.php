@@ -2,6 +2,7 @@
 
 namespace GarageBundle\Admin;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -155,8 +156,8 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->add('lBClink', null, array(
                 'label' => $this->label_LBCLink
             ))
-            ->add('description', null, array(
-                'label' => $this->label_description
+            ->add('description', CKEditorType::class, array(
+                'label' => $this->label_description, 'config' => array('uiColor' => '#ffffff')
             ))
             ->add('status')
             ->end()

@@ -123,4 +123,12 @@ class DefaultController extends Controller
         $promotions = $repository->findPromosToDisplay();
         return $this->render('default/promotions.html.twig', array("promotions"=>$promotions));
     }
+
+    /**
+     * @Route("/informations-legales", name="infos-legales")
+     */
+    public function infosLegalesAction(Request $request)
+    {
+        return $this->render('default/mentionlegale.html.twig');
+    }
 }

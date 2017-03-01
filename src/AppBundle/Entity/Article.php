@@ -42,6 +42,15 @@ class Article
     /**
      * @var string
      *
+     * @ORM\Column(name="introduction", type="text")
+     *
+     * @Assert\NotNull()
+     */
+    private $introduction;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="content", type="text")
      *
      * @Assert\NotNull()
@@ -207,5 +216,29 @@ class Article
     public function getCoverImage()
     {
         return $this->coverImage;
+    }
+
+    /**
+     * Set introduction
+     *
+     * @param string $introduction
+     *
+     * @return Article
+     */
+    public function setIntroduction($introduction)
+    {
+        $this->introduction = $introduction;
+
+        return $this;
+    }
+
+    /**
+     * Get introduction
+     *
+     * @return string
+     */
+    public function getIntroduction()
+    {
+        return $this->introduction;
     }
 }
