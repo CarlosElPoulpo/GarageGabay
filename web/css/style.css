@@ -609,49 +609,51 @@ span.renault-italic {
   font-weight: bold;
   font-family: "RenaultLife-Light";
 }
-/* line 28, ../sass/_navigation.scss */
+/* line 25, ../sass/_navigation.scss */
+.renault-nav .navbar {
+  background-color: white !important;
+}
+/* line 29, ../sass/_navigation.scss */
 .renault-nav .navbar .navbar-nav .nav-item a {
   color: black;
   font-weight: bold;
 }
-/* line 31, ../sass/_navigation.scss */
+/* line 32, ../sass/_navigation.scss */
 .renault-nav .navbar .navbar-nav .nav-item a:hover {
   color: #FFCC33;
 }
-/* line 35, ../sass/_navigation.scss */
+/* line 36, ../sass/_navigation.scss */
 .renault-nav .navbar .navbar-nav .nav-item .dropdown-menu {
   background-color: white;
 }
-/* line 38, ../sass/_navigation.scss */
+/* line 39, ../sass/_navigation.scss */
 .renault-nav .navbar .navbar-nav .nav-item .dropdown-menu a:hover {
   color: black;
 }
-/* line 46, ../sass/_navigation.scss */
+/* line 47, ../sass/_navigation.scss */
 .renault-nav .head-mobile-nav {
   width: 100%;
   color: black !important;
 }
-/* line 49, ../sass/_navigation.scss */
+/* line 50, ../sass/_navigation.scss */
 .renault-nav .head-mobile-nav .button-collapse {
   color: black !important;
 }
-
-/* line 55, ../sass/_navigation.scss */
-.scrolling-navbar {
+/* line 54, ../sass/_navigation.scss */
+.renault-nav .scrolling-navbar {
   z-index: 998 !important;
 }
-
-/* line 59, ../sass/_navigation.scss */
-.top-nav-collapse {
+/* line 58, ../sass/_navigation.scss */
+.renault-nav .top-nav-collapse {
   background-color: white !important;
   color: black !important;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
-/* line 63, ../sass/_navigation.scss */
-.top-nav-collapse .navbar-brand {
+/* line 62, ../sass/_navigation.scss */
+.renault-nav .top-nav-collapse .navbar-brand {
   color: black !important;
 }
-/* line 65, ../sass/_navigation.scss */
-.top-nav-collapse .navbar-brand:visited {
+/* line 64, ../sass/_navigation.scss */
+.renault-nav .top-nav-collapse .navbar-brand:visited {
   color: black;
 }

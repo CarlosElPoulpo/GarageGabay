@@ -111,62 +111,64 @@ body {
   font-weight: bold;
   font-family: "RenaultLife-Light";
 }
-/* line 22, ../sass/menu_on_index.scss */
+/* line 19, ../sass/menu_on_index.scss */
+.renault-nav .navbar {
+  background-color: transparent !important;
+}
+/* line 23, ../sass/menu_on_index.scss */
 .renault-nav .navbar .navbar-nav .nav-item a {
   color: white;
   font-weight: bold;
 }
-/* line 25, ../sass/menu_on_index.scss */
+/* line 26, ../sass/menu_on_index.scss */
 .renault-nav .navbar .navbar-nav .nav-item a:hover {
   color: #FFCC33;
 }
-/* line 29, ../sass/menu_on_index.scss */
+/* line 30, ../sass/menu_on_index.scss */
 .renault-nav .navbar .navbar-nav .nav-item .dropdown-menu {
   background-color: white;
 }
-/* line 32, ../sass/menu_on_index.scss */
+/* line 33, ../sass/menu_on_index.scss */
 .renault-nav .navbar .navbar-nav .nav-item .dropdown-menu a:hover {
   color: black;
 }
-/* line 40, ../sass/menu_on_index.scss */
+/* line 41, ../sass/menu_on_index.scss */
 .renault-nav .head-mobile-nav {
   width: 100%;
   color: white !important;
 }
-/* line 43, ../sass/menu_on_index.scss */
+/* line 44, ../sass/menu_on_index.scss */
 .renault-nav .head-mobile-nav .button-collapse {
   color: white !important;
 }
-
-/* line 49, ../sass/menu_on_index.scss */
-.scrolling-navbar {
-  z-index: 998 !important;
-}
-
-/* line 53, ../sass/menu_on_index.scss */
-.top-nav-collapse {
+/* line 48, ../sass/menu_on_index.scss */
+.renault-nav .top-nav-collapse {
   background-color: white !important;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
+/* line 50, ../sass/menu_on_index.scss */
+.renault-nav .top-nav-collapse .navbar-brand {
+  color: black !important;
+}
 /* line 55, ../sass/menu_on_index.scss */
-.top-nav-collapse .navbar-brand {
+.renault-nav .top-nav-collapse .navbar-nav .nav-item a {
   color: black !important;
 }
-/* line 60, ../sass/menu_on_index.scss */
-.top-nav-collapse .navbar-nav .nav-item a {
-  color: black !important;
-}
-/* line 63, ../sass/menu_on_index.scss */
-.top-nav-collapse .navbar-nav .nav-item .dropdown-menu {
+/* line 58, ../sass/menu_on_index.scss */
+.renault-nav .top-nav-collapse .navbar-nav .nav-item .dropdown-menu {
   background-color: white;
 }
-/* line 66, ../sass/menu_on_index.scss */
-.top-nav-collapse .navbar-nav .nav-item .dropdown-menu a:hover {
+/* line 61, ../sass/menu_on_index.scss */
+.renault-nav .top-nav-collapse .navbar-nav .nav-item .dropdown-menu a:hover {
   background-color: white;
 }
-/* line 74, ../sass/menu_on_index.scss */
-.top-nav-collapse .head-mobile-nav .button-collapse {
+/* line 69, ../sass/menu_on_index.scss */
+.renault-nav .top-nav-collapse .head-mobile-nav .button-collapse {
   color: black !important;
+}
+/* line 75, ../sass/menu_on_index.scss */
+.renault-nav .scrolling-navbar {
+  z-index: 998 !important;
 }
 
 /*
