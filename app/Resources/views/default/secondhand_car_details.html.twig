@@ -81,10 +81,11 @@
                         </tr>
                     </tbody>
                 </table>
+                <br>
                 <div class="d-flex flex-column">
-                    <a href="{{ garage.phone }}" class="btn btn-large green" target="_blank"><i class="fa fa-phone"></i> Appeler</a>
-                    <a href="{{ garage.email }}" class="btn btn-large blue" target="_blank"><i class="fa fa-envelope"></i> Envoyer un mail</a>
-
+                    <div id="clickToShowButton" class="btn btn-large green"><i class="fa fa-phone"></i> Appeler</div>
+                    <p class="text-center" id="clickToShow">{{ garage.phone }}</p>
+                    <a href="#" class="btn btn-large blue" onclick="toastr.warning('Non disponible');"><i class="fa fa-envelope"></i> Envoyer un mail</a>
                 </div>
             </div>
         </div>
@@ -96,4 +97,14 @@
         {% endif %}
         <a href="{{ path("cars") }}" class="btn btn-large btn-renault-primary">Toutes les voitures</a>
     </div>
+{% endblock %}
+
+{% block javascripts %} {{ parent() }}
+    <script>
+        $("#clickToShow").hide()
+        $("#clickToShowButton").click(function() {
+            $("#clickToShow").show();
+            $("#clickToShowButton").hide();
+        });
+    </script>
 {% endblock %}
