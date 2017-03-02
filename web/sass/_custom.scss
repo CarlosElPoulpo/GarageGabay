@@ -378,20 +378,37 @@ span.renault-italic{
       right: 0;
       color: white;
       padding: 5px;
-      &.arrive{
-        background-color: rgba(255, 138, 36, 0.7);
-      }
-      &.delay{
-        background-color: rgba(0, 166, 255, 0.7);
-      }
-      &.on-sale{
-        background-color: rgba(0,190,60, 0.7);
-      }
-      &.sold{
-        background-color: rgba(255, 0, 35, 0.7);
-      }
     }
   }
+}
+
+.status-details{
+  text-transform: uppercase;
+  color: white;
+}
+
+.arrive{
+  background-color: rgba(255, 138, 36, 1);
+}
+.delay{
+  background-color: rgba(0, 166, 255, 1);
+}
+.on-sale{
+  background-color: rgba(0,190,60, 1);
+}
+.sold{
+  background-color: rgb(190, 30, 0);
+}
+
+.status-details{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.boncoin-button{
+  text-transform: none;
+  background-color: #f56b2a;
 }
 
 .accordion{
@@ -404,5 +421,23 @@ span.renault-italic{
         color: $first-color!important;
       }
     }
+  }
+}
+
+.secondhand-carousel{
+  background-color: $sixth-color!important;
+  .carousel-inner{
+    height: 600px;
+    .carousel-item{
+      height: 100%;
+      .secondhand-image-carousel{
+        margin: auto;
+        height: 100%;
+      }
+    }
+  }
+  .carousel-control-prev-icon, .carousel-control-next-icon{
+    color: $first-color;
+    background: none;
   }
 }

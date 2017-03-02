@@ -86,29 +86,30 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->add('model', null, array(
                 'label' => $this->label_model
             ))
-            ->add('year', null, array(
+            /*->add('year', null, array(
                 'label' => $this->label_year
-            ))
+            ))*/
             ->add('price', null, array(
                 'label' => $this->label_price
             ))
-            ->add('creationDate', null, array(
-                'label' => $this->label_creationDate
-            ))
-            ->add('gear', null, array(
+
+            /*->add('gear', null, array(
                 'label' => $this->label_gear
             ))
             ->add('fuel', null, array(
                 'label' => $this->label_fuel
-            ))
+            ))*/
             ->add('km', null, array(
                 'label' => $this->label_km
             ))
-            ->add('lBClink', null, array(
+            /*->add('lBClink', null, array(
                 'label' => $this->label_LBCLink
             ))
             ->add('description', null, array(
                 'label' => $this->label_description
+            ))*/
+            ->add('creationDate', null, array(
+                'label' => $this->label_creationDate
             ))
             ->add('_action', null, array(
                 'actions' => array(

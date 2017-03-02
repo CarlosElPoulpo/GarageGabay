@@ -551,35 +551,81 @@ span.renault-italic {
   color: white;
   padding: 5px;
 }
-/* line 381, ../sass/_custom.scss */
-.card-voiture .voiture-image .status.arrive {
-  background-color: rgba(255, 138, 36, 0.7);
-}
-/* line 384, ../sass/_custom.scss */
-.card-voiture .voiture-image .status.delay {
-  background-color: rgba(0, 166, 255, 0.7);
-}
-/* line 387, ../sass/_custom.scss */
-.card-voiture .voiture-image .status.on-sale {
-  background-color: rgba(0, 190, 60, 0.7);
-}
-/* line 390, ../sass/_custom.scss */
-.card-voiture .voiture-image .status.sold {
-  background-color: rgba(255, 0, 35, 0.7);
+
+/* line 385, ../sass/_custom.scss */
+.status-details {
+  text-transform: uppercase;
+  color: white;
 }
 
-/* line 398, ../sass/_custom.scss */
+/* line 390, ../sass/_custom.scss */
+.arrive {
+  background-color: #ff8a24;
+}
+
+/* line 393, ../sass/_custom.scss */
+.delay {
+  background-color: #00a6ff;
+}
+
+/* line 396, ../sass/_custom.scss */
+.on-sale {
+  background-color: #00be3c;
+}
+
+/* line 399, ../sass/_custom.scss */
+.sold {
+  background-color: #be1e00;
+}
+
+/* line 403, ../sass/_custom.scss */
+.status-details {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+/* line 409, ../sass/_custom.scss */
+.boncoin-button {
+  text-transform: none;
+  background-color: #f56b2a;
+}
+
+/* line 415, ../sass/_custom.scss */
 .accordion .card-header {
   background-color: #333333 !important;
 }
-/* line 400, ../sass/_custom.scss */
+/* line 417, ../sass/_custom.scss */
 .accordion .card-header a {
   color: white !important;
   text-transform: uppercase;
 }
-/* line 403, ../sass/_custom.scss */
+/* line 420, ../sass/_custom.scss */
 .accordion .card-header a[aria-expanded=true] {
   color: #FFCC33 !important;
+}
+
+/* line 427, ../sass/_custom.scss */
+.secondhand-carousel {
+  background-color: #999999 !important;
+}
+/* line 429, ../sass/_custom.scss */
+.secondhand-carousel .carousel-inner {
+  height: 600px;
+}
+/* line 431, ../sass/_custom.scss */
+.secondhand-carousel .carousel-inner .carousel-item {
+  height: 100%;
+}
+/* line 433, ../sass/_custom.scss */
+.secondhand-carousel .carousel-inner .carousel-item .secondhand-image-carousel {
+  margin: auto;
+  height: 100%;
+}
+/* line 439, ../sass/_custom.scss */
+.secondhand-carousel .carousel-control-prev-icon, .secondhand-carousel .carousel-control-next-icon {
+  color: #FFCC33;
+  background: none;
 }
 
 /* line 1, ../sass/_navigation.scss */

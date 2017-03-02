@@ -25,9 +25,6 @@ class DefaultController extends Controller
         $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
         $garage = $repository->findOneBy([]);
 
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Promotion');
-        $promos = $repository->findPromosToDisplay();
-
         $repository = $this->getDoctrine()->getRepository('AppBundle:Employee');
         $employees = $repository->findAll(array('arrange' => 'ASC'));
 
@@ -37,19 +34,11 @@ class DefaultController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:HomePage');
         $homepage = $repository->findOneBy([]);
 
-        return $this->render('default/index.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage, "secondhandcars"=>$secondhandcars , "employees"=>$employees, "homepage"=>$homepage));
+        return $this->render('default/homepage.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage, "secondhandcars"=>$secondhandcars , "employees"=>$employees, "homepage"=>$homepage));
     }
 
     /**
-     * @Route("/apropos", name="apropos")
-     */
-    public function aproposAction(Request $request)
-    {
-        return $this->render('default/apropos.html.twig');
-    }
-
-    /**
-     * @Route("/voitures", name="voitures")
+     * @Route("/voitures", name="cars")
      */
     public function voituresAction(Request $request)
     {
@@ -63,26 +52,41 @@ class DefaultController extends Controller
         $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
         $secondhandcars = $repository->findAll();
 
-        return $this->render('default/voitures.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "secondhandcars"=>$secondhandcars));
+        return $this->render('default/cars.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "secondhandcars"=>$secondhandcars));
     }
 
     /**
-     * @Route("/voiture/{id}", name="voiture")
+     * @Route("/voiture-neuve/{id}", name="newcar_details")
      */
     public function detailsvoitureAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository('GarageBundle:NewCar');
         $car = $repository->find($id);
-        return $this->render('default/detailsvoiture.html.twig', array("car"=>$car));
+        return $this->render('default/new_car_details.html.twig', array("car"=>$car));
+    }
+
+    /**
+     * @Route("/voiture-occasion/{id}", name="secondhandcar_details")
+     */
+    public function secondHandCarDetailsAction(Request $request, $id)
+    {
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
+        $garage = $repository->findOneBy([]);
+
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
+        $car = $repository->find($id);
+        return $this->render(':default:secondhand_car_details.html.twig', array("car"=>$car, "garage"=>$garage));
     }
 
     /**
      * @Route("/article/{id}", name="article")
      */
-    public function detailsarticleAction(Request $request)
+    public function detailsarticleAction(Request $request, $id)
     {
-        return $this->render('default/detailsvoiture.html.twig');
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
+        $car = $repository->find($id);
+        return $this->render('default/article_details.html.twig');
     }
 
     /**
@@ -109,7 +113,7 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
         $garage = $repository->findOneBy([]);
-        return $this->render('elements/contactbutton.html.twig', array(
+        return $this->render(':elements:contact_button.html.twig', array(
             'garage' => $garage,
         ));
     }
@@ -125,10 +129,10 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/informations-legales", name="infos-legales")
+     * @Route("/informations-legales", name="cgu")
      */
     public function infosLegalesAction(Request $request)
     {
-        return $this->render('default/mentionlegale.html.twig');
+        return $this->render('default/cgu.html.twig');
     }
 }
