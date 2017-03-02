@@ -117,7 +117,7 @@ class Image
   public function getUploadDir()
   {
     // On retourne le chemin relatif vers l'image pour un navigateur (relatif au répertoire /web donc)
-    return 'media/uploads/img';
+    return '/media/uploads/img';
   }
 
   protected function getUploadRootDir()
@@ -128,9 +128,7 @@ class Image
 
   public function getWebPath()
   {
-      return null === $this->url
-          ? null
-          : $this->getUploadDir() . '/' . $this->getUrl();
+    return $this->getUploadDir().'/'.$this->getUrl();
   }
 
   /**

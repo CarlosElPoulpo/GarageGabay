@@ -166,7 +166,8 @@ class SecondHandCarAdmin extends AbstractAdmin
             ->with('Images')
             ->add('coverImage', 'sonata_type_model_list', array(
                 'label' => $this->label_coverImage,
-                'btn_list' => false
+                'btn_list' => false,
+                'required' => true
             ))
             ->add('images','sonata_type_model',array(
                 'label' => $this->label_images,
