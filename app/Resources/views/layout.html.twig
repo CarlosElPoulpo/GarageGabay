@@ -12,8 +12,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-        {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        #}<link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
+        <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
         <link href="{{ asset("css/mdb.min.css") }}" rel="stylesheet">
         <link href="{{ asset("css/style.min.css") }}" rel="stylesheet">
     {% endblock %}
@@ -28,12 +27,12 @@
     {% endblock %}
 </head>
 <body class="hidden-sn">
-{% include':elements:navigation.html.twig' %}
+{% include':site-structure:navigation.html.twig' %}
 {{ render(controller('AppBundle:Default:contactButton')) }}
 {% block central_layout %}
 
 {% endblock %}
-{% include':elements:footer.html.twig' %}
+{% include':site-structure:footer.html.twig' %}
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset("js/jquery-3.1.1.min.js") }}"></script>
     <script type="text/javascript" src="{{ asset("js/tether.min.js") }}"></script>

@@ -1,95 +1,33 @@
-{% extends 'base.html.twig' %}
+{% extends ':site-structure:base.html.twig' %}
 
 {% block body %}
     <br>
     <section class="section extra-margins">
 
         {% for article in articles %}
-        <div class="row">
-
-
-            <div class="col-md-5 mb-r">
-                <div class="view overlay hm-white-slight">
-                    <img src="{{ asset(article.coverImage.webPath) }}">
-                    <a>
-                        <div class="mask"></div>
-                    </a>
+            <div class="row">
+                <div class="col-md-5 mb-r">
+                    <div class="view overlay hm-white-slight">
+                        <img src="{{ asset(article.coverImage.webPath) }}">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-7 mb-r">
+                    <h4>{{ article.title }}</h4>
+                    {% set content = formation.description|slice(0, 200)~"..." %}
+                    <p>{{ content }}</p>
+                    <p>par <a><strong>{{ article.writtenBy }}</strong></a>, {{ article.publicationDate|date('d/m/Y') }}
+                    </p>
+                    <a class="btn first-color second-color-text">Lire plus</a>
                 </div>
             </div>
-
-
-            <div class="col-md-7 mb-r">
-                <h4>{{ article.title }}</h4>
-                {% set content = formation.description|slice(0, 200)~"..." %}
-                <p>{{ content }}</p>
-                <p>par <a><strong>{{ article.writtenBy }}</strong></a>, {{ article.publicationDate|date('d/m/Y') }}</p>
-                <a class="btn first-color second-color-text">Lire plus</a>
-            </div>
-
-
-        </div>
-
-
-        <hr class="renault-primary">
+            <hr class="renault-primary">
         {% else %}
-            <div class="col-md-12 text-sm-center">
+            <div class="col-md-12 text-center">
                 <p>Aucun articles</p>
             </div>
         {% endfor %}
-
-       <!-- <div class="row">
-
-
-            <div class="col-md-7 mb-r">
-                <h4>Berlin at the weekend - the best donuts in the city.</h4>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                    provident et dolorum fuga.</p>
-                <p>par <a><strong>Carine Fox</strong></a>, 14/08/2016</p>
-                <a class="btn first-color second-color-text">Lire plus</a>
-            </div>
-
-
-            <div class="col-md-5 mb-r">
-
-                <div class="view overlay hm-white-slight">
-                    <img src="{{ asset("media/articles/article-2.jpg") }}">
-                    <a>
-                        <div class="mask"></div>
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-
-        <hr class="renault-primary">
-
-
-        <div class="row">
-
-
-            <div class="col-md-5 mb-r">
-                <div class="view overlay hm-white-slight">
-                    <img src="{{ asset("media/articles/article-3.jpg") }}">
-                    <a>
-                        <div class="mask"></div>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="col-md-7 mb-r">
-                <h4>Guide to the beautiful Cinque Terre.</h4>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro qui dolorem ipsum quia sit
-                    amet, consectetur.</p>
-                <p>par <a><strong>Carine Fox</strong></a>, 11/08/2016</p>
-                <a class="btn first-color second-color-text">Lire plus</a>
-            </div>
-
-        </div>-->
-
-
     </section>
 {% endblock %}

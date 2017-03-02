@@ -6,12 +6,12 @@
             <div class="mask"></div>
         </a>
         <div class="status {{ car.status.tagcss }}">
-            {{ car.status.status }}
+            {{ car.status.name }}
         </div>
     </div>
 
     <div class="card-block">
-        <h4 class="card-title text-sm-left"><strong><a href="{{ path("voiture", {'id': car.id}) }}" class="fourth-color-text">{{ car.title }}</a></strong></h4>
+        <h4 class="card-title text-sm-left"><strong><a href="{{ path("secondhandcar_details", {'id': car.id}) }}" class="fourth-color-text">{{ car.title }}</a></strong></h4>
         <p class="card-text text-sm-center hidden-sm-down">
             <i class="material-icons">timeline</i> {{ car.km }} Km
             <br>
@@ -19,7 +19,7 @@
         </p>
         <br>
         <div class="text-sm-right">
-            <a href="{{ path("voiture", {'id': car.id}) }}" class="renault-link">Détails<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="{{ path("secondhandcar_details", {'id': car.id}) }}" class="renault-link">Détails<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
         <br>
         <div class="card-footer">

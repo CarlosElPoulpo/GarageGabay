@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends ':site-structure:base.html.twig' %}
 
 {% block header %}
     <div class="car-header fourth-color">
@@ -19,15 +19,15 @@
         <div class="col-md-6 text-sm-left d-flex flex-row">
             <div class="new-car-price">
                 <p><span class="renault-sub-heading">A partir de :</span><br>
-                <span class="bold">{{ car.price }} €</span></p>
+                    <span class="bold">{{ car.price }} €</span></p>
             </div>
             <div class="new-car-price-per-month">
                 <p>
-                {% if car.pricePerMonth %}
-                    <span class="renault-sub-heading">Mensualité de :</span><br>
-                    <span class="bold">{{ car.pricePerMonth }} € sur {{ car.duration }} mois </span><br>
-                {% endif %}
-                <span class="small renault-italic">Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</span></p>
+                    {% if car.pricePerMonth %}
+                        <span class="renault-sub-heading">Mensualité de :</span><br>
+                        <span class="bold">{{ car.pricePerMonth }} € sur {{ car.duration }} mois </span><br>
+                    {% endif %}
+                    <span class="small renault-italic">Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</span></p>
                 <!--<a href="" class="renault-link">financez</a>-->
             </div>
         </div>
@@ -39,7 +39,7 @@
     </div>
     <hr>
     <div class="d-flex justify-content-between">
-        <a href="{{ path("voitures") }}" class="btn btn-large btn-renault-primary">Toutes les voitures</a>
+        <a href="{{ path("cars") }}" class="btn btn-large btn-renault-primary">Toutes les voitures</a>
         <a href="{{ car.renaultLink }}" class="btn btn-large btn-renault-tertiary-grey">Voir sur Renault.fr</a>
     </div>
 {% endblock %}

@@ -1,17 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends ':site-structure:base.html.twig' %}
 
 {% block body %}
     <h2>Vehicules neuves</h2>
-    {% include ":default:tabsnewcars.html.twig" with {'particuliers': particuliers, 'utilitaires': utilitaires, 'electriques': electriques} %}
+    {% include ":elements:new_cars_displayer.html.twig" with {'particuliers': particuliers, 'utilitaires': utilitaires, 'electriques': electriques} %}
     <hr class="renault-primary">
     <h2>Vehicules d'occasions</h2>
     <div class="row">
     {% for secondhandcar in secondhandcars %}
         <div class="col-md-6 col-lg-4">
-            {% include 'default/cardvoiture.html.twig' with {'car': secondhandcar}%}
+            {% include ':elements:secondhand_car_card.html.twig' with {'car': secondhandcar}%}
         </div>
     {% else %}
-        <div class="col-md-12 text-sm-center">
+        <div class="col-md-12 text-center">
             <p>Aucunes voitures d'occasions</p>
         </div>
     {% endfor %}
