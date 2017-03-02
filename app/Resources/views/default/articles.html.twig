@@ -3,7 +3,6 @@
 {% block body %}
     <br>
     <section class="section extra-margins">
-
         {% for article in articles %}
             <div class="row">
                 <div class="col-md-5 mb-r">
@@ -16,11 +15,10 @@
                 </div>
                 <div class="col-md-7 mb-r">
                     <h4>{{ article.title }}</h4>
-                    {% set content = formation.description|slice(0, 200)~"..." %}
-                    <p>{{ content }}</p>
-                    <p>par <a><strong>{{ article.writtenBy }}</strong></a>, {{ article.publicationDate|date('d/m/Y') }}
+                    <p>{{ article.introduction }}</p>
+                    <p>par <a><strong>{{ article.writtenBy }}</strong></a>, le {{ article.publicationDate|date('d/m/Y') }}
                     </p>
-                    <a class="btn first-color second-color-text">Lire plus</a>
+                    <a class="btn first-color second-color-text" href="{{ path("article", {'id': article.id}) }}">Lire plus</a>
                 </div>
             </div>
             <hr class="renault-primary">

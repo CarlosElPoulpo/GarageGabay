@@ -42,8 +42,6 @@ class ArticleAdmin extends AbstractAdmin
         $listMapper
             ->add('title', null, array('label'=>$this->label_title))
             ->add('introduction', null, array('label'=>$this->label_introduction))
-            ->add('coverImage', null, array('label'=>$this->label_coverImage))
-            ->add('content', null, array('label'=>$this->label_content))
             ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
             ->add('publicationDate', null, array('label'=>$this->label_publicationDate))
             ->add('_action', null, array(

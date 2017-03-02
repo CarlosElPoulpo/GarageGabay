@@ -425,7 +425,7 @@ span.renault-italic{
 }
 
 .secondhand-carousel{
-  background-color: $sixth-color!important;
+  background-color: $seventh-color-off!important;
   .carousel-inner{
     height: 600px;
     .carousel-item{
@@ -439,5 +439,21 @@ span.renault-italic{
   .carousel-control-prev-icon, .carousel-control-next-icon{
     color: $first-color;
     background: none;
+  }
+}
+
+.article-header{
+  .streak-photo{
+    height: 300px;
+    margin-top: -25px;
+  }
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+  .article-header{
+    .streak-photo{
+      margin-top: -38px;
+    }
   }
 }

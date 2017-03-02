@@ -84,9 +84,9 @@ class DefaultController extends Controller
      */
     public function detailsarticleAction(Request $request, $id)
     {
-        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
-        $car = $repository->find($id);
-        return $this->render('default/article_details.html.twig');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Article');
+        $article = $repository->find($id);
+        return $this->render('default/article_details.html.twig', array("article"=>$article));
     }
 
     /**

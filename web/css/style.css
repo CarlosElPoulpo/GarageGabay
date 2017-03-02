@@ -607,7 +607,7 @@ span.renault-italic {
 
 /* line 427, ../sass/_custom.scss */
 .secondhand-carousel {
-  background-color: #999999 !important;
+  background-color: #e0e0e0 !important;
 }
 /* line 429, ../sass/_custom.scss */
 .secondhand-carousel .carousel-inner {
@@ -628,6 +628,22 @@ span.renault-italic {
   background: none;
 }
 
+/* line 445, ../sass/_custom.scss */
+.article-header {
+  margin-bottom: 20px;
+}
+/* line 446, ../sass/_custom.scss */
+.article-header .streak-photo {
+  height: 300px;
+  margin-top: -25px;
+}
+
+@media only screen and (max-width: 992px) {
+  /* line 455, ../sass/_custom.scss */
+  .article-header .streak-photo {
+    margin-top: -38px;
+  }
+}
 /* line 1, ../sass/_navigation.scss */
 .renault-nav {
   background-color: white !important;

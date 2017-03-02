@@ -1,5 +1,21 @@
 {% extends ':site-structure:base.html.twig' %}
 
-{% block body %}
+{% block header %}
+    <div class="article-header fourth-color">
+        <div class="streak streak-photo" style="background-image: url('{{ article.coverImage.webPath }}')">
+        </div>
+    </div>
+{% endblock %}
 
+{% block body %}
+    <h1>{{ article.title }}</h1>
+    <p class="small">{{ article.publicationDate|date('d/m/Y') }}</p>
+    <p>{{ article.introduction }}</p>
+    <hr>
+    {{ article.content|raw }}
+    <p class="text-right">Ecris par {{ article.writtenBy }}</p>
+    <hr>
+    <div class="text-center">
+        <a href="{{ path("articles") }}" class="btn btn-large btn-renault-primary text-center">Tous les articles</a>
+    </div>
 {% endblock %}
