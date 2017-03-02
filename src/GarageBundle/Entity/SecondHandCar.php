@@ -87,7 +87,7 @@ class SecondHandCar extends Car
 
     /**
      * @ORM\ManyToMany(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
-     * @ORM\JoinTable(name="images_secondHandCars",
+     * @ORM\JoinTable(name="images_secondhandcars",
      *      joinColumns={@ORM\JoinColumn(name="secondHandCar_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id", unique=true)}
      *      )

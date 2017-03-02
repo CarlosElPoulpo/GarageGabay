@@ -11,14 +11,14 @@
     </div>
 
     <div class="card-block">
-        <h4 class="card-title text-sm-left"><strong><a href="{{ path("secondhandcar_details", {'id': car.id}) }}" class="fourth-color-text">{{ car.title }}</a></strong></h4>
-        <p class="card-text text-sm-center hidden-sm-down">
+        <h4 class="card-title text-left"><strong><a href="{{ path("secondhandcar_details", {'id': car.id}) }}" class="fourth-color-text">{{ car.title }}</a></strong></h4>
+        <p class="card-text text-center hidden-sm-down">
             <i class="material-icons">timeline</i> {{ car.km }} Km
             <br>
             <i class="material-icons">local_gas_station</i> {{ car.fuel }}
         </p>
         <br>
-        <div class="text-sm-right">
+        <div class="text-right">
             <a href="{{ path("secondhandcar_details", {'id': car.id}) }}" class="renault-link">Détails<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
         <br>
