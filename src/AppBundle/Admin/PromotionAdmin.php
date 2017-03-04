@@ -68,7 +68,7 @@ class PromotionAdmin extends AbstractAdmin
                 'required' => false,
                 'btn_list' => false
             ))
-            ->add('promotion', 'sonata_type_admin')
+            ->add('promotion', 'sonata_type_admin', array("label"=>false))
         ;
     }
 

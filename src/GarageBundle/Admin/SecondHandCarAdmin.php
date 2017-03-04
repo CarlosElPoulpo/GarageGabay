@@ -176,7 +176,7 @@ class SecondHandCarAdmin extends AbstractAdmin
             ))
             ->end()
             ->with("Faire une promotion")
-                ->add('promotion', 'sonata_type_model_list', array('label'=>null, "required"=>false, 'btn_list' => false,))
+                ->add('promotion', 'sonata_type_model_list', array('label'=>false, "required"=>false, 'btn_list' => false))
             ->end()
         ;
     }

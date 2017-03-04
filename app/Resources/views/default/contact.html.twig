@@ -5,16 +5,16 @@
         <div class="col-sm-12 col-md-4 social-contact-column flex-center flex-column">
             <h2>{{ garage.name }}</h2>
             <div class="">
-                <div class="col-md-12 text-sm-center">
+                <div class="col-md-12 text-center">
                     <a class="btn-floating btn-small green"><i class="fa fa-phone"></i></a>
                     <p>{{ garage.phone }}</p>
                 </div>
-                <div class="col-md-12 text-sm-center">
+                <div class="col-md-12 text-center">
                     <a href="mailto:{{ garage.email }}" class="btn-floating btn-small blue"><i
                                 class="fa fa-envelope"></i></a>
                     <p>{{ garage.email }}</p>
                 </div>
-                <div class="col-md-12 text-sm-center">
+                <div class="col-md-12 text-center">
                     <a href="http://maps.google.com/?q={{ garage.roadNumber~" "~garage.road~", "~garage.postalCode~" "~garage.city}}"
                        class="btn-floating btn-small red" target="_blank"><i class="fa fa-map-marker"></i></a>
                     <p>{{ garage.roadnumber }} {{ garage.road }}<br>

@@ -42,7 +42,7 @@
                 {% for secondhandcar in secondhandcars|slice(0, 2) %}
                         {% include ':elements:secondhand_car_card.html.twig' with {'car': secondhandcar} %}
                 {% else %}
-                    <div class="col-md-12 text-sm-center">
+                    <div class="col-md-12 text-center">
                         <p>Aucunes voitures d'occasions</p>
                     </div>
                 {% endfor %}
@@ -126,17 +126,7 @@
                 <p class="section-description">{{ homepage.descriptionTeam }}</p>
                 <div class="row flex-center text-center">
                     {% for employee in employees %}
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-r">
-                            <div class="testimonial">
-                                <div class="avatar">
-                                    <img src="{{ asset(employee.image.webPath) }}"
-                                         class="rounded-circle img-fluid">
-                                </div>
-                                <h4>{{ employee.name }} {{ employee.lastname }}</h4>
-                                <h5>{{ employee.jobTitle }}</h5>
-                                <p>{{ employee.description }}</p>
-                            </div>
-                        </div>
+                        {% include ":elements:employee_card.html.twig" with {"employee":employee} %}
                     {% endfor %}
                 </div>
             </div>

@@ -57,11 +57,10 @@ class ServiceAdmin extends AbstractAdmin
             ->add('price', null, array('label'=>$this->label_price))
             ->add('icon', 'sonata_type_model_list', array(
                 'label' => $this->label_icon,
-                'btn_list' => false,
-            ))
+                'btn_list' => false))
             ->end()
             ->with("Faire une promotion")
-                ->add('promotion', 'sonata_type_model_list', array('label'=>null, "required"=>false, 'btn_list' => false,))
+                ->add('promotion', 'sonata_type_model_list', array('label'=>false, "required"=>false, 'btn_list' => false,))
             ->end()
         ;
     }

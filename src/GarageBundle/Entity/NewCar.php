@@ -49,14 +49,14 @@ class NewCar extends Car
 
     /**
      * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=false)
      * @Assert\Valid()
      */
     private $coverImage;
 
     /**
      * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=false)
      * @Assert\Valid()
      */
     private $icone;

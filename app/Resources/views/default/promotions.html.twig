@@ -3,34 +3,22 @@
 {% block body %}
     <div class="text-center">
     <h1>Promotions du moments</h1>
-    {% for promotion in promotions %}
-            {% include ':elements:promotion_card.html.twig' with {'promotion': promotion}%}
-    {% else %}
-        <div class="col-md-12 text-center">
-            <p>Aucunes promotions</p>
+        <div class="row">
+        {% if promotions or secondhandcars or services %}
+            {% for promotion in promotions %}
+                    {% include ':elements:promotion_card.html.twig' with {'promotion': promotion}%}
+            {% endfor %}
+            {%  for secondhandcar in secondhandcars %}
+                {% include ':elements:secondhand_car_card.html.twig' with {"car": secondhandcar} %}
+            {% endfor %}
+            {%  for service in services %}
+                {% include ':elements:service_card.html.twig' with {"service":service} %}
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12 text-center">
+                <p>Aucunes promotions</p>
+            </div>
+        {% endif %}
         </div>
-    {% endfor %}
-    </div>
-    <hr class="renault-primary">
-    <div class="text-center">
-    <h2>Voitures d'occasions en promotion</h2>
-    {%  for secondhandcar in secondhandcars %}
-        {% include ':elements:secondhand_car_card.html.twig' with {"car": secondhandcar} %}
-    {% else %}
-        <div class="col-md-12 text-center">
-            <p>Aucunes promotions</p>
-        </div>
-    {% endfor %}
-    </div>
-    <hr class="renault-primary">
-    <div class="text-center">
-    <h2>Promotions sur l'atelier</h2>
-    {%  for service in services %}
-        {% include ':elements:service_card.html.twig' with {"service":service} %}
-    {% else %}
-        <div class="col-md-12 text-center">
-            <p>Aucunes promotions</p>
-        </div>
-    {% endfor %}
     </div>
 {% endblock %}
