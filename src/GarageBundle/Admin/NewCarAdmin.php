@@ -63,6 +63,7 @@ class NewCarAdmin extends AbstractAdmin
     {
         unset($this->listModes['mosaic']);
         $listMapper
+            ->add('coverImage', null, array( 'template' => ':Admin:list_coverimage_for_car.html.twig'))
             ->add('model', null, array(
                 'label' => $this->label_model
             ))
