@@ -125,7 +125,14 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Promotion');
         $promotions = $repository->findPromosToDisplay();
-        return $this->render('default/promotions.html.twig', array("promotions"=>$promotions));
+
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
+        $secondhandcars = $repository->findAllWithPromotion();
+
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:Service');
+        $services = $repository->findAllWithPromotion();
+
+        return $this->render('default/promotions.html.twig', array("promotions"=>$promotions, "services"=>$services, "secondhandcars"=>$secondhandcars));
     }
 
     /**

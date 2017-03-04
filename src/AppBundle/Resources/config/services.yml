@@ -22,3 +22,9 @@ services:
         arguments: [~, AppBundle\Entity\HomePage, AppBundle:HomePageAdmin]
         tags:
             - { name: sonata.admin, manager_type: orm, group: generale, label: Page d'accueil }
+
+    app.admin.promotion_new:
+        class: AppBundle\Admin\PromotionNewAdmin
+        arguments: [~, AppBundle\Entity\PromotionNew, AppBundle:PromotionNewAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: PromotionNew }

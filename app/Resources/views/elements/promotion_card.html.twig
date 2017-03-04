@@ -1,17 +1,20 @@
-<div class="card">
+<div class="col-md-6 col-lg-4">
+    <div class="card">
 
-    <!--Card image-->
-    <img class="img-fluid" src="{{ asset(promotion.) }}" alt="Card image cap">
-    <!--/.Card image-->
+        <img class="img-fluid" src="{{ asset(promotion.image.webPath) }}" alt="Card image cap">
 
-    <!--Card content-->
-    <div class="card-block">
-        <!--Title-->
-        <h4 class="card-title">Card title</h4>
-        <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Button</a>
+        <div class="card-block">
+
+            <h4 class="card-title">{{ promotion.title }}</h4>
+
+            <p class="card-text">{{ promotion.title }}</p>
+
+            {% if promotion.promotion and promotion.promotion.endDate|date('d-M-Y') >= "now"|date('d-M-Y') %}
+                <p class="text-center first-color">{{ promotion.promotion.discount }}
+                    jusqu'au {{ promotion.promotion.endDate|date('d/m/Y') }}</p>
+            {% endif %}
+            <a href="#" class="btn btn-renault-primary">J'en profite !</a>
+        </div>
+
     </div>
-    <!--/.Card content-->
-
 </div>

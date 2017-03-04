@@ -10,4 +10,12 @@ namespace GarageBundle\Repository;
  */
 class ServiceRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllWithPromotion(){
+        $qb = $this->createQueryBuilder('s');
+        $qb->add('where', $qb->expr()->isNotNull('s.promotion'));
+
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
 }

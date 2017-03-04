@@ -39,32 +39,6 @@ class Promotion
     private $description;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="url", type="string", length=255, nullable=true)
-     */
-    private $url;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="publicationDate", type="datetime", nullable=true)
-     *
-     * @Assert\GreaterThanOrEqual("today")
-     */
-
-    private $publicationDate;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="endDate", type="datetime", nullable=true)
-     *
-     * @Assert\GreaterThanOrEqual("today")
-     */
-    private $endDate;
-
-    /**
      * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
      * @Assert\Valid()
@@ -72,12 +46,11 @@ class Promotion
      private $image;
 
     /**
-     * @ORM\OneToOne(targetEntity="GarageBundle\Entity\SecondHandCar", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\PromotionNew", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
      * @Assert\Valid()
      */
-    private $secondHandCar;
-
+    private $promotion;
 
     /**
      * Get id
@@ -135,30 +108,6 @@ class Promotion
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return Promotion
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
     }
 
     /**
@@ -255,5 +204,77 @@ class Promotion
     public function getSecondHandCar()
     {
         return $this->secondHandCar;
+    }
+
+    /**
+     * Set discount
+     *
+     * @param string $discount
+     *
+     * @return Promotion
+     */
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Get discount
+     *
+     * @return string
+     */
+    public function getDiscount()
+    {
+        return $this->discount;
+    }
+
+    /**
+     * Set service
+     *
+     * @param \GarageBundle\Entity\Service $service
+     *
+     * @return Promotion
+     */
+    public function setService(\GarageBundle\Entity\Service $service = null)
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    /**
+     * Get service
+     *
+     * @return \GarageBundle\Entity\Service
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    /**
+     * Set promotion
+     *
+     * @param \AppBundle\Entity\PromotionNew $promotion
+     *
+     * @return Promotion
+     */
+    public function setPromotion(\AppBundle\Entity\PromotionNew $promotion = null)
+    {
+        $this->promotion = $promotion;
+
+        return $this;
+    }
+
+    /**
+     * Get promotion
+     *
+     * @return \AppBundle\Entity\PromotionNew
+     */
+    public function getPromotion()
+    {
+        return $this->promotion;
     }
 }

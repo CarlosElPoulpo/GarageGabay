@@ -1,0 +1,18 @@
+<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-centered">
+    <div class="card card-prestations">
+        <div class="card-background">
+            <img src="{{ asset(service.icon.webPath) }}" alt="{{  service.name }}">
+        </div>
+        <div class="card-block text-center hidden-sm-down">
+            <h4 class="second-color-text text-fluid">{{  service.name }}</h4>
+        </div>
+        {% if service.promotion and service.promotion.endDate|date('d-M-Y') >= "now"|date('d-M-Y')%}
+            <div class="service-promo">
+                <span class="text-center">{{ service.promotion.discount }} jusqu'au {{ service.promotion.endDate|date('d/m/Y') }}</span>
+            </div>
+        {% endif %}
+        <div class="card-footer text-center">
+            <p>A partir de {{ service.price }} €</p>
+        </div>
+    </div>
+</div>

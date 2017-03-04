@@ -10,4 +10,12 @@ namespace GarageBundle\Repository;
  */
 class SecondHandCarRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllWithPromotion(){
+        $qb = $this->createQueryBuilder('shc');
+        $qb->add('where', $qb->expr()->isNotNull('shc.promotion'));
+
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
 }

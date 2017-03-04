@@ -644,6 +644,19 @@ span.renault-italic {
     margin-top: -38px;
   }
 }
+/* line 461, ../sass/_custom.scss */
+.service-promo {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 204, 51, 0.7);
+}
+/* line 467, ../sass/_custom.scss */
+.service-promo span {
+  padding: 3px;
+}
+
 /* line 1, ../sass/_navigation.scss */
 .renault-nav {
   background-color: white !important;

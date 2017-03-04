@@ -13,6 +13,7 @@ class ServiceAdmin extends AbstractAdmin
     private $label_name = "Nom du service";
     private $label_icon = "Icône";
     private $label_price = "Prix";
+    private $label_promotion = "Promotion";
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -58,6 +59,10 @@ class ServiceAdmin extends AbstractAdmin
                 'label' => $this->label_icon,
                 'btn_list' => false,
             ))
+            ->end()
+            ->with("Faire une promotion")
+                ->add('promotion', 'sonata_type_model_list', array('label'=>null, "required"=>false, 'btn_list' => false,))
+            ->end()
         ;
     }
 

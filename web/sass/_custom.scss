@@ -457,3 +457,14 @@ span.renault-italic{
     }
   }
 }
+
+.service-promo{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255,204,51,0.7);
+  span{
+    padding: 3px;
+  }
+}

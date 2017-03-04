@@ -101,6 +101,12 @@ class SecondHandCar extends Car
      */
     private $status;
 
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\PromotionNew", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
+     */
+    private $promotion;
 
     /**
      * Set brand
@@ -365,5 +371,29 @@ class SecondHandCar extends Car
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Set promotion
+     *
+     * @param \AppBundle\Entity\PromotionNew $promotion
+     *
+     * @return SecondHandCar
+     */
+    public function setPromotion(\AppBundle\Entity\PromotionNew $promotion = null)
+    {
+        $this->promotion = $promotion;
+
+        return $this;
+    }
+
+    /**
+     * Get promotion
+     *
+     * @return \AppBundle\Entity\PromotionNew
+     */
+    public function getPromotion()
+    {
+        return $this->promotion;
     }
 }

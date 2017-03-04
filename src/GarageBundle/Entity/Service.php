@@ -47,6 +47,12 @@ class Service
      */
     private $price;
 
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\PromotionNew", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
+     */
+    private $promotion;
 
     /**
      * Get id
@@ -133,5 +139,29 @@ class Service
     public function getIcon()
     {
         return $this->icon;
+    }
+
+    /**
+     * Set promotion
+     *
+     * @param \AppBundle\Entity\PromotionNew $promotion
+     *
+     * @return Service
+     */
+    public function setPromotion(\AppBundle\Entity\PromotionNew $promotion = null)
+    {
+        $this->promotion = $promotion;
+
+        return $this;
+    }
+
+    /**
+     * Get promotion
+     *
+     * @return \AppBundle\Entity\PromotionNew
+     */
+    public function getPromotion()
+    {
+        return $this->promotion;
     }
 }
