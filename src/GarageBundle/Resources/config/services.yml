@@ -33,7 +33,7 @@ services:
         class: GarageBundle\Admin\ServiceAdmin
         arguments: [~, GarageBundle\Entity\Service, GarageBundle:ServiceAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: generale, label: Prestations }
+            - { name: sonata.admin, manager_type: orm, group: autres, label: Prestations }
 
     garage.admin.partnership:
         class: GarageBundle\Admin\PartnershipAdmin
