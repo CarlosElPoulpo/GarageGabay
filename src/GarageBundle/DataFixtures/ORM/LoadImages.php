@@ -193,6 +193,31 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($giles);
         $this->addReference('imageGiles', $giles);
         /*END EMPLOYEES*/
+
+        /* PROMOTION */
+        $essuiGlace = new Image();
+        $this->jpg($essuiGlace, 'essuiGlace', '.jpeg');
+        $manager->persist($essuiGlace);
+        $this->addReference('imageEssuiGlace', $essuiGlace);
+
+        $pneusGY = new Image();
+        $this->jpg($pneusGY, 'pneus');
+        $manager->persist($pneusGY);
+        $this->addReference('imagePneusGY', $pneusGY);
+        /*END PROMOTION */
+
+        /* ARTICLE */
+        $articleCaptur = new Image();
+        $this->jpg($articleCaptur, 'captur');
+        $manager->persist($articleCaptur);
+        $this->addReference('imageArticleCaptur', $articleCaptur);
+
+        $articleZoe = new Image();
+        $this->jpg($articleZoe, 'zoe');
+        $manager->persist($articleZoe);
+        $this->addReference('imageArticleZoe', $articleZoe);
+        /*END ARTICLE */
+
     }
 
     public function jpg($image, $imageName, $ext='.jpg')

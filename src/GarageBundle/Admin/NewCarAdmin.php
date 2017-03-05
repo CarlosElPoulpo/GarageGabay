@@ -134,11 +134,10 @@ class NewCarAdmin extends AbstractAdmin
             ->add('coverImage', 'sonata_type_model_list', array(
                 'label' => $this->label_coverImage,
                 'btn_list' => false,
-                //'nullable' => true
             ))
             ->add('icone', 'sonata_type_model_list', array(
                 'label' => $this->label_icone,
-                'btn_list' => false
+                'btn_list' => false,
             ))
             ->end()
 
@@ -146,6 +145,7 @@ class NewCarAdmin extends AbstractAdmin
             ->add('partnerships','sonata_type_model', array(
                 'label' => $this->label_partnerships,
                 'multiple' => true,
+                'required' =>false
             ))
             ->add('pricePerMonth', null, array(
                 'label' => $this->label_pricePerMonth

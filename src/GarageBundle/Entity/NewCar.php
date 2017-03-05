@@ -50,6 +50,7 @@ class NewCar extends Car
     /**
      * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull
      * @Assert\Valid()
      */
     private $coverImage;
@@ -57,6 +58,7 @@ class NewCar extends Car
     /**
      * @ORM\OneToOne(targetEntity="ImageBundle\Entity\Image", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull
      * @Assert\Valid()
      */
     private $icone;

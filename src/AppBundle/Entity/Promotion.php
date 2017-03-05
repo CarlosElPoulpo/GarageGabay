@@ -111,30 +111,6 @@ class Promotion
     }
 
     /**
-     * Set publicationDate
-     *
-     * @param \DateTime $publicationDate
-     *
-     * @return Promotion
-     */
-    public function setPublicationDate($publicationDate)
-    {
-        $this->publicationDate = $publicationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get publicationDate
-     *
-     * @return \DateTime
-     */
-    public function getPublicationDate()
-    {
-        return $this->publicationDate;
-    }
-
-    /**
      * Set image
      *
      * @param \ImageBundle\Entity\Image $image
@@ -158,101 +134,6 @@ class Promotion
         return $this->image;
     }
 
-    /**
-     * Set endDate
-     *
-     * @param \DateTime $endDate
-     *
-     * @return Promotion
-     */
-    public function setEndDate($endDate)
-    {
-        $this->endDate = $endDate;
-
-        return $this;
-    }
-
-    /**
-     * Get endDate
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->endDate;
-    }
-
-    /**
-     * Set secondHandCar
-     *
-     * @param \GarageBundle\Entity\SecondHandCar $secondHandCar
-     *
-     * @return Promotion
-     */
-    public function setSecondHandCar(\GarageBundle\Entity\SecondHandCar $secondHandCar = null)
-    {
-        $this->secondHandCar = $secondHandCar;
-
-        return $this;
-    }
-
-    /**
-     * Get secondHandCar
-     *
-     * @return \GarageBundle\Entity\SecondHandCar
-     */
-    public function getSecondHandCar()
-    {
-        return $this->secondHandCar;
-    }
-
-    /**
-     * Set discount
-     *
-     * @param string $discount
-     *
-     * @return Promotion
-     */
-    public function setDiscount($discount)
-    {
-        $this->discount = $discount;
-
-        return $this;
-    }
-
-    /**
-     * Get discount
-     *
-     * @return string
-     */
-    public function getDiscount()
-    {
-        return $this->discount;
-    }
-
-    /**
-     * Set service
-     *
-     * @param \GarageBundle\Entity\Service $service
-     *
-     * @return Promotion
-     */
-    public function setService(\GarageBundle\Entity\Service $service = null)
-    {
-        $this->service = $service;
-
-        return $this;
-    }
-
-    /**
-     * Get service
-     *
-     * @return \GarageBundle\Entity\Service
-     */
-    public function getService()
-    {
-        return $this->service;
-    }
 
     /**
      * Set promotion

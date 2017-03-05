@@ -47,6 +47,7 @@ class PromotionNew
      */
     private $endDate;
 
+
     /**
      * Get id
      *
