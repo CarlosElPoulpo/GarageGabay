@@ -1,5 +1,13 @@
 {% extends ':site-structure:base.html.twig' %}
 
+{% block title %}
+    Voitures
+{% endblock %}
+
+{% block description %}
+    Voitures neuves et voitures d'occasions que nous vous proposons
+{% endblock %}
+
 {% block body %}
     <h2>Vehicules neuves</h2>
     {% include ":elements:new_cars_displayer.html.twig" with {'particuliers': particuliers, 'utilitaires': utilitaires, 'electriques': electriques} %}

@@ -1,5 +1,13 @@
 {% extends ':site-structure:base.html.twig' %}
 
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block description %}
+    {{ article.introduction }}
+{% endblock %}
+
 {% block header %}
     <div class="article-header fourth-color">
         <div class="streak streak-photo" style="background-image: url('{{ article.coverImage.webPath }}')">
