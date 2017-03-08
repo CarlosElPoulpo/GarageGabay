@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Car
  *
  * @ORM\Entity
- * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\HasLifecycleCallbacks()
  *

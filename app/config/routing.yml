@@ -1,8 +1,3 @@
-image_sf:
-    resource: "@ImageSFBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 image:
     resource: "@ImageBundle/Controller/"
     type:     annotation
