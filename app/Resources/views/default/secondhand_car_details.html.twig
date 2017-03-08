@@ -8,6 +8,15 @@
     {{ car.title }}
 {% endblock %}
 
+{% block open_graph %}
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ car.title }}" />
+    {% if car.coverImage %}
+        <meta property="og:image" content="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset(car.coverImage.webPath) }}" />
+    {% endif %}
+{% endblock %}
+
 {% block body %}
     <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails secondhand-carousel" data-ride="carousel">
         <!--Slides-->

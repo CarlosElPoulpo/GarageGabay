@@ -1,11 +1,20 @@
 {% extends ':site-structure:base.html.twig' %}
 
-{% block title %}
-    {{ car.title }}
+ {% block title %}
+    {{ car.model ~ " - " ~ car.title }}
 {% endblock %}
 
 {% block description %}
-    {{ car.title }}
+    {{ car.model ~ " - " ~ car.title }}
+{% endblock %}
+
+{% block open_graph %}
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ car.model ~ " - " ~ car.title }}" />
+    {% if car.coverImage %}
+        <meta property="og:image" content="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset(car.coverImage.webPath) }}" />
+    {% endif %}
 {% endblock %}
 
 {% block header %}

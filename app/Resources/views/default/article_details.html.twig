@@ -8,6 +8,16 @@
     {{ article.introduction }}
 {% endblock %}
 
+{% block open_graph %}
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:description" content="{{ article.introduction }}" />
+    {% if article.coverImage %}
+        <meta property="og:image" content="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset(article.coverImage.webPath) }}" />
+    {% endif %}
+{% endblock %}
+
 {% block header %}
     <div class="article-header fourth-color">
         <div class="streak streak-photo" style="background-image: url('{{ article.coverImage.webPath }}')">
