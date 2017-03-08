@@ -40,7 +40,9 @@
                 <br>
                 <div class="row">
                 {% for secondhandcar in secondhandcars|slice(0, 2) %}
+                    <div class="col-md-4">
                         {% include ':elements:secondhand_car_card.html.twig' with {'car': secondhandcar} %}
+                    </div>
                 {% else %}
                     <div class="col-md-12 text-center">
                         <p>Aucunes voitures d'occasions</p>
@@ -102,7 +104,9 @@
             <p class="text-center">{{ homepage.descriptionServices }}</p>
             <div class="row-centered">
                 {%  for service in services %}
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-centered">
                     {% include ':elements:service_card.html.twig' with {"service":service} %}
+                </div>
                 {% endfor %}
             </div>
             <div class="col-md-12 d-flex justify-content-center button-bottom-row smooth-scroll">

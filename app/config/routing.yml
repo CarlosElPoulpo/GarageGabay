@@ -1,3 +1,7 @@
+ndp_site_map:
+    resource: "@NDPSiteMapBundle/Resources/config/routing.yml"
+    prefix:   /
+
 image:
     resource: "@ImageBundle/Controller/"
     type:     annotation

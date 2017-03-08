@@ -26,27 +26,27 @@ class SiteMap
     {
         $urls = array();
 
-        $formations = $this->em->getRepository('AppBundle:Formation')->findAll();
+        $articles = $this->em->getRepository('AppBundle:Article')->findAll();
 
-        foreach ($formations as $formation) {
+        foreach ($articles as $article) {
             $urls[] = array(
-                'loc' => $this->router->generate('details_formation', array('id' => $formation->getId()), UrlGeneratorInterface::ABSOLUTE_URL)
+                'loc' => $this->router->generate('article', array('id' => $article->getId()), UrlGeneratorInterface::ABSOLUTE_URL)
             );
         }
 
-        $interventions = $this->em->getRepository('AppBundle:Intervention')->findAll();
+        $secondhandcars = $this->em->getRepository('GarageBundle:SecondHandCar')->findAll();
 
-        foreach ($interventions as $intervention) {
+        foreach ($secondhandcars as $secondhandcar) {
             $urls[] = array(
-                'loc' => $this->router->generate('details_intervention', array('id' => $intervention->getId()), UrlGeneratorInterface::ABSOLUTE_URL)
+                'loc' => $this->router->generate('secondhandcar_details', array('id' => $secondhandcar->getId()), UrlGeneratorInterface::ABSOLUTE_URL)
             );
         }
 
-        $stages = $this->em->getRepository('AppBundle:Stage')->findAll();
+        $newcars = $this->em->getRepository("GarageBundle:NewCar")->findAll();
 
-        foreach ($stages as $stage) {
+        foreach ($newcars as $newcar) {
             $urls[] = array(
-                'loc' => $this->router->generate('details_stage', array('id' => $stage->getId()), UrlGeneratorInterface::ABSOLUTE_URL)
+                'loc' => $this->router->generate('newcar_details', array('id' => $newcar->getId()), UrlGeneratorInterface::ABSOLUTE_URL)
             );
         }
 
@@ -54,19 +54,16 @@ class SiteMap
             'loc' => $this->router->generate('homepage', array(), UrlGeneratorInterface::ABSOLUTE_URL)
         );
         $urls[] = array(
-            'loc' => $this->router->generate('enquetes', array(), UrlGeneratorInterface::ABSOLUTE_URL)
+            'loc' => $this->router->generate('cars', array(), UrlGeneratorInterface::ABSOLUTE_URL)
         );
         $urls[] = array(
-            'loc' => $this->router->generate('publications', array(), UrlGeneratorInterface::ABSOLUTE_URL)
+            'loc' => $this->router->generate('promotions', array(), UrlGeneratorInterface::ABSOLUTE_URL)
         );
         $urls[] = array(
-            'loc' => $this->router->generate('articles_courts', array(), UrlGeneratorInterface::ABSOLUTE_URL)
+            'loc' => $this->router->generate('articles', array(), UrlGeneratorInterface::ABSOLUTE_URL)
         );
         $urls[] = array(
-            'loc' => $this->router->generate('sportifs', array(), UrlGeneratorInterface::ABSOLUTE_URL)
-        );
-        $urls[] = array(
-            'loc' => $this->router->generate('style_guide', array(), UrlGeneratorInterface::ABSOLUTE_URL)
+            'loc' => $this->router->generate('contact', array(), UrlGeneratorInterface::ABSOLUTE_URL)
         );
         return $urls;
     }
