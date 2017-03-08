@@ -15,9 +15,9 @@
     <h2>Vehicules d'occasions</h2>
     <div class="row">
     {% for secondhandcar in secondhandcars %}
-    <div class="col-md-4">
+        <div class="col-md-4">
             {% include ':elements:secondhand_car_card.html.twig' with {'car': secondhandcar}%}
-    </div>
+        </div>
     {% else %}
         <div class="col-md-12 text-center">
             <p>Aucunes voitures d'occasions</p>

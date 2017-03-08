@@ -18,4 +18,19 @@ class SecondHandCarRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findAllNotSold(){
+        $qb = $this->createQueryBuilder('shc');
+
+        $qb ->innerJoin('shc.status', 's')
+            ->addSelect('s')
+            ->where('s.name != :name')
+            ->setParameter('name', "Vendue")
+            /*->orderBy('shc.creationDate', 'desc')*/
+        ;
+
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
 }

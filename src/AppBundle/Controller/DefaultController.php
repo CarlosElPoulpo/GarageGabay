@@ -50,7 +50,7 @@ class DefaultController extends Controller
         $electriques = $repository->findByType("Electrique");
 
         $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
-        $secondhandcars = $repository->findAll();
+        $secondhandcars = $repository->findAllNotSold();
 
         return $this->render('default/cars.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "secondhandcars"=>$secondhandcars));
     }
