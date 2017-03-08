@@ -77,7 +77,7 @@ class SecondHandCarAdmin extends AbstractAdmin
     {
         unset($this->listModes['mosaic']);
         $listMapper
-            ->add('coverImage', null, array( 'template' => ':Admin:list_coverimage_for_car.html.twig', 'label'=>" "))
+            ->add('coverImage', null, array( 'template' => ':admin:list_coverimage_for_car.html.twig', 'label' => 'Aperçu'))
             ->add('title', null, array(
                 'label' => $this->label_title
             ))

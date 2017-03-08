@@ -34,8 +34,8 @@ class ServiceAdmin extends AbstractAdmin
     {
         unset($this->listModes['mosaic']);
         $listMapper
+            ->add('icon', null, array('label'=>$this->label_icon, 'template' => ':admin:list_icon_for_service.html.twig'))
             ->add('name', null, array('label'=>$this->label_name))
-            ->add('icon', null, array('label'=>$this->label_icon))
             ->add('price', null, array('label'=>$this->label_price))
             ->add('_action', null, array(
                 'actions' => array(
