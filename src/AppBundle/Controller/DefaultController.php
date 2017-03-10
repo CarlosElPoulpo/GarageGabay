@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -77,6 +78,25 @@ class DefaultController extends Controller
         $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
         $car = $repository->find($id);
         return $this->render(':default:secondhand_car_details.html.twig', array("car"=>$car, "garage"=>$garage));
+    }
+
+    /**
+     * @Route("/send")
+     */
+    public function sendAction()
+    {
+        $this_is = 'this is';
+        $the_message = ' the message of the email';
+        $mailer = $this->get('mailer');
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject('The Subject for this Message')
+            ->setFrom($this->container->getParameter('mailer_user'))
+            ->setTo('de.pachtere.nat@gmail.com')
+            ->setBody($this->renderView(':emails:email.html.twig', ['this'=>$this_is, 'message'=>$the_message]))
+        ;
+        $mailer->send($message);
+        return new Response('<html><body>The email has been sent successfully!</body></html>');
     }
 
     /**

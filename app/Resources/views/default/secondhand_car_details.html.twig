@@ -102,7 +102,7 @@
                     <div id="clickToShowButton" class="btn btn-large green hidden-sm-down"><i class="fa fa-phone"></i> Appeler</div>
                     <p class="text-center hidden-sm-down" id="clickToShow">{{ garage.phone }}</p>
                     <a href="tel:{{ garage.phone }}" class="btn btn-large green hidden-md-up"><i class="fa fa-phone"></i> Appeler</a>
-                    <a href="#" class="btn btn-large blue" onclick="toastr.warning('Non disponible');"><i class="fa fa-envelope"></i> Envoyer un mail</a>
+                    <a href="{{ path("sendmail", {"id": car.id}) }}" class="btn btn-large blue"><i class="fa fa-envelope"></i> Envoyer un mail</a>
                 </div>
             </div>
             <div class="col-12 col-md-8 hidden-md-up">
