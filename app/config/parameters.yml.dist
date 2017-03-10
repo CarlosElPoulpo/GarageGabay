@@ -13,7 +13,7 @@ parameters:
     mailer_transport: smtp
     mailer_host: smtp.gmail.com
     mailer_user: garage.heritier@gmail.com
-    mailer_password:
+    mailer_password: julienetadrien
 
     # A secret key that's used to generate certain security-related tokens
     secret:            bd2e6b01a7fcfe23ac0299ade4d5a329dc63cb9e
