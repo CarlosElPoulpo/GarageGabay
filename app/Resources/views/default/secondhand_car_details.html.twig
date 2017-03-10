@@ -52,6 +52,10 @@
     <div class="row">
         <h1>{{ car.title }}</h1>
         <div class="row">
+            <div class="col-12 col-md-8 hidden-sm-down">
+                <h2>Description</h2>
+                {{ car.description | raw }}
+            </div>
             <div class="col-12 col-md-4">
                 <div class="col-12 status-details {{ car.status.tagcss }}">
                     {{ car.status.name }}
@@ -101,7 +105,7 @@
                     <a href="#" class="btn btn-large blue" onclick="toastr.warning('Non disponible');"><i class="fa fa-envelope"></i> Envoyer un mail</a>
                 </div>
             </div>
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 hidden-md-up">
                 <h2>Description</h2>
                 {{ car.description | raw }}
             </div>
