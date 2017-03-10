@@ -112,6 +112,7 @@ class NewCarAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->with('Voiture neuve', array('class'=>'col-md-7 left'))
             ->add('title', null, array(
                 'label' => $this->label_title
             ))
@@ -130,7 +131,7 @@ class NewCarAdmin extends AbstractAdmin
             ))
             ->end()
 
-            ->with('Images')
+            ->with('Images', array('class'=>'col-md-5 right'))
             ->add('coverImage', 'sonata_type_model_list', array(
                 'label' => $this->label_coverImage,
                 'btn_list' => false,
@@ -141,7 +142,7 @@ class NewCarAdmin extends AbstractAdmin
             ))
             ->end()
 
-            ->with('Partenariats')
+            ->with('Partenariats', array('class'=>'col-md-5 right'))
             ->add('partnerships','sonata_type_model', array(
                 'label' => $this->label_partnerships,
                 'multiple' => true,

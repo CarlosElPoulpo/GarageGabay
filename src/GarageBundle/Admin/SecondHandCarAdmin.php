@@ -128,57 +128,58 @@ class SecondHandCarAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-
-            ->add('title', null, array(
-                'label' => $this->label_title
-            ))
-            ->add('brand', null, array(
-                'label' => $this->label_brand
-            ))
-            ->add('model', null, array(
-                'label' => $this->label_model
-            ))
-            ->add('year', null, array(
-                'label' => $this->label_year
-            ))
-            ->add('price', null, array(
-                'label' => $this->label_price
-            ))
-            ->add('gear', ChoiceType::class, array(
-                'choices' => array('Manuelle' => 'Manuelle', 'Automatique' => 'Automatique'),
-                'label' => $this->label_gear
-            ))
-            ->add('fuel', ChoiceType::class, array(
-                'choices' => array('Essence' => 'Essence', 'Diesel' => 'Diesel'),
-                'label' => $this->label_fuel
-            ))
-            ->add('km', null, array(
-                'label' => $this->label_km
-            ))
-            ->add('lBClink', null, array(
-                'label' => $this->label_LBCLink
-            ))
-            ->add('description', CKEditorType::class, array(
-                'label' => $this->label_description, 'config' => array('uiColor' => '#ffffff')
-            ))
-            ->add('status')
+            ->with("Voiture d'occasion", array('class'=>'col-md-7 left'))
+                ->add('title', null, array(
+                    'label' => $this->label_title
+                ))
+                ->add('brand', null, array(
+                    'label' => $this->label_brand
+                ))
+                ->add('model', null, array(
+                    'label' => $this->label_model
+                ))
+                ->add('year', null, array(
+                    'label' => $this->label_year
+                ))
+                ->add('price', null, array(
+                    'label' => $this->label_price
+                ))
+                ->add('gear', ChoiceType::class, array(
+                    'choices' => array('Manuelle' => 'Manuelle', 'Automatique' => 'Automatique'),
+                    'label' => $this->label_gear
+                ))
+                ->add('fuel', ChoiceType::class, array(
+                    'choices' => array('Essence' => 'Essence', 'Diesel' => 'Diesel'),
+                    'label' => $this->label_fuel
+                ))
+                ->add('km', null, array(
+                    'label' => $this->label_km
+                ))
+                ->add('lBClink', null, array(
+                    'label' => $this->label_LBCLink
+                ))
+                ->add('description', CKEditorType::class, array(
+                    'label' => $this->label_description, 'config' => array('uiColor' => '#ffffff')
+                ))
+                ->add('status')
             ->end()
 
-            ->with('Images')
-            ->add('coverImage', 'sonata_type_model_list', array(
-                'label' => $this->label_coverImage,
-                'btn_list' => false,
-                'required' => true
-            ))
-            ->add('images','sonata_type_model',array(
-                'label' => $this->label_images,
-                'multiple' => true,
-                'required' => false
-            ))
+            ->with('Images', array('class'=>'col-md-5 right'))
+                    ->add('coverImage', 'sonata_type_model_list', array(
+                        'label' => $this->label_coverImage,
+                        'btn_list' => false,
+                        'required' => true
+                    ))
+                    ->add('images','sonata_type_model',array(
+                        'label' => $this->label_images,
+                        'multiple' => true,
+                        'required' => false
+                    ))
             ->end()
-            ->with("Faire une promotion")
+            ->with("Faire une promotion", array('class'=>'col-md-5 right'))
                 ->add('promotion', 'sonata_type_model_list', array('label'=>false, "required"=>false, 'btn_list' => false))
             ->end()
+
         ;
     }
 
