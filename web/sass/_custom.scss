@@ -442,6 +442,17 @@ span.renault-italic{
   }
 }
 
+
+@media only screen and (max-width: 992px) {
+  .secondhand-carousel{
+    background-color: $seventh-color-off!important;
+    .carousel-inner {
+      height: 250px;
+    }
+  }
+}
+
+
 .article-header{
   .streak-photo{
     height: 300px;

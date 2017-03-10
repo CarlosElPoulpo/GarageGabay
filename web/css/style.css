@@ -628,23 +628,33 @@ span.renault-italic {
   background: none;
 }
 
-/* line 445, ../sass/_custom.scss */
+@media only screen and (max-width: 992px) {
+  /* line 447, ../sass/_custom.scss */
+  .secondhand-carousel {
+    background-color: #e0e0e0 !important;
+  }
+  /* line 449, ../sass/_custom.scss */
+  .secondhand-carousel .carousel-inner {
+    height: 250px;
+  }
+}
+/* line 456, ../sass/_custom.scss */
 .article-header {
   margin-bottom: 20px;
 }
-/* line 446, ../sass/_custom.scss */
+/* line 457, ../sass/_custom.scss */
 .article-header .streak-photo {
   height: 300px;
   margin-top: -25px;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 455, ../sass/_custom.scss */
+  /* line 466, ../sass/_custom.scss */
   .article-header .streak-photo {
     margin-top: -38px;
   }
 }
-/* line 461, ../sass/_custom.scss */
+/* line 472, ../sass/_custom.scss */
 .service-promo {
   position: absolute;
   top: 0;
@@ -652,7 +662,7 @@ span.renault-italic {
   text-align: center;
   background-color: rgba(255, 204, 51, 0.7);
 }
-/* line 467, ../sass/_custom.scss */
+/* line 478, ../sass/_custom.scss */
 .service-promo span {
   padding: 3px;
 }
