@@ -17,3 +17,4 @@
 /web/bundles/
 /.sass-cache
 /node_modules
+/app/config/parameters.yml.dist
