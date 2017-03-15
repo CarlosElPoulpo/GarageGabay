@@ -488,4 +488,10 @@ form{
   .btn-cent-percent-width{
     width: 100%;
   }
+  [type="checkbox"]:checked {
+    + label:before {
+      border-right: 2px solid $first-color!important;
+      border-bottom: 2px solid $first-color!important;
+    }
+  }
 }

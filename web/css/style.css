@@ -676,6 +676,11 @@ form input:focus, form textarea:focus {
 form .btn-cent-percent-width {
   width: 100%;
 }
+/* line 492, ../sass/_custom.scss */
+form [type="checkbox"]:checked + label:before {
+  border-right: 2px solid #FFCC33 !important;
+  border-bottom: 2px solid #FFCC33 !important;
+}
 
 /* line 1, ../sass/_navigation.scss */
 .renault-nav {
