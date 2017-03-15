@@ -98,12 +98,13 @@
                         </tr>
                     </tbody>
                 </table>
-                <br>
                 <div class="d-flex flex-column">
-                    <div id="clickToShowButton" class="btn btn-large green hidden-sm-down"><i class="fa fa-phone"></i> Appeler</div>
+                    <div id="clickToShowButton" class="btn btn-large btn-renault-tertiary-grey hidden-sm-down"><i class="fa fa-phone"></i> Appeler</div>
                     <p class="text-center hidden-sm-down" id="clickToShow">{{ garage.phone }}</p>
-                    <a href="tel:{{ garage.phone }}" class="btn btn-large green hidden-md-up"><i class="fa fa-phone"></i> Appeler</a>
-                    <a href="#" class="btn btn-large blue"><i class="fa fa-envelope"></i> Envoyer un mail</a>
+                    <a href="tel:{{ garage.phone }}" class="btn btn-large btn-renault-tertiary-grey hidden-md-up"><i class="fa fa-phone"></i> Appeler</a>
+                    <h3>Contacter nous</h3>
+                    {{ form(form) }}
+
                 </div>
             </div>
             <div class="col-12 col-md-8 hidden-md-up">

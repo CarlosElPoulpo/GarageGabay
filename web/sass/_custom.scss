@@ -479,3 +479,13 @@ span.renault-italic{
     padding: 3px;
   }
 }
+
+form{
+  input:focus, textarea:focus{
+    border-bottom: 1px solid $first-color!important;
+    box-shadow: 0 1px 0 0 $first-color!important;
+  }
+  .btn-cent-percent-width{
+    width: 100%;
+  }
+}

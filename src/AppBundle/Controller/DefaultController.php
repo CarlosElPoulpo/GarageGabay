@@ -2,6 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use GarageBundle\Entity\ContactMail;
+use GarageBundle\Entity\ContactMailSHC;
+use GarageBundle\Form\ContactMailType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -72,12 +75,41 @@ class DefaultController extends Controller
      */
     public function secondHandCarDetailsAction(Request $request, $id)
     {
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
+        $car = $repository->find($id);
+
         $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
         $garage = $repository->findOneBy([]);
 
-        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
-        $car = $repository->find($id);
-        return $this->render(':default:secondhand_car_details.html.twig', array("car"=>$car, "garage"=>$garage));
+        $contactmailshc = new ContactMailSHC();
+        $contactmailshc->setSecondHandCar($car);
+
+        $form = $this->createForm(ContactMailType::class, $contactmailshc);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$task` variable has also been updated
+            $contactmailshc = $form->getData();
+
+            $mailer = $this->get('mailer');
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject($contactmailshc->subject())
+                ->setContentType("text/html")
+                ->setFrom(array($this->container->getParameter('mailer_user') => 'Garage Heritier'))
+                ->setTo(array($this->container->getParameter('mailer_user'), $contactmailshc->getEmail()))
+                ->setBody($this->renderView(':emails:email_second_hand_car.html.twig', ['datas'=>$contactmailshc]))
+            ;
+            $mailer->send($message);
+
+            return $this->redirectToRoute('cars');
+        }
+
+
+
+        return $this->render(':default:secondhand_car_details.html.twig', array("car"=>$car, "garage"=>$garage, "form"=>$form->createView()));
     }
 
     /**
@@ -85,18 +117,12 @@ class DefaultController extends Controller
      */
     public function sendAction()
     {
-        $this_is = 'this is';
-        $the_message = ' the message of the email';
-        $mailer = $this->get('mailer');
 
-        $message = \Swift_Message::newInstance()
-            ->setSubject('The Subject for this Message')
-            ->setFrom($this->container->getParameter('mailer_user'))
-            ->setTo('de.pachtere.nat@gmail.com')
-            ->setBody($this->renderView(':emails:email.html.twig', ['this'=>$this_is, 'message'=>$the_message]))
-        ;
-        $mailer->send($message);
-        return new Response('<html><body>The email has been sent successfully!</body></html>');
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
+        $car = $repository->find(10);
+        $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
+        $garage = $repository->findOneBy([]);
+        return $this->render(':emails:email_second_hand_car.html.twig', array("car"=>$car, "garage"=>$garage));
     }
 
     /**

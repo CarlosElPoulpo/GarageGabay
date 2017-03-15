@@ -667,6 +667,16 @@ span.renault-italic {
   padding: 3px;
 }
 
+/* line 484, ../sass/_custom.scss */
+form input:focus, form textarea:focus {
+  border-bottom: 1px solid #FFCC33 !important;
+  box-shadow: 0 1px 0 0 #FFCC33 !important;
+}
+/* line 488, ../sass/_custom.scss */
+form .btn-cent-percent-width {
+  width: 100%;
+}
+
 /* line 1, ../sass/_navigation.scss */
 .renault-nav {
   background-color: white !important;
