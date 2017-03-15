@@ -2,9 +2,15 @@
 
 namespace GarageBundle\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
 
 class ContactMail
 {
+    /**
+     * @Recaptcha\IsTrue
+     */
+    public $recaptcha;
+
     /**
      * @Assert\NotBlank()
      */
@@ -88,6 +94,5 @@ class ContactMail
     {
         $this->body = $body;
     }
-
 }
 

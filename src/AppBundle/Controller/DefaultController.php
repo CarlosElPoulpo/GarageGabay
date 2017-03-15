@@ -3,7 +3,9 @@
 namespace AppBundle\Controller;
 
 use GarageBundle\Entity\ContactMail;
+use GarageBundle\Entity\ContactMailNC;
 use GarageBundle\Entity\ContactMailSHC;
+use GarageBundle\Form\ContactMailNCType;
 use GarageBundle\Form\ContactMailType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -67,7 +69,33 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository('GarageBundle:NewCar');
         $car = $repository->find($id);
-        return $this->render('default/new_car_details.html.twig', array("car"=>$car));
+
+
+        $contactmailnc = new ContactMailNC();
+        $contactmailnc->setNewCar($car);
+        $contactmailnc->setBody("nothing");
+        $form = $this->createForm(ContactMailNCType::class, $contactmailnc);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $contactmailnc = $form->getData();
+
+            $mailer = $this->get('mailer');
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject($contactmailnc->subject())
+                ->setContentType("text/html")
+                ->setFrom(array($this->container->getParameter('mailer_user') => 'Garage Heritier'))
+                ->setTo(array($this->container->getParameter('mailer_user'), $contactmailnc->getEmail()))
+                ->setBody($this->renderView(':emails:email_new_car.html.twig', ['datas'=>$contactmailnc]))
+            ;
+            $mailer->send($message);
+
+            return $this->redirectToRoute('cars');
+        }
+
+        return $this->render('default/new_car_details.html.twig', array("car"=>$car, "form"=>$form->createView()));
     }
 
     /**
@@ -89,8 +117,6 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
             $contactmailshc = $form->getData();
 
             $mailer = $this->get('mailer');
@@ -106,8 +132,6 @@ class DefaultController extends Controller
 
             return $this->redirectToRoute('cars');
         }
-
-
 
         return $this->render(':default:secondhand_car_details.html.twig', array("car"=>$car, "garage"=>$garage, "form"=>$form->createView()));
     }

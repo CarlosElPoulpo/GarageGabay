@@ -30,6 +30,6 @@ class ContactMailSHC extends ContactMail
     }
 
     public function subject(){
-        return "[garage-heritier-grenoble.fr]-".$this->getFullname()."-".$this->getSecondHandCar()->getTitle();
+        return "[garage-heritier-grenoble.fr] - ".$this->getFullname()." - ".$this->getSecondHandCar()->getTitle();
     }
 }

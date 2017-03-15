@@ -224,3 +224,10 @@ fos_user:
     from_email:
         address: you@example.com
         sender_name: You
+
+ewz_recaptcha:
+    public_key:  6LeVdhgUAAAAAKNXENteWMkPPTwJEh_BnoTe8vvY
+    private_key: 6LeVdhgUAAAAAN8XftXuXueVIY6MK3_MX6EjkN0-
+    # Not needed as "%kernel.default_locale%" is the default value for the locale key
+    locale_key:  %kernel.default_locale%
+    enabled: true

@@ -19,7 +19,7 @@ class AppKernel extends Kernel
 
             //image upload
             new Vich\UploaderBundle\VichUploaderBundle(),
-
+            new EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
             //sonata bundles
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),

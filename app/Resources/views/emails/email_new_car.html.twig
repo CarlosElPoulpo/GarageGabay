@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+<h2>Demande de contact pour : {{ datas.getNewCar().model }}</h2>
+
+<h4>Coordonnées:</h4>
+<p>{{ datas.fullname }}<br>
+{{ datas.email }}<br>
+{{ datas.phone }}</p>
+
+{% if datas.essai %}
+    <p>Bonjour,<br>
+        Je souhaite être contacté pour un essai de la voiture : <strong>{{ datas.newCar.model }}</strong><br>
+        Cordialement,
+    </p>
+{% else %}
+    <p>Bonjour,<br>
+        Je souhaite être contacté au sujet de la voiture : <strong>{{ datas.newCar.model }}</strong><br>
+        Cordialement,
+    </p>
+{% endif %}
+
+<a href="{{ app.request.uri }}">Voir la voiture</a>
+
+</body>
+
+</html>

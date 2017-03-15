@@ -33,7 +33,7 @@
 {% block body %}
     <br>
     <div class="row">
-        <div class="col-md-6 text-sm-left d-flex flex-row">
+        <div class="col-md-6 text-left d-flex flex-row">
             <div class="new-car-price">
                 <p><span class="renault-sub-heading">A partir de :</span><br>
                 <span class="bold">{{ car.price }} €</span></p>
@@ -48,10 +48,22 @@
                 <!--<a href="" class="renault-link">financez</a>-->
             </div>
         </div>
-        <div class="col-md-6 text-sm-right">
-            <a href="" class="btn btn-large btn-renault-secondary " onclick="toastr.warning('Non disponible');">Etre contacté</a>
+        <div class="col-md-6">
+            <h3>Etre contacté par le garage</h3>
+            {{ form_start(form) }}
+
+            {{ form_row(form.fullname) }}
+
+            {{ form_row(form.email) }}
+            {{ form_row(form.phone) }}
             <br>
-            <a href="" class="btn btn-large btn-renault-secondary " onclick="toastr.warning('Non disponible');">Réserver un essai</a>
+            <fieldset class="form-group">
+                {{ form_widget(form.essai) }}
+                {{ form_label(form.essai) }}
+                {{ form_errors(form.essai) }}
+            </fieldset>
+
+            {{ form_rest(form) }}
         </div>
     </div>
     <hr>
