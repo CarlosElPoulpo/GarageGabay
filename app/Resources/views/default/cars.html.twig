@@ -9,6 +9,17 @@
 {% endblock %}
 
 {% block body %}
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success green white-text">
+            {% for msg in app.session.flashBag.get('success') %}
+                <button type="button" class="close white-text" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4>Email envoyé !</h4>
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
     <h2>Vehicules neuves</h2>
     {% include ":elements:new_cars_displayer.html.twig" with {'particuliers': particuliers, 'utilitaires': utilitaires, 'electriques': electriques} %}
     <hr class="renault-primary">
@@ -24,4 +35,12 @@
         </div>
     {% endfor %}
     </div>
+{% endblock %}
+
+{% block javascripts %} {{ parent() }}
+    <script>
+        $(".close").click(function() {
+            $(".close").parent().remove()
+        });
+    </script>
 {% endblock %}

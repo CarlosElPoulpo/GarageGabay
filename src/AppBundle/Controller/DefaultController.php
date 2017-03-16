@@ -87,11 +87,18 @@ class DefaultController extends Controller
                 ->setSubject($contactmailnc->subject())
                 ->setContentType("text/html")
                 ->setFrom(array($this->container->getParameter('mailer_user') => 'Garage Heritier'))
-                ->setTo(array($this->container->getParameter('mailer_user'), $contactmailnc->getEmail()))
+                ->setTo(array($this->container->getParameter('mailer_garage')))
+                ->setReplyTo($contactmailnc->getEmail())
                 ->setBody($this->renderView(':emails:email_new_car.html.twig', ['datas'=>$contactmailnc]))
             ;
             $mailer->send($message);
 
+            $flash_message = "Demande de contact pour la voiture : ";
+            if($contactmailnc->getEssai()){
+                $flash_message = "Demande de contact et d'essai pour la voiture : ";
+            }
+            $flash_message .= $contactmailnc->getNewCar()->getTitle();
+            $this->get('session')->getFlashBag()->set('success', $flash_message);
             return $this->redirectToRoute('cars');
         }
 
@@ -125,28 +132,17 @@ class DefaultController extends Controller
                 ->setSubject($contactmailshc->subject())
                 ->setContentType("text/html")
                 ->setFrom(array($this->container->getParameter('mailer_user') => 'Garage Heritier'))
-                ->setTo(array($this->container->getParameter('mailer_user'), $contactmailshc->getEmail()))
+                ->setTo(array($this->container->getParameter('mailer_garage')))
+                ->setReplyTo($contactmailshc->getEmail())
                 ->setBody($this->renderView(':emails:email_second_hand_car.html.twig', ['datas'=>$contactmailshc]))
             ;
             $mailer->send($message);
 
+            $this->get('session')->getFlashBag()->set('success', "Demande de contact pour la voiture : ".$contactmailshc->getSecondHandCar()->getTitle());
             return $this->redirectToRoute('cars');
         }
 
         return $this->render(':default:secondhand_car_details.html.twig', array("car"=>$car, "garage"=>$garage, "form"=>$form->createView()));
-    }
-
-    /**
-     * @Route("/send")
-     */
-    public function sendAction()
-    {
-
-        $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
-        $car = $repository->find(10);
-        $repository = $this->getDoctrine()->getRepository('GarageBundle:Garage');
-        $garage = $repository->findOneBy([]);
-        return $this->render(':emails:email_second_hand_car.html.twig', array("car"=>$car, "garage"=>$garage));
     }
 
     /**

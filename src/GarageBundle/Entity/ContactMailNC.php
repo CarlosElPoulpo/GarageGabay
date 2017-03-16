@@ -47,7 +47,7 @@ class ContactMailNC extends ContactMail
     }
 
     public function subject(){
-        $message = "[garage-heritier-grenoble.fr] - ".$this->getFullname()." - ";
+        $message = $this->getFullname()." - ";
         if($this->essai){
             $message .= "Demande d'essai pour : ";
         }else{
