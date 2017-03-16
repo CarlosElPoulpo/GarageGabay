@@ -40,6 +40,17 @@
     <script type="text/javascript" src="{{ asset("js/mdb.min.js") }}"></script>
     <script>
         $(".button-collapse").sideNav();
+        $(".btn-contact").click(function(){
+            if ($(this).hasClass('show')) {
+                if ($(this).hasClass('btn-map')){
+                    var win = window.open($(this).attr('href'), '_blank');
+                    win.focus();
+                }
+                $(this).removeClass('show');
+            } else {
+                $(this).addClass('show');
+            }
+        })
     </script>
     {% include ":elements:analytics_track_code.html.twig" %}
 {% endblock %}

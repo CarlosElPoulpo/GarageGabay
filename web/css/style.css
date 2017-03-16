@@ -302,7 +302,7 @@ footer .footer-copyright {
   z-index: 900;
 }
 /* line 155, ../sass/_custom.scss */
-.contact-computer a {
+.contact-computer div {
   -webkit-transition: left 0.2s;
   transition: left 0.2s;
   transition-timing-function: ease-in;
@@ -313,106 +313,94 @@ footer .footer-copyright {
   font-size: 12.8px;
 }
 /* line 165, ../sass/_custom.scss */
-.contact-computer a i {
+.contact-computer div i {
   margin-left: 12.8px;
 }
-/* line 168, ../sass/_custom.scss */
-.contact-computer a:hover {
-  left: -10px;
-}
-/* line 172, ../sass/_custom.scss */
-.contact-computer a.btn-envelope {
+/* line 169, ../sass/_custom.scss */
+.contact-computer div.btn-envelope {
   left: -210px;
   background-color: #2196F3;
 }
-/* line 175, ../sass/_custom.scss */
-.contact-computer a.btn-envelope:hover {
-  left: -10px;
-}
-/* line 179, ../sass/_custom.scss */
-.contact-computer a.btn-map {
+/* line 173, ../sass/_custom.scss */
+.contact-computer div.btn-map {
   left: -106px;
   background-color: #F44336;
 }
-/* line 182, ../sass/_custom.scss */
-.contact-computer a.btn-map i {
+/* line 176, ../sass/_custom.scss */
+.contact-computer div.btn-map i {
   margin-right: 5px;
 }
-/* line 185, ../sass/_custom.scss */
-.contact-computer a.btn-map:hover {
-  left: -10px;
-}
-/* line 189, ../sass/_custom.scss */
-.contact-computer a.btn-phone {
+/* line 180, ../sass/_custom.scss */
+.contact-computer div.btn-phone {
   left: -123px;
   background-color: #4CAF50;
 }
-/* line 192, ../sass/_custom.scss */
-.contact-computer a.btn-phone:hover {
+/* line 184, ../sass/_custom.scss */
+.contact-computer div.show {
   left: -10px;
 }
 
 /*RENAULT ELEMENTS*/
 /*BUTTON*/
-/* line 200, ../sass/_custom.scss */
+/* line 191, ../sass/_custom.scss */
 .btn-renault, .btn-renault-black-text, .btn-renault-primary, .btn-renault-secondary, .btn-renault-tertiary-white, .btn-renault-white-text, .btn-renault-tertiary-grey {
   font-family: "RenaultLife-Bold" !important;
   border-radius: 0 !important;
 }
-/* line 203, ../sass/_custom.scss */
+/* line 194, ../sass/_custom.scss */
 .btn-renault i, .btn-renault-black-text i, .btn-renault-primary i, .btn-renault-secondary i, .btn-renault-tertiary-white i, .btn-renault-white-text i, .btn-renault-tertiary-grey i {
   margin-left: 10px !important;
 }
 
-/* line 208, ../sass/_custom.scss */
+/* line 199, ../sass/_custom.scss */
 .btn-renault-black-text, .btn-renault-primary, .btn-renault-secondary, .btn-renault-tertiary-white {
   color: black !important;
 }
 
-/* line 213, ../sass/_custom.scss */
+/* line 204, ../sass/_custom.scss */
 .btn-renault-white-text, .btn-renault-tertiary-grey {
   color: white !important;
 }
 
-/* line 218, ../sass/_custom.scss */
+/* line 209, ../sass/_custom.scss */
 .btn-renault-primary {
   background-color: #FFCC33 !important;
 }
-/* line 221, ../sass/_custom.scss */
+/* line 212, ../sass/_custom.scss */
 .btn-renault-primary:hover {
   background-color: #FFDD33 !important;
 }
 
-/* line 226, ../sass/_custom.scss */
+/* line 217, ../sass/_custom.scss */
 .btn-renault-secondary {
   background-color: #CCCCCC;
 }
-/* line 229, ../sass/_custom.scss */
+/* line 220, ../sass/_custom.scss */
 .btn-renault-secondary:hover {
   background-color: #e0e0e0;
 }
 
-/* line 234, ../sass/_custom.scss */
+/* line 225, ../sass/_custom.scss */
 .btn-renault-tertiary-white {
   background-color: white;
 }
-/* line 237, ../sass/_custom.scss */
+/* line 228, ../sass/_custom.scss */
 .btn-renault-tertiary-white:hover {
   background-color: #e0e0e0;
 }
 
-/* line 242, ../sass/_custom.scss */
+/* line 233, ../sass/_custom.scss */
 .btn-renault-tertiary-grey {
   background-color: #333333;
   color: white;
 }
-/* line 246, ../sass/_custom.scss */
+/* line 237, ../sass/_custom.scss */
 .btn-renault-tertiary-grey:hover {
   background-color: #555555;
 }
 
 /*HORIZONTAL BAR*/
-/* line 252, ../sass/_custom.scss */
+/* line 243, ../sass/_custom.scss */
 hr.renault-primary {
   background-color: #FFCC33;
   height: 3px;
@@ -420,41 +408,41 @@ hr.renault-primary {
 }
 
 /*LINK*/
-/* line 259, ../sass/_custom.scss */
+/* line 250, ../sass/_custom.scss */
 a.renault-link {
   color: black;
   text-transform: uppercase;
   /*font-family: $second-font;*/
 }
-/* line 263, ../sass/_custom.scss */
+/* line 254, ../sass/_custom.scss */
 a.renault-link i {
   margin-left: 10px;
 }
-/* line 266, ../sass/_custom.scss */
+/* line 257, ../sass/_custom.scss */
 a.renault-link:hover {
   color: #666666;
   text-decoration: underline;
 }
 
 /*OTHERS*/
-/* line 273, ../sass/_custom.scss */
+/* line 264, ../sass/_custom.scss */
 span.renault-sub-heading {
   font-family: "RenaultLife-Light";
   text-transform: uppercase;
 }
 
-/* line 278, ../sass/_custom.scss */
+/* line 269, ../sass/_custom.scss */
 span.renault-italic {
   font-family: "RenaultLife-LightItalic";
 }
 
 /*END RENAULT*/
-/* line 283, ../sass/_custom.scss */
+/* line 274, ../sass/_custom.scss */
 .row-centered {
   text-align: center;
 }
 
-/* line 287, ../sass/_custom.scss */
+/* line 278, ../sass/_custom.scss */
 .col-centered {
   display: inline-block;
   float: none;
@@ -462,37 +450,37 @@ span.renault-italic {
   margin-right: -4px;
 }
 
-/* line 296, ../sass/_custom.scss */
+/* line 287, ../sass/_custom.scss */
 .tabs-3 .nav-item .nav-link {
   border-radius: 0px;
   text-transform: uppercase;
 }
-/* line 299, ../sass/_custom.scss */
+/* line 290, ../sass/_custom.scss */
 .tabs-3 .nav-item .nav-link.active {
   background-color: transparent !important;
   color: #fff;
   border-bottom: solid 1px #FFCC33 !important;
 }
 
-/* line 309, ../sass/_custom.scss */
+/* line 300, ../sass/_custom.scss */
 .car-header .streak-photo {
   height: 700px;
   margin-top: -25px;
 }
-/* line 312, ../sass/_custom.scss */
+/* line 303, ../sass/_custom.scss */
 .car-header .streak-photo .car-title-header {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.65);
   color: black;
   font-family: "RenaultLife-Regular";
 }
-/* line 317, ../sass/_custom.scss */
+/* line 308, ../sass/_custom.scss */
 .car-header .streak-photo .car-title-header .header-1 {
   font-size: 48px;
   line-height: 43px;
   margin: 0;
 }
-/* line 322, ../sass/_custom.scss */
+/* line 313, ../sass/_custom.scss */
 .car-header .streak-photo .car-title-header .header-2 {
   font-size: 22px;
   line-height: 24px;
@@ -500,25 +488,25 @@ span.renault-italic {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 335, ../sass/_custom.scss */
+  /* line 326, ../sass/_custom.scss */
   .car-header .streak-photo {
     height: 300px;
     margin-top: -38px;
   }
 }
-/* line 343, ../sass/_custom.scss */
+/* line 334, ../sass/_custom.scss */
 .new-car-price {
   min-width: 25%;
   padding: 10px;
 }
 
-/* line 348, ../sass/_custom.scss */
+/* line 339, ../sass/_custom.scss */
 .new-car-price-per-month {
   padding: 10px;
   border-left: 2px solid black;
 }
 
-/* line 353, ../sass/_custom.scss */
+/* line 344, ../sass/_custom.scss */
 .video-container {
   position: relative;
   padding-bottom: 37%;
@@ -528,7 +516,7 @@ span.renault-italic {
   margin: auto;
 }
 
-/* line 362, ../sass/_custom.scss */
+/* line 353, ../sass/_custom.scss */
 .video-container iframe,
 .video-container object,
 .video-container embed {
@@ -539,11 +527,11 @@ span.renault-italic {
   height: 100%;
 }
 
-/* line 373, ../sass/_custom.scss */
+/* line 364, ../sass/_custom.scss */
 .card-voiture .voiture-image {
   position: relative;
 }
-/* line 375, ../sass/_custom.scss */
+/* line 366, ../sass/_custom.scss */
 .card-voiture .voiture-image .status {
   position: absolute;
   bottom: 0;
@@ -552,109 +540,109 @@ span.renault-italic {
   padding: 5px;
 }
 
-/* line 385, ../sass/_custom.scss */
+/* line 376, ../sass/_custom.scss */
 .status-details {
   text-transform: uppercase;
   color: white;
 }
 
-/* line 390, ../sass/_custom.scss */
+/* line 381, ../sass/_custom.scss */
 .arrive {
   background-color: #ff8a24;
 }
 
-/* line 393, ../sass/_custom.scss */
+/* line 384, ../sass/_custom.scss */
 .delay {
   background-color: #00a6ff;
 }
 
-/* line 396, ../sass/_custom.scss */
+/* line 387, ../sass/_custom.scss */
 .on-sale {
   background-color: #00be3c;
 }
 
-/* line 399, ../sass/_custom.scss */
+/* line 390, ../sass/_custom.scss */
 .sold {
   background-color: #be1e00;
 }
 
-/* line 403, ../sass/_custom.scss */
+/* line 394, ../sass/_custom.scss */
 .status-details {
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
 }
 
-/* line 409, ../sass/_custom.scss */
+/* line 400, ../sass/_custom.scss */
 .boncoin-button {
   text-transform: none;
   background-color: #f56b2a;
 }
 
-/* line 415, ../sass/_custom.scss */
+/* line 406, ../sass/_custom.scss */
 .accordion .card-header {
   background-color: #333333 !important;
 }
-/* line 417, ../sass/_custom.scss */
+/* line 408, ../sass/_custom.scss */
 .accordion .card-header a {
   color: white !important;
   text-transform: uppercase;
 }
-/* line 420, ../sass/_custom.scss */
+/* line 411, ../sass/_custom.scss */
 .accordion .card-header a[aria-expanded=true] {
   color: #FFCC33 !important;
 }
 
-/* line 427, ../sass/_custom.scss */
+/* line 418, ../sass/_custom.scss */
 .secondhand-carousel {
   background-color: #e0e0e0 !important;
 }
-/* line 429, ../sass/_custom.scss */
+/* line 420, ../sass/_custom.scss */
 .secondhand-carousel .carousel-inner {
   height: 600px;
 }
-/* line 431, ../sass/_custom.scss */
+/* line 422, ../sass/_custom.scss */
 .secondhand-carousel .carousel-inner .carousel-item {
   height: 100%;
 }
-/* line 433, ../sass/_custom.scss */
+/* line 424, ../sass/_custom.scss */
 .secondhand-carousel .carousel-inner .carousel-item .secondhand-image-carousel {
   margin: auto;
   height: 100%;
 }
-/* line 439, ../sass/_custom.scss */
+/* line 430, ../sass/_custom.scss */
 .secondhand-carousel .carousel-control-prev-icon, .secondhand-carousel .carousel-control-next-icon {
   color: #FFCC33;
   background: none;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 447, ../sass/_custom.scss */
+  /* line 438, ../sass/_custom.scss */
   .secondhand-carousel {
     background-color: #e0e0e0 !important;
   }
-  /* line 449, ../sass/_custom.scss */
+  /* line 440, ../sass/_custom.scss */
   .secondhand-carousel .carousel-inner {
     height: 250px;
   }
 }
-/* line 456, ../sass/_custom.scss */
+/* line 447, ../sass/_custom.scss */
 .article-header {
   margin-bottom: 20px;
 }
-/* line 457, ../sass/_custom.scss */
+/* line 448, ../sass/_custom.scss */
 .article-header .streak-photo {
   height: 300px;
   margin-top: -25px;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 466, ../sass/_custom.scss */
+  /* line 457, ../sass/_custom.scss */
   .article-header .streak-photo {
     margin-top: -38px;
   }
 }
-/* line 472, ../sass/_custom.scss */
+/* line 463, ../sass/_custom.scss */
 .service-promo {
   position: absolute;
   top: 0;
@@ -662,21 +650,20 @@ span.renault-italic {
   text-align: center;
   background-color: rgba(255, 204, 51, 0.7);
 }
-/* line 478, ../sass/_custom.scss */
+/* line 469, ../sass/_custom.scss */
 .service-promo span {
   padding: 3px;
 }
 
-/* line 484, ../sass/_custom.scss */
+/* line 475, ../sass/_custom.scss */
 form input:focus, form textarea:focus {
   border-bottom: 1px solid #FFCC33 !important;
-  box-shadow: 0 1px 0 0 #FFCC33 !important;
 }
-/* line 488, ../sass/_custom.scss */
+/* line 478, ../sass/_custom.scss */
 form .btn-cent-percent-width {
   width: 100%;
 }
-/* line 492, ../sass/_custom.scss */
+/* line 482, ../sass/_custom.scss */
 form [type="checkbox"]:checked + label:before {
   border-right: 2px solid #FFCC33 !important;
   border-bottom: 2px solid #FFCC33 !important;

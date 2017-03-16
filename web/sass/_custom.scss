@@ -152,7 +152,7 @@ footer {
   left: 0px;
   top: 100px;
   z-index: 900;
-  a {
+  div {
     $var1: 12.8px;
     -webkit-transition: left 0.2s;
     transition: left 0.2s;
@@ -165,33 +165,24 @@ footer {
     i{
       margin-left:$var1;
     }
-    &:hover {
-      left: -10px;
-    }
   }
-  a.btn-envelope {
+  div.btn-envelope {
     left: -210px;
     background-color: #2196F3;
-    &:hover {
-      left: -10px;
-    }
   }
-  a.btn-map{
+  div.btn-map{
     left: -106px;
     background-color: #F44336;
     i{
       margin-right: 5px;
     }
-    &:hover {
-      left: -10px;
-    }
   }
-  a.btn-phone{
+  div.btn-phone{
     left: -123px;
     background-color: #4CAF50;
-    &:hover {
-      left: -10px;
-    }
+  }
+  div.show{
+    left: -10px;
   }
 }
 
