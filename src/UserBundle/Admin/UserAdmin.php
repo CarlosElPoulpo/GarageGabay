@@ -8,6 +8,8 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class UserAdmin extends AbstractAdmin
 {
@@ -85,22 +87,44 @@ class UserAdmin extends AbstractAdmin
         $rolesChoices = self::flattenRoles($roles);
 
         unset($this->listModes['mosaic']);
+
         $formMapper
             ->add('username', null, array(
                 'label' => $this->label_username
             ))
             ->add('email', null, array(
                 'label' => $this->label_email
-            ))
-            ->add('password', null, array(
+            ));
+        if ($this->isCurrentRoute('create')) {
+            $formMapper->add('plainPassword', TextType::class, array(
                 'label' => $this->label_password
-            ))
-            ->add('roles', 'choice', array(
-                'choices'  => $rolesChoices,
-                'multiple' => true,
-                'label' => $this->label_roles
-            ))
+            ));
+        }
+        $formMapper->add('roles', 'choice', array(
+            'choices'  => $rolesChoices,
+            'multiple' => true,
+            'label' => $this->label_roles,
+        ));
         ;
+    }
+
+    protected static function flattenRoles($rolesHierarchy)
+    {
+        $flatRoles = array();
+        foreach($rolesHierarchy as $roles) {
+
+            if(empty($roles)) {
+                continue;
+            }
+
+            foreach($roles as $role) {
+                if(!isset($flatRoles[$role])) {
+                    $flatRoles[$role] = $role;
+                }
+            }
+        }
+
+        return $flatRoles;
     }
 
     /**
@@ -125,24 +149,5 @@ class UserAdmin extends AbstractAdmin
                 'label' => $this->label_roles
             ))
         ;
-    }
-
-    protected static function flattenRoles($rolesHierarchy)
-    {
-        $flatRoles = array();
-        foreach($rolesHierarchy as $roles) {
-
-            if(empty($roles)) {
-                continue;
-            }
-
-            foreach($roles as $role) {
-                if(!isset($flatRoles[$role])) {
-                    $flatRoles[$role] = $role;
-                }
-            }
-        }
-
-        return $flatRoles;
     }
 }

@@ -22,8 +22,8 @@ class LoadPromotion extends AbstractFixture implements OrderedFixtureInterface
         $promoNew1 = new PromotionNew();
         $promoNew1
             ->setDiscount("30%")
-            ->setStartDate(new \DateTime('2017-03-01'))
-            ->setEndDate(new \DateTime('2017-03-08'));
+            ->setStartDate(new \DateTime())
+            ->setEndDate(new \DateTime('+10 day'));
         $promo1 = new Promotion();
         $promo1
             ->setTitle("La saison des pluies")
@@ -34,8 +34,8 @@ class LoadPromotion extends AbstractFixture implements OrderedFixtureInterface
         $promoNew2 = new PromotionNew();
         $promoNew2
             ->setDiscount("25%")
-            ->setStartDate(new \DateTime('2017-03-02'))
-            ->setEndDate(new \DateTime('2017-03-09'));
+            ->setStartDate(new \DateTime('-2 day'))
+            ->setEndDate(new \DateTime('+8 day'));
         $promo2 = new Promotion();
         $promo2
             ->setTitle("Bonne année avec les pneus GoodYear")

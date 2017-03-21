@@ -22,6 +22,12 @@ class User extends BaseUser
      */
     protected $id;
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setEnabled(true);
+    }
+
 
     /**
      * Get id
@@ -35,7 +41,7 @@ class User extends BaseUser
 
     function __toString()
     {
-        return $this->username();
+        return $this->getUsername();
     }
 }
 
