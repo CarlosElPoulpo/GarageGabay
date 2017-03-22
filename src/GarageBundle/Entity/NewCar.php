@@ -178,7 +178,7 @@ class NewCar extends Car
         return $this->vehiculeType;
     }
 
-    function __toString()
+    public function __toString()
     {
         return $this->getTitle();
     }

@@ -194,7 +194,7 @@ class Image
 
   }
 
-    function __toString()
+    public function __toString()
     {
         return $this->alt;
     }

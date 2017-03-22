@@ -96,7 +96,7 @@ class Partnership
         return $this->image;
     }
 
-    function __toString()
+    public function __toString()
     {
         return $this->name;
     }

@@ -46,7 +46,7 @@ class Status
         return $this->id;
     }
 
-    function __toString() {
+    public function __toString() {
         return $this->name;
     }
 
