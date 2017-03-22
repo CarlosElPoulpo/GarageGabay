@@ -95,4 +95,3 @@ class ContactMail
         $this->body = $body;
     }
 }
-
