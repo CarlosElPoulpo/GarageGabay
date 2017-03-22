@@ -3,7 +3,6 @@
 namespace AppBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 

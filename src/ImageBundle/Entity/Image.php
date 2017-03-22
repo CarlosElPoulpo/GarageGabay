@@ -5,7 +5,6 @@ namespace ImageBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use GarageBundle\Entity\SecondHandCar;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Table(name="image")
