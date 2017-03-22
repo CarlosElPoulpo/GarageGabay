@@ -3,7 +3,6 @@ namespace NDP\DateFieldsBundle\Form\Type;
 use NDP\DateFieldsBundle\Form\DataTransformer\YearMonthDateTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 
