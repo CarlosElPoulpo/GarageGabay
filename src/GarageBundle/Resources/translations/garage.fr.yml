@@ -1,0 +1,44 @@
+service:
+  name: "Nom"
+  icon: "Icône"
+  price: "Prix"
+
+car:
+  title: "Titre"
+  model: "Modèle"
+  price: "Prix"
+  creationdate: "Date de création"
+  newcar:
+    pricepermonth: "Prix par mois"
+    duration: "Durée"
+    renaultlink: "Lien Renault.fr"
+    coverimage: "Image de couverture"
+    vehiculetype: "Type de véhicule"
+    icon: "Icône"
+    partnership: "Partenaires"
+  secondhand:
+    gear: "Boîte de vitesse"
+    brand: "Marque"
+    year: "Année"
+    fuel: "Carburant"
+    km: "Kilométrage"
+    lblink: "Lien LeBonCoin"
+    description: "Description"
+    coverimage: "Image de couverture"
+    images: "Images supplémentaires"
+
+garage:
+  name: "Nom du garage"
+  image: "Photo"
+  description: "Description"
+  roadnumber: "Numéro de rue"
+  road: "Rue"
+  city: "Ville"
+  postalcode: "Code postal"
+  phone: "Numéro de téléphone"
+  email: "Adresse email"
+  facebookpagelink: "Lien de la page Facebook"
+  googlepagelink: "Lien de la page Google"
+
+partnership:
+  name: "Nom"

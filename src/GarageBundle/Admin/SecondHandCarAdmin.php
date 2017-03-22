@@ -12,21 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class SecondHandCarAdmin extends AbstractAdmin
 {
-    private  $label_title = "Titre";
-    private  $label_brand = "Marque";
-    private  $label_model = "Modèle";
-    private  $label_year = "Année";
-    private  $label_price = "Prix";
-    private  $label_creationDate = "Date de création";
-    private  $label_gear = "Boite de vitesse";
-    private  $label_fuel = "Carburant";
-    private  $label_km = "Kilométrage";
-    private  $label_LBCLink = "Lien LeBonCoin";
-    private  $label_description = "Description";
-    private  $label_coverImage = "Image de couverture";
-    private  $label_images = "Images supplémentaires";
-
-
+    protected $translationDomain = 'garage';
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -35,37 +21,37 @@ class SecondHandCarAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('title', null, array(
-                'label' => $this->label_title
+                'label' => "car.title"
             ))
             ->add('brand', null, array(
-                'label' => $this->label_brand
+                'label' => "car.secondhand.brand"
             ))
             ->add('model', null, array(
-                'label' => $this->label_model
+                'label' => "car.model"
             ))
             ->add('year', null, array(
-                'label' => $this->label_year
+                'label' => "car.secondhand.year"
             ))
             ->add('price', null, array(
-                'label' => $this->label_price
+                'label' => "car.price"
             ))
             ->add('creationDate', null, array(
-                'label' => $this->label_creationDate
+                'label' => "car.creationdate"
             ))
             ->add('gear', null, array(
-                'label' => $this->label_gear
+                'label' => "car.secondhand.gear"
             ))
             ->add('fuel', null, array(
-                'label' => $this->label_fuel
+                'label' => "car.secondhand.fuel"
             ))
             ->add('km', null, array(
-                'label' => $this->label_km
+                'label' => "car.secondhand.km"
             ))
             ->add('lBClink', null, array(
-                'label' => $this->label_LBCLink
+                'label' => "car.secondhand.lblink"
             ))
             ->add('description', null, array(
-                'label' => $this->label_description
+                'label' => "car.secondhand.description"
             ))
         ;
     }
@@ -79,38 +65,22 @@ class SecondHandCarAdmin extends AbstractAdmin
         $listMapper
             ->add('coverImage', null, array( 'template' => ':admin:list_coverimage_for_car.html.twig', 'label' => 'Aperçu'))
             ->add('title', null, array(
-                'label' => $this->label_title
+                'label' => "car.title"
             ))
             ->add('brand', null, array(
-                'label' => $this->label_brand
+                'label' => "car.secondhand.brand"
             ))
             ->add('model', null, array(
-                'label' => $this->label_model
+                'label' => "car.model"
             ))
-            /*->add('year', null, array(
-                'label' => $this->label_year
-            ))*/
             ->add('price', null, array(
-                'label' => $this->label_price
+                'label' => "car.price"
             ))
-
-            /*->add('gear', null, array(
-                'label' => $this->label_gear
-            ))
-            ->add('fuel', null, array(
-                'label' => $this->label_fuel
-            ))*/
             ->add('km', null, array(
-                'label' => $this->label_km
+                'label' => "car.secondhand.km"
             ))
-            /*->add('lBClink', null, array(
-                'label' => $this->label_LBCLink
-            ))
-            ->add('description', null, array(
-                'label' => $this->label_description
-            ))*/
             ->add('creationDate', null, array(
-                'label' => $this->label_creationDate
+                'label' => "car.creationdate"
             ))
             ->add('_action', null, array(
                 'actions' => array(
@@ -130,48 +100,48 @@ class SecondHandCarAdmin extends AbstractAdmin
         $formMapper
             ->with("Voiture d'occasion", array('class'=>'col-md-7 left'))
                 ->add('title', null, array(
-                    'label' => $this->label_title
+                    'label' => "car.title"
                 ))
                 ->add('brand', null, array(
-                    'label' => $this->label_brand
+                    'label' => "car.secondhand.brand"
                 ))
                 ->add('model', null, array(
-                    'label' => $this->label_model
+                    'label' => "car.model"
                 ))
                 ->add('year', null, array(
-                    'label' => $this->label_year
+                    'label' => "car.secondhand.year"
                 ))
                 ->add('price', null, array(
-                    'label' => $this->label_price
+                    'label' => "car.price"
                 ))
                 ->add('gear', ChoiceType::class, array(
                     'choices' => array('Manuelle' => 'Manuelle', 'Automatique' => 'Automatique'),
-                    'label' => $this->label_gear
+                    'label' => "car.secondhand.gear"
                 ))
                 ->add('fuel', ChoiceType::class, array(
                     'choices' => array('Essence' => 'Essence', 'Diesel' => 'Diesel'),
-                    'label' => $this->label_fuel
+                    'label' => "car.secondhand.fuel"
                 ))
                 ->add('km', null, array(
-                    'label' => $this->label_km
+                    'label' => "car.secondhand.km"
                 ))
                 ->add('lBClink', null, array(
-                    'label' => $this->label_LBCLink
+                    'label' => "car.secondhand.lblink"
                 ))
                 ->add('description', CKEditorType::class, array(
-                    'label' => $this->label_description, 'config' => array('uiColor' => '#ffffff')
+                    'label' => "car.secondhand.description", 'config' => array('uiColor' => '#ffffff')
                 ))
                 ->add('status')
             ->end()
 
             ->with('Images', array('class'=>'col-md-5 right'))
                     ->add('coverImage', 'sonata_type_model_list', array(
-                        'label' => $this->label_coverImage,
+                        'label' => "car.secondhand.coverimage",
                         'btn_list' => false,
                         'required' => true
                     ))
                     ->add('images','sonata_type_model',array(
-                        'label' => $this->label_images,
+                        'label' => "car.secondhand.images",
                         'multiple' => true,
                         'required' => false
                     ))
@@ -190,37 +160,37 @@ class SecondHandCarAdmin extends AbstractAdmin
     {
         $showMapper
             ->add('title', null, array(
-                'label' => $this->label_title
+                'label' => "car.title"
             ))
             ->add('brand', null, array(
-                'label' => $this->label_brand
+                'label' => "car.secondhand.brand"
             ))
             ->add('model', null, array(
-                'label' => $this->label_model
+                'label' => "car.model"
             ))
             ->add('year', null, array(
-                'label' => $this->label_year
+                'label' => "car.secondhand.year"
             ))
             ->add('price', null, array(
-                'label' => $this->label_price
+                'label' => "car.price"
             ))
             ->add('creationDate', null, array(
-                'label' => $this->label_creationDate
+                'label' => "car.creationdate"
             ))
             ->add('gear', null, array(
-                'label' => $this->label_gear
+                'label' => "car.secondhand.gear"
             ))
             ->add('fuel', null, array(
-                'label' => $this->label_fuel
+                'label' => "car.secondhand.fuel"
             ))
             ->add('km', null, array(
-                'label' => $this->label_km
+                'label' => "car.secondhand.km"
             ))
             ->add('lBClink', null, array(
-                'label' => $this->label_LBCLink
+                'label' => "car.secondhand.lblink"
             ))
             ->add('description', null, array(
-                'label' => $this->label_description
+                'label' => "car.secondhand.description"
             ))
             ->add('coverImage')
             ->add('images')

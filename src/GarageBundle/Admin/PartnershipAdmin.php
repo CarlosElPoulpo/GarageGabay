@@ -10,7 +10,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class PartnershipAdmin extends AbstractAdmin
 {
-    private  $label_name = "Nom";
+    protected $translationDomain = 'garage';
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -19,7 +19,7 @@ class PartnershipAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('name', null, array(
-        'label' => $this->label_name
+        'label' => "partnership.name"
     ))
         ;
     }
@@ -31,7 +31,7 @@ class PartnershipAdmin extends AbstractAdmin
     {
         $listMapper
             ->add('name', null, array(
-                'label' => $this->label_name
+                'label' => "partnership.name"
             ))
             ->add('_action', null, array(
                 'actions' => array(
@@ -50,7 +50,7 @@ class PartnershipAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('name', null, array(
-                'label' => $this->label_name
+                'label' => "partnership.name"
             ))
             ->end()
 
@@ -67,7 +67,7 @@ class PartnershipAdmin extends AbstractAdmin
     {
         $showMapper
             ->add('name', null, array(
-                'label' => $this->label_name
+                'label' => "partnership.name"
             ))
 //            ->add('image')
         ;

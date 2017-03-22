@@ -10,9 +10,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class ServiceAdmin extends AbstractAdmin
 {
-    private $label_name = "Nom du service";
-    private $label_icon = "Icône";
-    private $label_price = "Prix";
+    protected $translationDomain = 'garage';
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -20,9 +18,8 @@ class ServiceAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name', null, array('label'=>$this->label_name))
-            ->add('icon', null, array('label'=>$this->label_icon))
-            ->add('price', null, array('label'=>$this->label_price))
+            ->add('name', null, array('label'=>"service.name"))
+            ->add('price', null, array('label'=>"service.price"))
         ;
     }
 
@@ -33,9 +30,9 @@ class ServiceAdmin extends AbstractAdmin
     {
         unset($this->listModes['mosaic']);
         $listMapper
-            ->add('icon', null, array('label'=>$this->label_icon, 'template' => ':admin:list_icon_for_service.html.twig'))
-            ->add('name', null, array('label'=>$this->label_name))
-            ->add('price', null, array('label'=>$this->label_price))
+            ->add('icon', null, array("label"=>"service.icon", 'template' => ':admin:list_icon_for_service.html.twig'))
+            ->add('name', null, array('label'=>"service.name"))
+            ->add('price', null, array('label'=>"service.price"))
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -52,10 +49,11 @@ class ServiceAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', null, array('label'=>$this->label_name))
-            ->add('price', null, array('label'=>$this->label_price))
+            ->with("Général")
+            ->add('name', null, array('label'=>"service.name"))
+            ->add('price', null, array('label'=>"service.price"))
             ->add('icon', 'sonata_type_model_list', array(
-                'label' => $this->label_icon,
+                'label' => "service.icon",
                 'btn_list' => false, 'help'=>" <a href='http://www.flaticon.com/packs/mechanic-elements-5' target='_blank'>Rechercher un icon sur Flat Icon</a>"))
             ->end()
             ->with("Faire une promotion")
@@ -70,9 +68,9 @@ class ServiceAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('name', null, array('label'=>$this->label_name))
-            ->add('icon', null, array('label'=>$this->label_icon))
-            ->add('price', null, array('label'=>$this->label_price))
+            ->add('name', null, array('label'=>"service.name"))
+            ->add('icon', null, array('label'=>"service.icon"))
+            ->add('price', null, array('label'=>"service.price"))
         ;
     }
 }

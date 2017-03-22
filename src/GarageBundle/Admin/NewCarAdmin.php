@@ -10,18 +10,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class NewCarAdmin extends AbstractAdmin
 {
-    private  $label_title = "Titre";
-    private  $label_model = "Modèle";
-    private  $label_price = "Prix";
-    private  $label_creationDate = "Date de création";
-    private  $label_pricePerMonth = "Prix par Mois";
-    private  $label_renaultLink = "Lien Renault.fr";
-    private  $label_vehiculeType = "Type de véhicule";
-    private  $label_coverImage = "Image de couverture";
-    private  $label_icone = "Icone";
-    private  $label_partnerships = "Partenariats";
-    private  $label_duration = "Durée";
-
+    protected $translationDomain = 'garage';
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -30,28 +19,28 @@ class NewCarAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('title', null, array(
-                'label' => $this->label_title
+                'label' => "car.title"
             ))
             ->add('model', null, array(
-                'label' => $this->label_model
+                'label' => "car.model"
             ))
             ->add('price', null, array(
-                'label' => $this->label_price
+                'label' => "car.price"
             ))
             ->add('creationDate', null, array(
-                'label' => $this->label_creationDate
+                'label' => "car.creationdate"
             ))
             ->add('pricePerMonth', null, array(
-                'label' => $this->label_pricePerMonth
+                'label' => "car.newcar.pricepermonth"
             ))
             ->add('duration', null, array(
-                'label' => $this->label_duration
+                'label' => "car.newcar.duration"
             ))
             ->add('renaultLink', null, array(
-                'label' => $this->label_renaultLink
+                'label' => "car.newcar.renaultlink"
             ))
             ->add('vehiculeType', null, array(
-                'label' => $this->label_vehiculeType
+                'label' => "car.newcar.vehiculetype"
             ))
         ;
     }
@@ -65,37 +54,14 @@ class NewCarAdmin extends AbstractAdmin
         $listMapper
             ->add('coverImage', null, array( 'template' => ':admin:list_coverimage_for_car.html.twig', 'label' => 'Aperçu'))
             ->add('model', null, array(
-                'label' => $this->label_model
+                'label' => "car.model"
             ))
             ->add('title', null, array(
-                'label' => $this->label_title
+                'label' => "car.title"
             ))
             ->add('price', null, array(
-                'label' => $this->label_price
+                'label' => "car.price"
             ))
-            /*->add('coverImage', null, array(
-                'label' => $this->label_coverImage,
-            ))
-            ->add('icone')
-            ->add('vehiculeType', null, array(
-                'label' => $this->label_vehiculeType
-            ))
-            ->add('price', null, array(
-                'label' => $this->label_price
-            ))
-            ->add('creationDate', null, array(
-                'label' => $this->label_creationDate
-            ))
-            ->add('partnerships')
-            ->add('pricePerMonth', null, array(
-                'label' => $this->label_pricePerMonth
-            ))
-            ->add('duration', null, array(
-                'label' => $this->label_duration
-            ))
-            ->add('renaultLink', null, array(
-                'label' => $this->label_renaultLink
-            ))*/
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -114,45 +80,45 @@ class NewCarAdmin extends AbstractAdmin
         $formMapper
             ->with('Voiture neuve', array('class'=>'col-md-7 left'))
             ->add('title', null, array(
-                'label' => $this->label_title
+                'label' => "car.title"
             ))
             ->add('model', null, array(
-                'label' => $this->label_model
+                'label' => "car.model"
             ))
             ->add('vehiculeType', null, array(
-                'label' => $this->label_vehiculeType
+                'label' => "car.newcar.vehiculetype"
             ))
             ->add('price', null, array(
-                'label' => $this->label_price
+                'label' => "car.price"
             ))
 
             ->add('renaultLink', null, array(
-                'label' => $this->label_renaultLink
+                'label' => "car.newcar.renaultlink"
             ))
             ->end()
 
             ->with('Images', array('class'=>'col-md-5 right'))
             ->add('coverImage', 'sonata_type_model_list', array(
-                'label' => $this->label_coverImage,
+                'label' => "car.newcar.coverimage",
                 'btn_list' => false,
             ))
             ->add('icone', 'sonata_type_model_list', array(
-                'label' => $this->label_icone,
+                'label' => "car.newcar.icon",
                 'btn_list' => false,
             ))
             ->end()
 
             ->with('Partenariats', array('class'=>'col-md-5 right'))
             ->add('partnerships','sonata_type_model', array(
-                'label' => $this->label_partnerships,
+                'label' => "car.newcar.partnership",
                 'multiple' => true,
                 'required' =>false
             ))
             ->add('pricePerMonth', null, array(
-                'label' => $this->label_pricePerMonth
+                'label' => "car.newcar.pricepermonth"
             ))
             ->add('duration', null, array(
-                'label' => $this->label_duration
+                'label' => "car.newcar.duration"
             ))
             ->end()
         ;
@@ -165,39 +131,33 @@ class NewCarAdmin extends AbstractAdmin
     {
         $showMapper
             ->add('title', null, array(
-                'label' => $this->label_title
+                'label' => "car.title"
             ))
             ->add('model', null, array(
-                'label' => $this->label_model
+                'label' => "car.model"
             ))
             ->add('price', null, array(
-                'label' => $this->label_price
+                'label' => "car.price"
             ))
             ->add('creationDate', null, array(
-                'label' => $this->label_creationDate
+                'label' => "car.creationdate"
             ))
             ->add('pricePerMonth', null, array(
-                'label' => $this->label_pricePerMonth
+                'label' => "car.newcar.pricepermonth"
             ))
             ->add('duration', null, array(
-                'label' => $this->label_duration
+                'label' => "car.newcar.duration"
             ))
             ->add('renaultLink', null, array(
-                'label' => $this->label_renaultLink
+                'label' => "car.newcar.renaultlink"
             ))
             ->add('vehiculeType', null, array(
-                'label' => $this->label_vehiculeType
+                'label' => "car.newcar.vehiculetype"
             ))
             ->add('coverImage')
-//            ->add('coverImage', 'entity', array(
-//                'class' => 'ImageBundle\Entity\Image',
-//                'template' => 'GarageBundle:admin:image_preview_coverImage.html.twig'
-//            ))
+
             ->add('icone')
-//            ->add('icone', 'entity', array(
-//                'class' => 'ImageBundle\Entity\Image',
-//                'template' => 'AppBundle:admin:image_preview_embedded.html.twig'
-//            ))
+
         ;
     }
 
