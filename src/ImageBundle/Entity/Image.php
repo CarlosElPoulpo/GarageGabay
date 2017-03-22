@@ -40,12 +40,6 @@ class Image
   // On ajoute cet attribut pour y stocker le nom du fichier temporairement
   private $tempFilename;
 
-//    /**
-//     * @ORM\ManyToOne(targetEntity="GarageBundle\Entity\SecondHandCar",inversedBy="images")
-//     * @ORM\JoinColumn(nullable=true)
-//     */
-//    private $secondHandCar;
-
   /**
    * @ORM\PrePersist()
    * @ORM\PreUpdate()
@@ -190,7 +184,6 @@ class Image
     // On vérifie si on avait déjà un fichier pour cette entité
     if (null !== $this->url) {
       // On sauvegarde l'extension du fichier pour le supprimer plus tard
-//      $this->tempFilename = $this->url;
       $this->tempFilename = $this->url;
 
       // On réinitialise les valeurs des attributs url et alt
