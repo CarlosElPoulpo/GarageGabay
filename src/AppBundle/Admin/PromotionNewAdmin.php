@@ -10,10 +10,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class PromotionNewAdmin extends AbstractAdmin
 {
-
-    private $label_discount = "Remise";
-    private $label_startDate = "Date de début";
-    private $label_endDate = "Date de fin";
+    protected $translationDomain = 'app';
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -22,11 +19,11 @@ class PromotionNewAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('discount', null, array(
-                'label' => $this->label_discount))
+                'label' => "promotion.discount"))
             ->add('startDate', null, array(
-                'label' => $this->label_startDate))
+                'label' => "promotion.startdate"))
             ->add('endDate', null, array(
-                'label' => $this->label_endDate))
+                'label' => "promotion.enddate"))
         ;
     }
 
@@ -37,11 +34,11 @@ class PromotionNewAdmin extends AbstractAdmin
     {
         $listMapper
             ->add('discount', null, array(
-                'label' => $this->label_discount))
+                'label' => "promotion.discount"))
             ->add('startDate', null, array(
-                'label' => $this->label_startDate))
+                'label' => "promotion.startdate"))
             ->add('endDate', null, array(
-                'label' => $this->label_endDate))
+                'label' => "promotion.enddate"))
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -59,12 +56,12 @@ class PromotionNewAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('discount', null, array(
-                'label' => $this->label_discount, "help"=>"Exemple: -15%, -20€"))
+                'label' => "promotion.discount", "help"=>"Exemple: -15%, -20€"))
             ->add('startDate','sonata_type_date_picker' , array(
-        'label' => $this->label_startDate, 'format' => 'dd-MM-yyyy', "required"=>false
+        'label' => "promotion.startdate", 'format' => 'dd-MM-yyyy', "required"=>false
     ))
             ->add('endDate', 'sonata_type_date_picker' , array(
-                'label' => $this->label_endDate, 'format' => 'dd-MM-yyyy', "required"=>false
+                'label' => "promotion.enddate", 'format' => 'dd-MM-yyyy', "required"=>false
             ))
         ;
     }
@@ -76,11 +73,11 @@ class PromotionNewAdmin extends AbstractAdmin
     {
         $showMapper
             ->add('discount', null, array(
-                'label' => $this->label_discount))
+                'label' => "promotion.discount"))
             ->add('startDate', null, array(
-                'label' => $this->label_startDate))
+                'label' => "promotion.startdate"))
             ->add('endDate', null, array(
-                'label' => $this->label_endDate))
+                'label' => "promotion.enddate"))
         ;
     }
 }

@@ -10,8 +10,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class PromotionAdmin extends AbstractAdmin
 {
-    private $label_title = "Titre";
-    private $label_description = "Description";
+    protected $translationDomain = 'app';
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -20,10 +19,10 @@ class PromotionAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('title', null, array(
-                    'label' => $this->label_title)
+                    'label' => "promotion.title")
             )
             ->add('description', null, array(
-                    'label' => $this->label_description)
+                    'label' => "promotion.description")
             )
             ->add('promotion')
         ;
@@ -36,10 +35,10 @@ class PromotionAdmin extends AbstractAdmin
     {
         $listMapper
             ->add('title', null, array(
-                    'label' => $this->label_title)
+                    'label' => "promotion.title")
             )
             ->add('description', null, array(
-                    'label' => $this->label_description)
+                    'label' => "promotion.description")
             )
             ->add('promotion')
             ->add('_action', null, array(
@@ -59,7 +58,7 @@ class PromotionAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('title', null, array(
-                    'label' => $this->label_title)
+                    'label' => "promotion.title")
             )
             ->add('description')
             ->add('image', 'sonata_type_model_list', array(
@@ -78,19 +77,12 @@ class PromotionAdmin extends AbstractAdmin
     {
         $showMapper
             ->add('title', null, array(
-                    'label' => $this->label_title)
+                    'label' => "promotion.title")
             )
             ->add('description', null, array(
-                    'label' => $this->label_description)
+                    'label' => "promotion.description")
             )
             ->end()
-
-//            ->with('Image liée')
-//            ->add('image', 'entity', array(
-//                'template' => 'AppBundle:admin:image_preview.html.twig'
-//            ))
-//            ->end()
-
             ->with('Image liée')
                 ->add('image', 'entity')
             ->end()

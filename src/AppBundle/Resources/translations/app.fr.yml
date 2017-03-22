@@ -1,0 +1,34 @@
+article:
+  title: "Titre"
+  introduction: "Introduction"
+  coverimage: "Image de couverture"
+  content: "Contenu"
+  writtenby: "Ecris par"
+  publicationdate: "Date de publication"
+
+employee:
+  name: "Prénom"
+  lastname: "Nom"
+  image: "Photo"
+  jobtitle: "Intitulé du poste"
+  description: "Description"
+  arrange: "Ordre d'apparition"
+
+homepage:
+  title: "Titre d'accueil"
+  welcomeparagraph: "Texte d'accueil"
+  titlecarsales: "Titre section vente des voitures"
+  descriptioncarsales: "Texte début de section"
+  videourl: "Lien Youtube de la pub Renault"
+  titlecarsalessecondhand: "Sous-titre vente de voitures d'occasion"
+  titleservices: "Titre section service"
+  descriptionservices: "Texte début de section"
+  titleteam: "Titre section présentation de l'équipe"
+  descriptionteam: "Texte début de section"
+
+promotion:
+  title: "Titre"
+  description: "Description"
+  discount: "Remise"
+  startdate: "Date de début"
+  enddate: "Date de fin"

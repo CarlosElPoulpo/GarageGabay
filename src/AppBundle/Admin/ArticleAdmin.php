@@ -11,25 +11,20 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class ArticleAdmin extends AbstractAdmin
 {
+    protected $translationDomain = 'app';
 
-    private $label_title = "Titre";
-    private $label_introduction = "Introduction";
-    private $label_coverImage = "Image de couverture";
-    private $label_content = "Contenu";
-    private $label_writtenBy = "Ecris par";
-    private $label_publicationDate = "Date de publication";
     /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('title', null, array('label'=>$this->label_title))
-            ->add('introduction', null, array('label'=>$this->label_introduction))
-            ->add('coverImage', null, array('label'=>$this->label_coverImage))
-            ->add('content', null, array('label'=>$this->label_content))
-            ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
-            ->add('publicationDate', null, array('label'=>$this->label_publicationDate))
+            ->add('title', null, array('label'=>"article.title"))
+            ->add('introduction', null, array('label'=>"article.introduction"))
+            ->add('coverImage', null, array('label'=>"article.coverimage"))
+            ->add('content', null, array('label'=>"article.content"))
+            ->add('writtenBy', null, array('label'=>"article.writtenby"))
+            ->add('publicationDate', null, array('label'=>"article.publicationdate"))
         ;
     }
 
@@ -40,10 +35,10 @@ class ArticleAdmin extends AbstractAdmin
     {
         unset($this->listModes['mosaic']);
         $listMapper
-            ->add('title', null, array('label'=>$this->label_title))
-            ->add('introduction', null, array('label'=>$this->label_introduction))
-            ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
-            ->add('publicationDate', null, array('label'=>$this->label_publicationDate))
+            ->add('title', null, array('label'=>"article.title"))
+            ->add('introduction', null, array('label'=>"article.introduction"))
+            ->add('writtenBy', null, array('label'=>"article.writtenby"))
+            ->add('publicationDate', null, array('label'=>"article.publicationdate"))
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -60,15 +55,15 @@ class ArticleAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title', null, array('label'=>$this->label_title))
-            ->add('introduction', null, array('label'=>$this->label_introduction))
-            ->add('content', CKEditorType::class, array('label'=>$this->label_content,'config' => array('uiColor' => '#ffffff')))
+            ->add('title', null, array('label'=>"article.title"))
+            ->add('introduction', null, array('label'=>"article.introduction"))
+            ->add('content', CKEditorType::class, array('label'=>"article.content",'config' => array('uiColor' => '#ffffff')))
             ->add('coverImage', 'sonata_type_model_list', array(
-                'label' => $this->label_coverImage,
+                'label' => "article.coverimage",
                 'required' => false,
                 'btn_list' => false
             ))
-            ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
+            ->add('writtenBy', null, array('label'=>"article.writtenby"))
         ;
     }
 
@@ -78,12 +73,12 @@ class ArticleAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('title', null, array('label'=>$this->label_title))
-            ->add('introduction', null, array('label'=>$this->label_introduction))
-            ->add('coverImage', null, array('label'=>$this->label_coverImage))
-            ->add('content', null, array('label'=>$this->label_content))
-            ->add('writtenBy', null, array('label'=>$this->label_writtenBy))
-            ->add('publicationDate', null, array('label'=>$this->label_publicationDate))
+            ->add('title', null, array('label'=>"article.title"))
+            ->add('introduction', null, array('label'=>"article.introduction"))
+            ->add('coverImage', null, array('label'=>"article.coverimage"))
+            ->add('content', null, array('label'=>"article.content"))
+            ->add('writtenBy', null, array('label'=>"article.writtenby"))
+            ->add('publicationDate', null, array('label'=>"article.publicationdate"))
         ;
     }
 }

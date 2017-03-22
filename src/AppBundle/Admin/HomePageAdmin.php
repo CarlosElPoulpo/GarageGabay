@@ -11,17 +11,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class HomePageAdmin extends AbstractAdmin
 {
-
-    private $label_title = "Titre d'accueil";
-    private $label_welcomeParagraph ="Texte d'accueil";
-    private $label_titleCarSales = "Titre section vente des voitures";
-    private $label_descriptionCarSales = "Texte début de section";
-    private $label_videoUrl = "Lien Youtube de la pub Renault";
-    private $label_titleCarSalesSecondHand = "Sous-titre vente de voitures d'occasion";
-    private $label_titleServices = "Titre section service";
-    private $label_descriptionServices = "Texte début de section";
-    private $label_titleTeam = "Titre section présentation de l'équipe";
-    private $label_descriptionTeam = "Texte début de section";
+    protected $translationDomain = 'app';
 
     public function getDashboardActions()
     {
@@ -72,22 +62,22 @@ class HomePageAdmin extends AbstractAdmin
     {
         $formMapper
             ->with('')
-                ->add('title', null, array('label' => $this->label_title))
-                ->add('welcomeParagraph', null, array('label' => $this->label_welcomeParagraph))
+                ->add('title', null, array('label' => "homepage.title"))
+                ->add('welcomeParagraph', null, array('label' => "homepage.welcomeparagraph"))
             ->end()
             ->with('Section sur la vente des voitures')
-                ->add('titleCarSales', null, array('label' => $this->label_titleCarSales))
-                ->add('descriptionCarSales', null, array('label' => $this->label_descriptionCarSales))
-                ->add('videoUrl', null, array('label' => $this->label_videoUrl))
-                ->add('titleCarSalesSecondHand', null, array('label' => $this->label_titleCarSalesSecondHand))
+                ->add('titleCarSales', null, array('label' => "homepage.titlecarsales"))
+                ->add('descriptionCarSales', null, array('label' => "homepage.descriptioncarsales"))
+                ->add('videoUrl', null, array('label' => "homepage.videourl"))
+                ->add('titleCarSalesSecondHand', null, array('label' => "homepage.titlecarsalessecondhand"))
             ->end()
             ->with('Section sur les services')
-                ->add('titleServices', null, array('label' => $this->label_titleServices))
-                ->add('descriptionServices', null, array('label' => $this->label_descriptionServices))
+                ->add('titleServices', null, array('label' => "homepage.titleservices"))
+                ->add('descriptionServices', null, array('label' => "homepage.descriptionservices"))
             ->end()
             ->with("Section sur l'équipe")
-                ->add('titleTeam', null, array('label' => $this->label_titleTeam))
-                ->add('descriptionTeam', null, array('label' => $this->label_descriptionTeam))
+                ->add('titleTeam', null, array('label' => "homepage.titleteam"))
+                ->add('descriptionTeam', null, array('label' => "homepage.descriptionteam"))
             ->end()
         ;
     }
@@ -98,16 +88,16 @@ class HomePageAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('title', null, array('label' => $this->label_title))
-            ->add('welcomeParagraph', null, array('label' => $this->label_welcomeParagraph))
-            ->add('titleCarSales', null, array('label' => $this->label_titleCarSales))
-            ->add('descriptionCarSales', null, array('label' => $this->label_descriptionCarSales))
-            ->add('videoUrl', null, array('label' => $this->label_videoUrl))
-            ->add('titleCarSalesSecondHand', null, array('label' => $this->label_titleCarSalesSecondHand))
-            ->add('titleServices', null, array('label' => $this->label_titleServices))
-            ->add('descriptionServices', null, array('label' => $this->label_descriptionServices))
-            ->add('titleTeam', null, array('label' => $this->label_titleTeam))
-            ->add('descriptionTeam', null, array('label' => $this->label_descriptionTeam))
+            ->add('title', null, array('label' => "homepage.title"))
+            ->add('welcomeParagraph', null, array('label' => "homepage.welcomeparagraph"))
+            ->add('titleCarSales', null, array('label' => "homepage.titlecarsales"))
+            ->add('descriptionCarSales', null, array('label' => "homepage.descriptioncarsales"))
+            ->add('videoUrl', null, array('label' => "homepage.videourl"))
+            ->add('titleCarSalesSecondHand', null, array('label' => "homepage.titlecarsalessecondhand"))
+            ->add('titleServices', null, array('label' => "homepage.titleservices"))
+            ->add('descriptionServices', null, array('label' => "homepage.descriptionservices"))
+            ->add('titleTeam', null, array('label' => "homepage.titleteam"))
+            ->add('descriptionTeam', null, array('label' => "homepage.descriptionteam"))
         ;
     }
 }
