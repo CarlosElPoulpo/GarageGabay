@@ -345,7 +345,7 @@ class SecondHandCar extends Car
         return $this->images;
     }
 
-    function __toString()
+    public function __toString()
     {
         return $this->getTitle();
     }
