@@ -25,6 +25,8 @@ class DefaultController extends Controller
         $particuliers = $repository->findByType("Particulier");
         $electriques = $repository->findByType("Electrique");
 
+        $voitures_neuves = array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques);
+
         $repository = $this->getDoctrine()->getRepository('GarageBundle:Service');
         $services = $repository->findAll();
 
@@ -40,7 +42,7 @@ class DefaultController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:HomePage');
         $homepage = $repository->findOneBy([]);
 
-        return $this->render('default/homepage.html.twig', array("utilitaires"=>$utilitaires, "particuliers"=>$particuliers, "electriques"=>$electriques, "services"=>$services, "garage"=>$garage, "secondhandcars"=>$secondhandcars , "employees"=>$employees, "homepage"=>$homepage));
+        return $this->render('default/homepage.html.twig', array("newcar"=>$voitures_neuves, "services"=>$services, "garage"=>$garage, "secondhandcars"=>$secondhandcars , "employees"=>$employees, "homepage"=>$homepage));
     }
 
     /**
