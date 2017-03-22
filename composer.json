@@ -1,7 +1,8 @@
 {
-    "name": "depac/.checkout",
+    "name": "Garage Heritier",
     "license": "proprietary",
     "type": "project",
+    "description": "Site web du Garage Heritier",
     "autoload": {
         "psr-4": {
             "": "src/"
