@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use GarageBundle\Entity\ContactMail;
 use GarageBundle\Entity\ContactMailNC;
 use GarageBundle\Entity\ContactMailSHC;
 use GarageBundle\Form\Type\ContactMailNCType;
