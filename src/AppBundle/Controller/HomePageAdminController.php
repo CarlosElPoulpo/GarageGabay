@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class HomePageAdminController extends CRUDController
 {
-    public function modifyAction(Request $request)
+    public function listAction()
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:HomePage');
         $homepage = $repository->findOneBy([]);

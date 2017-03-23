@@ -17,9 +17,9 @@ class GarageAdmin extends AbstractAdmin
     {
         $actions = parent::getDashboardActions();
         unset($actions['list']);
-        $actions['modify'] = array(
-            'label'              => ' Modifier',
-            'url'                => $this->generateUrl('modify'),
+        $actions['list'] = array(
+            'label'              => 'Modifier',
+            'url'                => $this->generateUrl('list'),
             'icon'               => 'edit',
         );
         return $actions;
@@ -27,7 +27,7 @@ class GarageAdmin extends AbstractAdmin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection->add('modify')->remove('create')->remove('delete');
+        $collection->remove('create')->remove('delete');
     }
 
     /**

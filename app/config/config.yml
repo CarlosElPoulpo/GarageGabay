@@ -149,33 +149,63 @@ sonata_admin:
                     content:
                         <h2>Bienvenue sur l'interface d'administration</h2>
             -
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [voitures]
+            -
                 position: left
                 type: sonata.admin.block.admin_list
                 settings:
-                    groups: [voitures, autres]
+                    groups: [garage, homepage, employee, services, articles, promotions]
             -
                 position: right
                 type: sonata.admin.block.admin_list
                 settings:
                     groups: [users, generale]
         groups:
+            garage:
+                label:  "Le garage"
+                icon:  '<i class="fa fa-building"></i>'
+                on_top: true
+                items:
+                    - garage.admin.garage
+            homepage:
+                label:  "Page d'accueil"
+                icon:  '<i class="fa fa-file"></i>'
+                on_top: true
+                items:
+                    - app.admin.home_page
+            employee:
+                label:  "Employés"
+                icon:  '<i class="fa fa-users"></i>'
+                on_top: true
+                items:
+                    - app.admin.employee
+            services:
+                label:  "Prestations"
+                icon:  '<i class="fa fa-wrench"></i>'
+                on_top: true
+                items:
+                    - garage.admin.service
+            articles:
+                label:  "Articles"
+                icon:  '<i class="fa fa-newspaper-o"></i>'
+                on_top: true
+                items:
+                    - app.admin.article
+            promotions:
+                label:  "Promotions"
+                icon:  '<i class="fa fa-tag"></i>'
+                on_top: true
+                items:
+                    - app.admin.promotion
             voitures:
                 label: Gestion des voitures
                 icon:  '<i class="fa fa-automobile"></i>'
-            generale:
-                label: Informations générales
-                icon:  '<i class="fa fa-info"></i>'
-            autres:
-                label: Autres
-                icon:  '<i class="fa fa-th"></i>'
             users:
                 label: Gestion des utilisateurs
                 icon:  '<i class="fa fa-users"></i>'
-            #admin:
-                #label: Administration
-                #icon: ''
-#            images:
-#                label: Upload d'image (old)
     title:      'Administration'
     title_logo: 'media/design/Menu-mobile-Logo.png'
     assets:

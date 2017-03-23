@@ -17,9 +17,9 @@ class HomePageAdmin extends AbstractAdmin
     {
         $actions = parent::getDashboardActions();
         unset($actions['list']);
-        $actions['modify'] = array(
+        $actions['list'] = array(
             'label'              => ' Modifier',
-            'url'                => $this->generateUrl('modify'),
+            'url'                => $this->generateUrl('list'),
             'icon'               => 'edit',
         );
         return $actions;
@@ -28,7 +28,6 @@ class HomePageAdmin extends AbstractAdmin
     protected function configureRoutes(RouteCollection $collection)
     {
         $collection
-            ->add('modify')
             ->remove('create')
             ->remove('delete');
     }
