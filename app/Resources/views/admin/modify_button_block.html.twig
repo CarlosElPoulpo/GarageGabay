@@ -1,0 +1,28 @@
+
+{% extends sonata_block.templates.block_base %}
+
+{% block block %}
+    <div class="row modify-group">
+    {% for group in groups %}
+        {% set display = (group.roles is empty or is_granted('ROLE_SUPER_ADMIN') ) %}
+        {% for role in group.roles if not display %}
+            {% set display = is_granted(role)%}
+        {% endfor %}
+
+        {% if display %}
+            {% for admin in group.items %}
+                {% if admin.dashboardActions|length > 0 %}
+                    {% for action in admin.dashboardActions %}
+                        <a href="{{ action.url }}" class="col-md-3 modify-button">
+                            <h1>{{ admin.label|trans({}, admin.translationdomain) }} <br></h1>
+                            {{ action.label|trans({}, action.translation_domain|default('SonataAdminBundle')) }}
+                        </a>
+                    {% endfor %}
+                {% endif %}
+            {%  endfor %}
+
+        {% endif %}
+    {% endfor %}
+    </div>
+    <hr>
+{% endblock %}

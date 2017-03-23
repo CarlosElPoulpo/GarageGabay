@@ -46,3 +46,9 @@ services:
         arguments: [~, GarageBundle\Entity\Status, SonataAdminBundle:CRUD]
         tags:
             - { name: sonata.admin, manager_type: orm, group: hidden, label: Status }
+
+    sonata.admin.block.modifybutton:
+        class: GarageBundle\Block\ModifyButtonBlockService
+        arguments: [ ~, "@templating", "@sonata.admin.pool"]
+        tags:
+            - { name: sonata.block }

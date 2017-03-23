@@ -99,6 +99,7 @@ sonata_block:
         sonata.block.service.action:
         sonata.block.service.rss:
         sonata.admin.block.stats:
+        sonata.admin.block.modifybutton:
         sonata.admin.block.search_result:
             contexts: [admin]
 
@@ -146,23 +147,28 @@ sonata_admin:
                 position: top
                 type: sonata.block.service.text
                 settings:
-                    content:
-                        <h2>Bienvenue sur l'interface d'administration</h2>
+                    content: <h2>Interface d'administration</h2>
             -
                 position: right
                 type: sonata.admin.block.admin_list
                 settings:
                     groups: [voitures]
             -
-                position: left
-                type: sonata.admin.block.admin_list
+                position: top
+                class: col-lg-12 col-md-12
+                type: sonata.admin.block.modifybutton
                 settings:
-                    groups: [garage, homepage, employee, services, articles, promotions]
+                    groups: [garage, homepage]
             -
                 position: right
                 type: sonata.admin.block.admin_list
                 settings:
                     groups: [users, generale]
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [employee, services, articles, promotions]
         groups:
             garage:
                 label:  "Le garage"
