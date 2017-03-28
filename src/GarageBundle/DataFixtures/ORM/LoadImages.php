@@ -46,6 +46,11 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $iconeCaptur = new Image();
         $this->jpg($iconeCaptur,'iconeCaptur','.jpeg');
         $manager->persist($iconeCaptur);
+
+
+
+
+
         //--------------------------------------
         $trafic = new Image();
         $this->jpg($trafic,'trafic');
@@ -71,6 +76,59 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $this->jpg($iconeMaster,'iconeMasterFourgon','.jpeg');
         $manager->persist($iconeMaster);
         //--------------------------------------
+        //--------------------------------------
+        $kangooExpress = new Image();
+        $this->jpg($kangooExpress,'kangooExpress');
+        $manager->persist($kangooExpress);
+
+        $iconeKangooExpress = new Image();
+        $this->jpg($iconeKangooExpress,'iconeKangooExpress','.jpeg');
+        $manager->persist($iconeKangooExpress);
+        //--------------------------------------
+        $masterCabine = new Image();
+        $this->jpg($masterCabine,'masterCabine');
+        $manager->persist($masterCabine);
+
+        $iconeMasterCabine = new Image();
+        $this->jpg($iconeMasterCabine,'iconeMasterCabine','.jpeg');
+        $manager->persist($iconeMasterCabine);
+        //--------------------------------------
+        $masterGrandVolume = new Image();
+        $this->jpg($masterGrandVolume,'masterGrandVolume');
+        $manager->persist($masterGrandVolume);
+
+        $iconeMasterGrandVolume = new Image();
+        $this->jpg($iconeMasterGrandVolume,'iconeMasterGrandVolume','.jpeg');
+        $manager->persist($iconeMasterGrandVolume);
+        //--------------------------------------
+        $masterTransportsOuverts = new Image();
+        $this->jpg($masterTransportsOuverts,'masterTransportsOuverts');
+        $manager->persist($masterTransportsOuverts);
+
+        $iconeMasterTransportsOuverts = new Image();
+        $this->jpg($iconeMasterTransportsOuverts,'iconeMasterTransportsOuverts','.jpeg');
+        $manager->persist($iconeMasterTransportsOuverts);
+        //--------------------------------------
+        $nouveauMasterZEU = new Image();
+        $this->jpg($nouveauMasterZEU,'nouveauMasterZEU');
+        $manager->persist($nouveauMasterZEU);
+
+        $iconeNouveauMasterZEU = new Image();
+        $this->jpg($iconeNouveauMasterZEU,'iconeNouveauMasterZEU','.jpeg');
+        $manager->persist($iconeNouveauMasterZEU);
+        //--------------------------------------
+        $nouveauKangooZEU = new Image();
+        $this->jpg($nouveauKangooZEU,'nouveauKangooZEU');
+        $manager->persist($nouveauKangooZEU);
+
+        $iconeNouveauKangooZEU = new Image();
+        $this->jpg($iconeNouveauKangooZEU,'iconeNouveauKangooZEU','.jpeg');
+        $manager->persist($iconeNouveauKangooZEU);
+
+
+
+        //--------------------------------------
+        //--------------------------------------
         $zoe = new Image();
         $this->jpg($zoe,'zoe');
         $manager->persist($zoe);
@@ -94,6 +152,30 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $iconeMasterE = new Image();
         $this->jpg($iconeMasterE,'iconeMasterE','.jpeg');
         $manager->persist($iconeMasterE);
+        //--------------------------------------
+        $twizy = new Image();
+        $this->jpg($twizy,'twizy');
+        $manager->persist($twizy);
+
+        $iconeTwizy = new Image();
+        $this->jpg($iconeTwizy,'iconeTwizy','.jpeg');
+        $manager->persist($iconeTwizy);
+        //--------------------------------------
+        $twizyCargo = new Image();
+        $this->jpg($twizyCargo,'twizyCargo');
+        $manager->persist($twizyCargo);
+
+        $iconeTwizyCargo = new Image();
+        $this->jpg($iconeTwizyCargo,'iconeTwizyCargo','.jpeg');
+        $manager->persist($iconeTwizyCargo);
+        //--------------------------------------
+        $nouveauKangooZE = new Image();
+        $this->jpg($nouveauKangooZE,'nouveauKangooZE');
+        $manager->persist($nouveauKangooZE);
+
+        $iconeNouveauKangooZE = new Image();
+        $this->jpg($iconeNouveauKangooZE,'iconeNouveauKangooZE','.jpeg');
+        $manager->persist($iconeNouveauKangooZE);
 
         $manager->flush();
 
@@ -111,12 +193,31 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('imageMaster', $master);
         $this->addReference('iconeMaster', $iconeMaster);
 
+        $this->addReference('imageKangooExpress', $kangooExpress);
+        $this->addReference('iconeKangooExpress', $iconeKangooExpress);
+        $this->addReference('imageMasterCabine', $masterCabine);
+        $this->addReference('iconeMasterCabine', $iconeMasterCabine);
+        $this->addReference('imageMasterGrandVolume', $masterGrandVolume);
+        $this->addReference('iconeMasterGrandVolume', $iconeMasterGrandVolume);
+        $this->addReference('imageMasterTransportsOuverts', $masterTransportsOuverts);
+        $this->addReference('iconeMasterTransportsOuverts', $iconeMasterTransportsOuverts);
+        $this->addReference('imageNouveauMasterZEU', $nouveauMasterZEU);
+        $this->addReference('iconeNouveauMasterZEU', $iconeNouveauMasterZEU);
+        $this->addReference('imageNouveauKangooZEU', $nouveauKangooZEU);
+        $this->addReference('iconeNouveauKangooZEU', $iconeNouveauKangooZEU);
+
         $this->addReference('imageZoe', $zoe);
         $this->addReference('iconeZoe', $iconeZoe);
         $this->addReference('imageKangooE', $kangooE);
         $this->addReference('iconeKangooE', $iconeKangooE);
         $this->addReference('imageMasterE', $masterE);
         $this->addReference('iconeMasterE', $iconeMasterE);
+        $this->addReference('imageTwizy', $twizy);
+        $this->addReference('iconeTwizy', $iconeTwizy);
+        $this->addReference('imageTwizyCargo', $twizyCargo);
+        $this->addReference('iconeTwizyCargo', $iconeTwizyCargo);
+        $this->addReference('imageNouveauKangooZE', $nouveauKangooZE);
+        $this->addReference('iconeNouveauKangooZE', $iconeNouveauKangooZE);
         /*END VEHICULES NEUFS*/
 
         /*SERVICES ICONS*/
