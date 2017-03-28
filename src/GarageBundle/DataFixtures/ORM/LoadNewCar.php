@@ -98,6 +98,73 @@ class LoadNewCar extends AbstractFixture implements OrderedFixtureInterface
         $master->setCoverImage($this->getReference('imageMaster'));
         $master->setIcone($this->getReference('iconeMaster'));
 
+
+
+
+
+        $kangooExpress = new NewCar();
+        $kangooExpress->setModel('KANGOO Express');
+        $kangooExpress->setTitle("L'utilitaire sur-mesure pour les professionnels exigeants");
+        $kangooExpress->setVehiculeType($this->getReference('vehiculeType-utilitaire'));
+        $kangooExpress->setPrice(13600);
+        $kangooExpress->setRenaultLink("https://www.renault.fr/vehicules/vehicules-professionnels/kangoo-express.html");
+        $kangooExpress->setPricePerMonth(241);
+        $kangooExpress->setDuration(60);
+        $kangooExpress->setCoverImage($this->getReference('imageKangooExpress'));
+        $kangooExpress->setIcone($this->getReference('iconeKangooExpress'));
+
+        $masterCabine = new NewCar();
+        $masterCabine->setModel('MASTER Cabine Approfondie');
+        $masterCabine->setTitle("Un modèle pour vous, quels que soient vos besoins");
+        $masterCabine->setVehiculeType($this->getReference('vehiculeType-utilitaire'));
+        $masterCabine->setPrice(30950);
+        $masterCabine->setRenaultLink("https://www.renault.fr/vehicules/vehicules-professionnels/master-cabine-approfondie.html");
+        $masterCabine->setPricePerMonth(549);
+        $masterCabine->setDuration(60);
+        $masterCabine->setCoverImage($this->getReference('imageMasterCabine'));
+        $masterCabine->setIcone($this->getReference('iconeMasterCabine'));
+
+        $masterGrandVolume = new NewCar();
+        $masterGrandVolume->setModel('MASTER Grand Volume');
+        $masterGrandVolume->setTitle("Un modèle pour vous, quels que soient vos besoins");
+        $masterGrandVolume->setVehiculeType($this->getReference('vehiculeType-utilitaire'));
+        $masterGrandVolume->setPrice(41220);
+        $masterGrandVolume->setRenaultLink("https://www.renault.fr/vehicules/vehicules-professionnels/master-grand-volume.html");
+        $masterGrandVolume->setPricePerMonth(734);
+        $masterGrandVolume->setDuration(60);
+        $masterGrandVolume->setCoverImage($this->getReference('imageMasterGrandVolume'));
+        $masterGrandVolume->setIcone($this->getReference('iconeMasterGrandVolume'));
+
+        $masterTransportsOuverts = new NewCar();
+        $masterTransportsOuverts->setModel('MASTER Transports ouverts');
+        $masterTransportsOuverts->setTitle("Un modèle pour vous, quels que soient vos besoins");
+        $masterTransportsOuverts->setVehiculeType($this->getReference('vehiculeType-utilitaire'));
+        $masterTransportsOuverts->setPrice(28300);
+        $masterTransportsOuverts->setRenaultLink("https://www.renault.fr/vehicules/vehicules-professionnels/master-transport-ouvert.html");
+        $masterTransportsOuverts->setPricePerMonth(502);
+        $masterTransportsOuverts->setDuration(60);
+        $masterTransportsOuverts->setCoverImage($this->getReference('imageMasterTransportsOuverts'));
+        $masterTransportsOuverts->setIcone($this->getReference('iconeMasterTransportsOuverts'));
+
+        $nouveauMasterZEU = new NewCar();
+        $nouveauMasterZEU->setModel('Nouveau MASTER Z.E.');
+        $nouveauMasterZEU->setTitle("Le meilleur de l'utilitaire et du 100% électrique Renault réunis dans un grand fourgon.");
+        $nouveauMasterZEU->setVehiculeType($this->getReference('vehiculeType-utilitaire'));
+        $nouveauMasterZEU->setPrice(0);
+        $nouveauMasterZEU->setRenaultLink("https://www.renault.fr/vehicules/vehicules-professionnels/master-ze-reveal.html");
+        $nouveauMasterZEU->setCoverImage($this->getReference('imageNouveauMasterZEU'));
+        $nouveauMasterZEU->setIcone($this->getReference('iconeNouveauMasterZEU'));
+
+        $nouveauKangooZEU = new NewCar();
+        $nouveauKangooZEU->setModel('Nouveau KANGOO Z.E.');
+        $nouveauKangooZEU->setTitle("270km NEDC*, 200km en conditions réelles, 100% électrique !");
+        $nouveauKangooZEU->setVehiculeType($this->getReference('vehiculeType-utilitaire'));
+        $nouveauKangooZEU->setPrice(0);
+        $nouveauKangooZEU->setRenaultLink("https://www.renault.fr/vehicules/vehicules-electriques/kangoo-ze-reveal.html");
+        $nouveauKangooZEU->setCoverImage($this->getReference('imageNouveauKangooZEU'));
+        $nouveauKangooZEU->setIcone($this->getReference('iconeNouveauKangooZEU'));
+
+
         //---------------------Electriques-------------------------
 
         $zoe = new NewCar();
@@ -131,18 +198,55 @@ class LoadNewCar extends AbstractFixture implements OrderedFixtureInterface
         $masterE->setCoverImage($this->getReference('imageMasterE'));
         $masterE->setIcone($this->getReference('iconeMasterE'));
 
+        $twizy = new NewCar();
+        $twizy->setModel('TWIZY');
+        $twizy->setTitle("Fun au quotidien");
+        $twizy->setVehiculeType($this->getReference('vehiculeType-electrique'));
+        $twizy->setPrice(7440);
+        $twizy->setRenaultLink("https://www.renault.fr/vehicules/vehicules-electriques/twizy.html");
+        $twizy->setPricePerMonth(120);
+        $twizy->setDuration(48);
+        $twizy->setCoverImage($this->getReference('imageTwizy'));
+        $twizy->setIcone($this->getReference('iconeTwizy'));
+
+        $twizyCargo = new NewCar();
+        $twizyCargo->setModel('TWIZY Cargo');
+        $twizyCargo->setTitle("Le quadricycle 100% électrique qui a du coffre !");
+        $twizyCargo->setVehiculeType($this->getReference('vehiculeType-electrique'));
+        $twizyCargo->setPrice(0);
+        $twizyCargo->setRenaultLink("https://www.renault.fr/vehicules/vehicules-electriques/twizy/twizy-cargo.html");
+        $twizyCargo->setCoverImage($this->getReference('imageTwizyCargo'));
+        $twizyCargo->setIcone($this->getReference('iconeTwizyCargo'));
+
+        $nouveauKangooZE = new NewCar();
+        $nouveauKangooZE->setModel('Nouveau KANGOO Z.E.');
+        $nouveauKangooZE->setTitle("270km NEDC*, 200km en conditions réelles, 100% électrique !");
+        $nouveauKangooZE->setVehiculeType($this->getReference('vehiculeType-electrique'));
+        $nouveauKangooZE->setPrice(0);
+        $nouveauKangooZE->setRenaultLink("https://www.renault.fr/vehicules/vehicules-electriques/kangoo-ze-reveal.html");
+        $nouveauKangooZE->setCoverImage($this->getReference('imageNouveauKangooZE'));
+        $nouveauKangooZE->setIcone($this->getReference('iconeNouveauKangooZE'));
 
         $manager->persist($twingo);
         $manager->persist($clio);
         $manager->persist($captur);
-        
-        $manager->persist($trafic);
+
         $manager->persist($kangoo);
+        $manager->persist($kangooExpress);
+        $manager->persist($trafic);
         $manager->persist($master);
-        
+        $manager->persist($masterCabine);
+        $manager->persist($masterGrandVolume);
+        $manager->persist($masterTransportsOuverts);
+        $manager->persist($nouveauMasterZEU);
+        $manager->persist($nouveauKangooZEU);
+
         $manager->persist($zoe);
         $manager->persist($kangooE);
+        $manager->persist($twizy);
+        $manager->persist($twizyCargo);
         $manager->persist($masterE);
+        $manager->persist($nouveauKangooZE);
 
 
         $manager->flush();
