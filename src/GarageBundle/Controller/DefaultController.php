@@ -66,6 +66,7 @@ class DefaultController extends Controller
             if($contactmailnc->getEssai()){
                 $flash_message = "Demande de contact et d'essai pour la voiture : ";
             }
+            $flash_message .= $contactmailnc->getNewCar()->getModel()." ";
             $flash_message .= $contactmailnc->getNewCar()->getTitle();
             $this->get('session')->getFlashBag()->set('success', $flash_message);
             return $this->redirectToRoute('cars');
