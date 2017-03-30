@@ -23,6 +23,9 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         /*VEHICULES NEUFS*/
+        //--------------------------------------
+        // PARTICULIER
+        //--------------------------------------
         $twingo = new Image();
         $this->jpg($twingo,'twingo');
         $manager->persist($twingo);
@@ -31,6 +34,15 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $this->jpg($iconeTwingo,'iconeTwingo','.jpeg');
         $manager->persist($iconeTwingo);
         //--------------------------------------
+        $zoeP = new Image();
+        $this->jpg($zoeP,'zoeP');
+        $manager->persist($zoeP);
+
+        $iconeZoeP = new Image();
+        $this->jpg($iconeZoeP,'iconeZoeP','.jpeg');
+        $manager->persist($iconeZoeP);
+        //--------------------------------------
+
         $clio = new Image();
         $this->jpg($clio,'clio');
         $manager->persist($clio);
@@ -39,6 +51,22 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $this->jpg($iconeClio,'iconeClio','.jpeg');
         $manager->persist($iconeClio);
         //--------------------------------------
+        $clioEstate = new Image();
+        $this->jpg($clioEstate,'clioEstate');
+        $manager->persist($clioEstate);
+
+        $iconeClioEstate = new Image();
+        $this->jpg($iconeClioEstate,'iconeClioEstate','.jpeg');
+        $manager->persist($iconeClioEstate);
+        //--------------------------------------
+        $kangooP = new Image();
+        $this->jpg($kangooP,'kangooP');
+        $manager->persist($kangooP);
+
+        $iconeKangooP = new Image();
+        $this->jpg($iconeKangooP,'iconeKangooP','.jpeg');
+        $manager->persist($iconeKangooP);
+        //--------------------------------------
         $captur = new Image();
         $this->jpg($captur,'captur');
         $manager->persist($captur);
@@ -46,11 +74,80 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $iconeCaptur = new Image();
         $this->jpg($iconeCaptur,'iconeCaptur','.jpeg');
         $manager->persist($iconeCaptur);
+        //--------------------------------------
+        $megane = new Image();
+        $this->jpg($megane,'megane');
+        $manager->persist($megane);
 
+        $iconeMegane = new Image();
+        $this->jpg($iconeMegane,'iconeMegane','.jpeg');
+        $manager->persist($iconeMegane);
+        //--------------------------------------
+        $meganeEstate = new Image();
+        $this->jpg($meganeEstate,'meganeEstate','.jpeg');
+        $manager->persist($meganeEstate);
 
+        $iconeMeganeEstate = new Image();
+        $this->jpg($iconeMeganeEstate,'iconeMeganeEstate','.jpeg');
+        $manager->persist($iconeMeganeEstate);
+        //--------------------------------------
+        $scenic = new Image();
+        $this->jpg($scenic,'scenic');
+        $manager->persist($scenic);
 
+        $iconeScenic = new Image();
+        $this->jpg($iconeScenic,'iconeScenic','.jpeg');
+        $manager->persist($iconeScenic);
+        //--------------------------------------
+        $grandScenic = new Image();
+        $this->jpg($grandScenic,'grandScenic');
+        $manager->persist($grandScenic);
 
+        $iconeGrandScenic = new Image();
+        $this->jpg($iconeGrandScenic,'iconeGrandScenic','.jpeg');
+        $manager->persist($iconeGrandScenic);
+        //--------------------------------------
+        $kadjar = new Image();
+        $this->jpg($kadjar,'kadjar');
+        $manager->persist($kadjar);
 
+        $iconeKadjar = new Image();
+        $this->jpg($iconeKadjar,'iconeKadjar','.jpeg');
+        $manager->persist($iconeKadjar);
+        //--------------------------------------
+        $talisman = new Image();
+        $this->jpg($talisman,'talisman');
+        $manager->persist($talisman);
+
+        $iconeTalisman = new Image();
+        $this->jpg($iconeTalisman,'iconeTalisman','.jpeg');
+        $manager->persist($iconeTalisman);
+        //--------------------------------------
+        $talismanEstate = new Image();
+        $this->jpg($talismanEstate,'talismanEstate');
+        $manager->persist($talismanEstate);
+
+        $iconeTalismanEstate = new Image();
+        $this->jpg($iconeTalismanEstate,'iconeTalismanEstate','.jpeg');
+        $manager->persist($iconeTalismanEstate);
+        //--------------------------------------
+        $espace = new Image();
+        $this->jpg($espace,'espace');
+        $manager->persist($espace);
+
+        $iconeEspace = new Image();
+        $this->jpg($iconeEspace,'iconeEspace','.jpeg');
+        $manager->persist($iconeEspace);
+        //--------------------------------------
+        $traficCombi = new Image();
+        $this->jpg($traficCombi,'traficCombi');
+        $manager->persist($traficCombi);
+
+        $iconeTraficCombi = new Image();
+        $this->jpg($iconeTraficCombi,'iconeTraficCombi','.jpeg');
+        $manager->persist($iconeTraficCombi);
+        //--------------------------------------
+        // UTILITAIRE
         //--------------------------------------
         $trafic = new Image();
         $this->jpg($trafic,'trafic');
@@ -124,10 +221,8 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
         $iconeNouveauKangooZEU = new Image();
         $this->jpg($iconeNouveauKangooZEU,'iconeNouveauKangooZEU','.jpeg');
         $manager->persist($iconeNouveauKangooZEU);
-
-
-
         //--------------------------------------
+        // ELECTRIQUE
         //--------------------------------------
         $zoe = new Image();
         $this->jpg($zoe,'zoe');
@@ -181,10 +276,35 @@ class LoadImages extends AbstractFixture implements OrderedFixtureInterface
 
         $this->addReference('imageTwingo', $twingo);
         $this->addReference('iconeTwingo', $iconeTwingo);
+        $this->addReference('imageZoeP', $zoeP);
+        $this->addReference('iconeZoeP', $iconeZoeP);
         $this->addReference('imageClio', $clio);
         $this->addReference('iconeClio', $iconeClio);
+        $this->addReference('imageClioEstate', $clioEstate);
+        $this->addReference('iconeClioEstate', $iconeClioEstate);
         $this->addReference('imageCaptur', $captur);
         $this->addReference('iconeCaptur', $iconeCaptur);
+        $this->addReference('imageKangooP', $kangooP);
+        $this->addReference('iconeKangooP', $iconeKangooP);
+        $this->addReference('imageMegane', $megane);
+        $this->addReference('iconeMegane', $iconeMegane);
+        $this->addReference('imageMeganeEstate', $meganeEstate);
+        $this->addReference('iconeMeganeEstate', $iconeMeganeEstate);
+        $this->addReference('imageScenic', $scenic);
+        $this->addReference('iconeScenic', $iconeScenic);
+        $this->addReference('imageGrandScenic', $grandScenic);
+        $this->addReference('iconeGrandScenic', $iconeGrandScenic);
+        $this->addReference('imageKadjar', $kadjar);
+        $this->addReference('iconeKadjar', $iconeKadjar);
+        $this->addReference('imageTalisman', $talisman);
+        $this->addReference('iconeTalisman', $iconeTalisman);
+        $this->addReference('imageTalismanEstate', $talismanEstate);
+        $this->addReference('iconeTalismanEstate', $iconeTalismanEstate);
+        $this->addReference('imageEspace', $espace);
+        $this->addReference('iconeEspace', $iconeEspace);
+        $this->addReference('imageTraficCombi', $traficCombi);
+        $this->addReference('iconeTraficCombi', $iconeTraficCombi);
+
 
         $this->addReference('imageTrafic', $trafic);
         $this->addReference('iconeTrafic', $iconeTrafic);
