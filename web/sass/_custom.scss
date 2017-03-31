@@ -303,8 +303,9 @@ span.renault-italic{
 
 .car-header{
   .streak-photo{
-    height: 700px;
+    height: 600px;
     margin-top: -25px;
+    background-position: top;
     .car-title-header{
       padding: 20px;
       background-color: $header-car;
