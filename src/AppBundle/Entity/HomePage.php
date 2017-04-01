@@ -59,6 +59,13 @@ class HomePage
     /**
      * @var string
      *
+     * @ORM\Column(name="textUnderVideo", type="text", nullable=true)
+     */
+    private $textUnderVideo;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="titleCarSalesSecondHand", type="text", nullable=true)
      */
     private $titleCarSalesSecondHand;
@@ -345,5 +352,29 @@ class HomePage
     public function __toString()
     {
         return "Page d'accueil";
+    }
+
+    /**
+     * Set textUnderVideo
+     *
+     * @param string $textUnderVideo
+     *
+     * @return HomePage
+     */
+    public function setTextUnderVideo($textUnderVideo)
+    {
+        $this->textUnderVideo = $textUnderVideo;
+
+        return $this;
+    }
+
+    /**
+     * Get textUnderVideo
+     *
+     * @return string
+     */
+    public function getTextUnderVideo()
+    {
+        return $this->textUnderVideo;
     }
 }

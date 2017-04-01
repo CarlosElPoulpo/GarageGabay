@@ -20,6 +20,7 @@ homepage:
   titlecarsales: "Titre section vente des voitures"
   descriptioncarsales: "Texte début de section"
   videourl: "Lien Youtube de la pub Renault"
+  textundervideo: "Texte en dessous de la vidéo Youtube"
   titlecarsalessecondhand: "Sous-titre vente de voitures d'occasion"
   titleservices: "Titre section service"
   descriptionservices: "Texte début de section"

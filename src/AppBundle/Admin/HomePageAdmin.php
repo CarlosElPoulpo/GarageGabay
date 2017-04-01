@@ -68,6 +68,7 @@ class HomePageAdmin extends AbstractAdmin
                 ->add('titleCarSales', null, array('label' => "homepage.titlecarsales"))
                 ->add('descriptionCarSales', null, array('label' => "homepage.descriptioncarsales"))
                 ->add('videoUrl', null, array('label' => "homepage.videourl"))
+                ->add('textUnderVideo', null, array('label' => "homepage.textundervideo"))
                 ->add('titleCarSalesSecondHand', null, array('label' => "homepage.titlecarsalessecondhand"))
             ->end()
             ->with('Section sur les services')
