@@ -37,10 +37,15 @@
                 <br>
                 <h1 class="flex-center">{{ homepage.titleCarSales }}</h1>
                 <p>{{ homepage.descriptionCarSales }}</p>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="{{ homepage.videoUrl }}" frameborder="0" allowfullscreen></iframe>
+                <div class="d-flex flex-center">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{ homepage.videoUrl }}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
                 <br>
+                <h4 class="text-center">Cliquez sur une voiture pour reserver votre essai</h4>
                     {% include ":elements:new_cars_displayer.html.twig" with {'particuliers': newcar.particuliers, 'utilitaires': newcar.utilitaires, 'electriques': newcar.electriques} %}
                     <hr class="renault-primary half-with">
                 <h3 class="text-xs-left">{{ homepage.titleCarSalesSecondHand }} <a class="btn btn-large btn-renault-primary" href="{{ path("cars") }}">Voir toute les voitures <i

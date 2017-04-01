@@ -26,7 +26,7 @@ class LoadGarages extends AbstractFixture implements OrderedFixtureInterface
         $garage->setEmail("garage.heritier@gmail.com");
         $garage->setFacebookPageLink("");
         $garage->setGooglePageLink("");
-        $garage->setPhone("+ 33 1 47 20 00 01");
+        $garage->setPhone("+ 33 4 76 51 75 50");
         $garage->setCity("Grenoble");
         $garage->setPostalCode("38100");
         $garage->setRoad("Av Jean Perrot");
