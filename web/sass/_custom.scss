@@ -24,7 +24,7 @@ main{
 }
 
 .view {
-  background: url("../media/design/index-full-screen.jpg")no-repeat center center fixed;
+  background: url("../media/design/fullscreen-black-and-grey.png")no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -178,8 +178,11 @@ footer {
     }
   }
   div.btn-phone{
-    left: -123px;
+    left: -125px;
     background-color: #4CAF50;
+    i{
+      margin-right: 5px;
+    }
   }
   div.show{
     left: -10px;
