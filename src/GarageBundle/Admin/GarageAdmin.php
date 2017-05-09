@@ -76,7 +76,10 @@ class GarageAdmin extends AbstractAdmin
                 'class'       => 'col-md-6',
             ))
                 ->add('name', null, array('label'=>"garage.name"))
-                ->add('image', null, array('label'=>"garage.image"))
+                //->add('image', null, array('label'=>"garage.image"))
+                ->add('image', 'sonata_type_model_list', array(
+                    'btn_list' => false,
+                ))
                 ->add('description', null, array('label'=>"garage.description"))
             ->end()
             ->with('Informations de contact', array(
