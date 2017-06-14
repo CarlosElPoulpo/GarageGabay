@@ -28,10 +28,10 @@ class DefaultController extends Controller
         $garage = $repository->findOneBy([]);
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Employee');
-        $employees = $repository->findAll(array('arrange' => 'ASC'));
+        $employees = $repository->findBy(array(), array('arrange' => 'ASC'));
 
         $repository = $this->getDoctrine()->getRepository('GarageBundle:SecondHandCar');
-        $secondhandcars = $repository->findAll(array('creationDate' => 'DESC'));
+        $secondhandcars = $repository->findBy(array(), array('creationDate' => 'DESC'));
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:HomePage');
         $homepage = $repository->findOneBy([]);

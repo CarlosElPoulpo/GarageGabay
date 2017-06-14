@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-    <div class="view hm-black-strong fullscreen-index">
+    <div class="view fullscreen-index">
         <div class="full-bg-img d-flex flex-column justify-content-between">
             <div class="container"></div>
             <div class="container d-flex flex-row">
@@ -84,10 +84,10 @@
             <div id="le-garage" class="col-md-12 flex-center flex-column">
                 <h1><img src="{{ asset("media/design/logo-renault.png") }}" alt=""></h1>
                 <div class="col-md-12 flex-center flex-column flex-md-row flex-lg-row">
-                    <div class="">
+                    <div class="col-md-6">
                         <p class="text-xs-left">{{ garage.description }}</p>
                     </div>
-                    <div class="">
+                    <div class="col-md-6">
                         <figure class="figure">
                             <img src="{{ asset(garage.image.webPath) }}" class="figure-img img-fluid" alt="{{ garage.name }}">
                             <figcaption class="figure-caption float-right">{{ garage.name }}</figcaption>
