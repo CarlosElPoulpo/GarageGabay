@@ -353,7 +353,11 @@ class Garage
 
     public function __toString()
     {
-        return $this->getName();
+        if ($this->getName() <> null )
+            return $this->getName();
+        else {
+            return '';
+        }
     }
 
     /**

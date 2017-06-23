@@ -195,7 +195,11 @@ class Image
 
     public function __toString()
     {
-        return $this->alt;
+        if ($this->getAlt() <> null )
+            return $this->getAlt();
+        else {
+            return '';
+        }
     }
 
 

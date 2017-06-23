@@ -348,7 +348,11 @@ class SecondHandCar extends Car
 
     public function __toString()
     {
-        return $this->getTitle();
+        if ($this->getTitle() <> null )
+            return $this->getTitle();
+        else {
+            return '';
+        }
     }
 
     /**

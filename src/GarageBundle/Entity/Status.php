@@ -52,7 +52,11 @@ class Status
     }
 
     public function __toString() {
-        return $this->name;
+        if ($this->getName() <> null )
+            return $this->getName();
+        else {
+            return '';
+        }
     }
 
     /**
