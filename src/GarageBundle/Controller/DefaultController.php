@@ -52,8 +52,8 @@ class DefaultController extends Controller
 
             $mailer = $this->get('mailer');
 
-            $message = \Swift_Message::newInstance()
-                ->setSubject($contactmailnc->subject())
+            $message = new \Swift_Message($contactmailnc->subject());
+            $message
                 ->setContentType("text/html")
                 ->setFrom(array($this->container->getParameter('mailer_user') => 'Garage Heritier'))
                 ->setTo(array($this->container->getParameter('mailer_garage')))

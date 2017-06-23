@@ -29,6 +29,11 @@ class Status
     private $name;
 
     /**
+     * @ORM\OneToMany(targetEntity="GarageBundle\Entity\SecondHandcar", mappedBy="status")
+     */
+    private $secondHandCars;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="tagcss", type="string", length=255)

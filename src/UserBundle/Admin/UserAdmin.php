@@ -55,9 +55,6 @@ class UserAdmin extends AbstractAdmin
             ->add('email', null, array(
                 'label' => $this->label_email
             ))
-            ->add('password', null, array(
-                'label' => $this->label_password
-            ))
             ->add('lastLogin', null, array(
                 'label' => $this->label_lastLogin
             ))

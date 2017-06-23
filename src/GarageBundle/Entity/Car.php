@@ -183,4 +183,13 @@ class Car
         $this->setCreationDate(new \DateTimeImmutable());
     }
 
+    /**
+     * @return string
+     */
+    function __toString()
+    {
+        return $this->getTitle();
+    }
+
+
 }

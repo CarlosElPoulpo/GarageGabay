@@ -95,9 +95,10 @@ class SecondHandCar extends Car
      */
      private $images;
 
+
     /**
-     * @ORM\OneToOne(targetEntity="GarageBundle\Entity\Status", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToOne(targetEntity="GarageBundle\Entity\Status", inversedBy="secondHandCars")
+     * @ORM\JoinColumn(nullable=false)
      * @Assert\Valid()
      */
     private $status;
@@ -397,4 +398,6 @@ class SecondHandCar extends Car
     {
         return $this->promotion;
     }
+
+
 }
